@@ -1,8 +1,8 @@
 +------------------+
 | Section Metadata |
-+------------------+
-| grey             |
-+------------------+
++---------+--------+
+| style   | grey   |
++---------+--------+
 
 # Trendsetters, game changers, night owls
 
@@ -66,9 +66,9 @@ From courtside cool to beachy vibes, discover the freshest looks and real storie
 
 +------------------+
 | Section Metadata |
-+------------------+
-| grey             |
-+------------------+
++---------+--------+
+| style   | grey   |
++---------+--------+
 
 Hot right now
 
@@ -128,9 +128,9 @@ Get inspired by real looks, real stories, and the freshest trends in youth fashi
 
 +------------------+
 | Section Metadata |
-+------------------+
-| dark             |
-+------------------+
++---------+--------+
+| style   | dark   |
++---------+--------+
 
 +-------------------------------------------------------------------+
 | Tabs Showcase                                                     |

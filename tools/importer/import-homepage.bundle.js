@@ -403,13 +403,9 @@ var CustomImportScript = (() => {
     return pageBlocks;
   }
   function createSectionMetadata(document, style) {
-    const cells = [
-      ["Section Metadata"],
-      ["style", style]
-    ];
     return WebImporter.Blocks.createBlock(document, {
       name: "Section Metadata",
-      cells: [[style]]
+      cells: [["style", style]]
     });
   }
   var import_homepage_default = {

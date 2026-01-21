@@ -136,13 +136,9 @@ function findBlocksOnPage(document, template) {
  * @returns {Element} The section metadata table element
  */
 function createSectionMetadata(document, style) {
-  const cells = [
-    ['Section Metadata'],
-    ['style', style]
-  ];
   return WebImporter.Blocks.createBlock(document, {
     name: 'Section Metadata',
-    cells: [[style]]
+    cells: [['style', style]]
   });
 }
 
