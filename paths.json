@@ -1,7 +1,10 @@
 {
   "mappings": [
-    "/content/aem-block-collection/:/",
-    "/content/aem-block-collection/metadata:/metadata.json",
-    "/content/aem-block-collection/configuration:/.helix/config.json"
+    "/content/ec-xwalk-jan-21/:/",
+    "/content/ec-xwalk-jan-21/metadata:/metadata.json",
+    "/content/ec-xwalk-jan-21/configuration:/.helix/config.json"
+  ],
+  "includes": [
+    "/content/ec-xwalk-jan-21/"
   ]
 }
