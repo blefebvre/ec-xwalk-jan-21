@@ -1,27 +1,109 @@
+/* Cards Articles - Article cards with image, tag, heading */
+
+.cards-articles {
+  margin: var(--spacing-xl) 0;
+}
+
 .cards-articles > ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-l);
 }
 
 .cards-articles > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-m);
+  background-color: transparent;
+  border: none;
 }
 
-.cards-articles .cards-articles-card-body {
-  margin: 16px;
-}
-
+/* Image column */
 .cards-articles .cards-articles-card-image {
+  overflow: hidden;
   line-height: 0;
 }
 
-.cards-articles > ul > li img {
+.cards-articles .cards-articles-card-image p {
+  margin: 0;
+  line-height: 0;
+}
+
+.cards-articles .cards-articles-card-image img {
   width: 100%;
+  height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
+  display: block;
+}
+
+/* Text column */
+.cards-articles .cards-articles-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.cards-articles .cards-articles-card-body p {
+  margin: 0;
+}
+
+/* Tag and read time */
+.cards-articles .cards-articles-card-body p:first-child {
+  font-size: var(--body-font-size-xs);
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.cards-articles .cards-articles-card-body p:first-child em {
+  font-style: normal;
+  font-weight: 500;
+  padding: 4px 8px;
+  background-color: var(--light-color);
+  border-radius: 4px;
+}
+
+/* Heading */
+.cards-articles .cards-articles-card-body h3 {
+  margin: var(--spacing-xs) 0;
+  font-size: var(--heading-font-size-s);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+/* Description */
+.cards-articles .cards-articles-card-body p:nth-child(3) {
+  font-size: var(--body-font-size-s);
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+/* Read link */
+.cards-articles .cards-articles-card-body p:last-child a {
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.cards-articles .cards-articles-card-body p:last-child a:hover {
+  text-decoration: underline;
+}
+
+@media (width >= 600px) {
+  .cards-articles > ul {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+  }
+}
+
+@media (width >= 900px) {
+  .cards-articles > ul {
+    gap: 48px;
+  }
 }

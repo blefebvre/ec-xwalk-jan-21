@@ -1,33 +1,93 @@
+/* Columns CTA - CTA section with heading + buttons */
+
+.columns-cta {
+  margin: var(--spacing-xl) 0;
+}
+
 .columns-cta > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-l);
+  align-items: center;
+}
+
+.columns-cta > div > div:first-child {
+  text-align: center;
+}
+
+.columns-cta > div > div:first-child h2 {
+  margin: 0 0 var(--spacing-m) 0;
+  font-size: var(--heading-font-size-l);
+  font-weight: 400;
+}
+
+.columns-cta > div > div:first-child p {
+  margin: 0;
+  font-size: var(--body-font-size-m);
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* Buttons column */
+.columns-cta > div > div:last-child {
   display: flex;
   flex-direction: column;
+  gap: var(--spacing-s);
+  align-items: center;
 }
 
-.columns-cta img {
-  width: 100%;
+.columns-cta > div > div:last-child a {
+  display: inline-block;
+  padding: 16px 24px;
+  border: 1px solid var(--accent-primary);
+  border-radius: 1600px;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  background-color: var(--accent-primary);
+  color: var(--text-color-inverted);
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.columns-cta > div > div {
-  order: 1;
+.columns-cta > div > div:last-child a:hover {
+  background-color: var(--text-color-inverted);
+  color: var(--accent-primary);
 }
 
-.columns-cta > div > .columns-cta-img-col {
-  order: 0;
+/* Secondary button style for second link */
+.columns-cta > div > div:last-child a:nth-child(2),
+.columns-cta > div > div:last-child br + a {
+  background-color: transparent;
+  color: var(--accent-primary);
 }
 
-.columns-cta > div > .columns-cta-img-col img {
-  display: block;
+.columns-cta > div > div:last-child a:nth-child(2):hover,
+.columns-cta > div > div:last-child br + a:hover {
+  background-color: var(--accent-primary);
+  color: var(--text-color-inverted);
+}
+
+@media (width >= 600px) {
+  .columns-cta > div > div:last-child {
+    flex-direction: row;
+    justify-content: center;
+  }
 }
 
 @media (width >= 900px) {
   .columns-cta > div {
-    align-items: center;
-    flex-direction: unset;
-    gap: 24px;
+    grid-template-columns: 2fr 1fr;
+    gap: 48px;
   }
 
-  .columns-cta > div > div {
-    flex: 1;
-    order: unset;
+  .columns-cta > div > div:first-child {
+    text-align: left;
+  }
+
+  .columns-cta > div > div:last-child {
+    justify-content: flex-end;
   }
 }

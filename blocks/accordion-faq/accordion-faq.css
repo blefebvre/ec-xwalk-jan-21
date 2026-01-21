@@ -1,33 +1,41 @@
+/* Accordion FAQ - FAQ expandable items */
+
+.accordion-faq {
+  margin: var(--spacing-m) 0;
+}
+
 .accordion-faq details {
-  border: 1px solid #dadada;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
+.accordion-faq details:first-child {
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
 .accordion-faq details + details {
-  margin-top: 24px;
-}
-
-.accordion-faq details p {
-  margin-bottom: 0.8em;
+  margin-top: 0;
 }
 
 .accordion-faq details summary {
   position: relative;
-  padding: 0 16px;
-  padding-right: 46px;
+  padding: var(--spacing-m) 0;
+  padding-right: 40px;
   cursor: pointer;
   list-style: none;
-  overflow: auto;
-  transition: background-color 0.2s;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 500;
+  color: var(--text-color);
+  transition: color 0.2s ease;
 }
 
-.accordion-faq details[open] summary {
-  background-color: var(--light-color);
+.accordion-faq details summary p {
+  margin: 0;
 }
 
-.accordion-faq details summary:focus,
-.accordion-faq details summary:hover {
-  background-color: var(--light-color);
+.accordion-faq details summary strong {
+  font-weight: 500;
 }
 
 .accordion-faq details summary::-webkit-details-marker {
@@ -38,28 +46,44 @@
   content: '';
   position: absolute;
   top: 50%;
-  right: 18px;
-  transform: translateY(-50%) rotate(135deg);
-  width: 6px;
-  height: 6px;
-  border: 2px solid;
-  border-width: 2px 2px 0 0;
-  transition: transform 0.2s;
+  right: 0;
+  transform: translateY(-50%) rotate(45deg);
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--text-color);
+  border-width: 0 2px 2px 0;
+  transition: transform 0.2s ease;
 }
 
 .accordion-faq details[open] summary::after {
-  transform: translateY(-50%) rotate(-45deg);
+  transform: translateY(-50%) rotate(-135deg);
 }
 
+.accordion-faq details summary:hover {
+  color: var(--link-hover-color);
+}
+
+.accordion-faq details[open] summary {
+  color: var(--text-color);
+}
+
+/* Content panel */
 .accordion-faq details .accordion-faq-item-body {
-  padding: 0 16px;
+  padding: 0 0 var(--spacing-m) 0;
 }
 
 .accordion-faq details:not([open]) .accordion-faq-item-body {
   display: none;
 }
 
-.accordion-faq details[open] .accordion-faq-item-body {
-  border-top: 1px solid #dadada;
-  background-color: var(--background-color);
+.accordion-faq details .accordion-faq-item-body p {
+  margin: 0;
+  font-size: var(--body-font-size-s);
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+/* Grey section variant */
+.section.grey .accordion-faq details {
+  border-color: rgba(0, 0, 0, 0.1);
 }

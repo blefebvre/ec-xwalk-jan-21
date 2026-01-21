@@ -1,33 +1,41 @@
+/* Columns Hero - Side-by-side hero images */
+
+.columns-hero {
+  margin-bottom: var(--spacing-xl);
+}
+
 .columns-hero > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-m);
+}
+
+.columns-hero > div > div {
   display: flex;
-  flex-direction: column;
+  gap: var(--spacing-m);
 }
 
 .columns-hero img {
   width: 100%;
-}
-
-.columns-hero > div > div {
-  order: 1;
-}
-
-.columns-hero > div > .columns-hero-img-col {
-  order: 0;
-}
-
-.columns-hero > div > .columns-hero-img-col img {
+  height: auto;
   display: block;
+  object-fit: cover;
+}
+
+.columns-hero p {
+  margin: 0;
+}
+
+@media (width >= 600px) {
+  .columns-hero > div > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-l);
+  }
 }
 
 @media (width >= 900px) {
-  .columns-hero > div {
-    align-items: center;
-    flex-direction: unset;
-    gap: 24px;
-  }
-
   .columns-hero > div > div {
-    flex: 1;
-    order: unset;
+    gap: 48px;
   }
 }
