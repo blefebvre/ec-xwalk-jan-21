@@ -1,0 +1,196 @@
+{
+  "url": "https://wknd-trendsetters.site/",
+  "timestamp": "2026-01-21T00:00:00.000Z",
+  "sections": [
+    {
+      "number": 1,
+      "style": "light",
+      "sectionMetadata": null,
+      "contentSequences": [
+        {
+          "sequence": 1,
+          "description": "Large centered heading, paragraph, two call-to-action buttons",
+          "decision": "DEFAULT_CONTENT",
+          "blockName": null,
+          "reason": "Author can type heading, paragraph, and links normally. Prominent styling is CSS concern."
+        },
+        {
+          "sequence": 2,
+          "description": "Two square images displayed side-by-side",
+          "decision": "BLOCK",
+          "blockName": "columns-hero",
+          "blockVariant": "columns-hero",
+          "reason": "Side-by-side layout requires structure. Obvious match with columns block."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "style": "light",
+      "sectionMetadata": null,
+      "contentSequences": [
+        {
+          "sequence": 1,
+          "description": "Single centered heading 'Trends made for your lifestyle'",
+          "decision": "DEFAULT_CONTENT",
+          "blockName": null,
+          "reason": "Just a heading - author types it normally."
+        },
+        {
+          "sequence": 2,
+          "description": "Grid of 8 items in 4 columns, each with icon and short descriptive text paragraph",
+          "decision": "BLOCK",
+          "blockName": "cards-features",
+          "blockVariant": "cards-features",
+          "reason": "Repeating structured pattern with icons and text. Matches cards (no images) variant."
+        },
+        {
+          "sequence": 3,
+          "description": "Two centered buttons (Browse, Join)",
+          "decision": "DEFAULT_CONTENT",
+          "blockName": null,
+          "reason": "Just two links - author types them normally."
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "style": "grey",
+      "sectionMetadata": {"style": "grey"},
+      "contentSequences": [
+        {
+          "sequence": 1,
+          "description": "Eyebrow text 'Hot right now', heading 'Style that never sleeps', paragraph, button aligned right",
+          "decision": "DEFAULT_CONTENT",
+          "blockName": null,
+          "reason": "Author can type eyebrow text, heading, paragraph, and link normally."
+        },
+        {
+          "sequence": 2,
+          "description": "Four horizontal card items in grid, each with: square image, category tag, read time, heading, description, 'Read' link",
+          "decision": "BLOCK",
+          "blockName": "cards-articles",
+          "blockVariant": "cards-articles",
+          "reason": "Repeating structured pattern with images and text. Obvious match with cards block."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "style": "dark",
+      "sectionMetadata": {"style": "dark"},
+      "singleBlockValidation": {
+        "validated": true,
+        "backgroundType": "solid dark color",
+        "layout": "content centered with visible padding",
+        "decision": "KEEP section-metadata",
+        "reason": "Section provides container styling for tabs block"
+      },
+      "contentSequences": [
+        {
+          "sequence": 1,
+          "description": "Three-tab navigation (Trends, Sporty, Nightlife) with switchable content panels, each containing heading and wide banner image",
+          "decision": "BLOCK",
+          "blockName": "tabs-showcase",
+          "blockVariant": "tabs-showcase",
+          "reason": "Interactive tabbed component. Obvious match with tabs block."
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "style": "grey",
+      "sectionMetadata": {"style": "grey"},
+      "contentSequences": [
+        {
+          "sequence": 1,
+          "description": "Centered heading 'Style Qs, real quick answers' and subheading",
+          "decision": "DEFAULT_CONTENT",
+          "blockName": null,
+          "reason": "Just headings and text - author types them normally."
+        },
+        {
+          "sequence": 2,
+          "description": "Four collapsible question/answer accordion items",
+          "decision": "BLOCK",
+          "blockName": "accordion-faq",
+          "blockVariant": "accordion-faq",
+          "reason": "Interactive expandable Q&A component. Obvious match with accordion block."
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "style": "light",
+      "sectionMetadata": null,
+      "singleBlockValidation": {
+        "validated": true,
+        "backgroundType": "white/default",
+        "layout": "standard padding",
+        "decision": "NO section-metadata",
+        "reason": "Light/white is default, no special styling required"
+      },
+      "contentSequences": [
+        {
+          "sequence": 1,
+          "description": "Two-column layout: heading and paragraph on left, two stacked buttons (Sign up, Connect) on right",
+          "decision": "BLOCK",
+          "blockName": "columns-cta",
+          "blockVariant": "columns-cta",
+          "reason": "Side-by-side layout requires structure. Obvious match with columns block."
+        }
+      ]
+    }
+  ],
+  "blocksUsed": [
+    {
+      "name": "columns-hero",
+      "baseBlock": "columns",
+      "usedIn": ["Section 1 Sequence 2"],
+      "structure": "2 columns per row, each cell can contain images"
+    },
+    {
+      "name": "columns-cta",
+      "baseBlock": "columns",
+      "usedIn": ["Section 6 Sequence 1"],
+      "structure": "2 columns per row, text left, buttons right"
+    },
+    {
+      "name": "cards-features",
+      "baseBlock": "cards",
+      "usedIn": ["Section 2 Sequence 2"],
+      "structure": "Grid of items with icons and text (no images)"
+    },
+    {
+      "name": "cards-articles",
+      "baseBlock": "cards",
+      "usedIn": ["Section 3 Sequence 2"],
+      "structure": "Each row = 1 card with 2 columns: image | text content"
+    },
+    {
+      "name": "tabs-showcase",
+      "baseBlock": "tabs",
+      "usedIn": ["Section 4 Sequence 1"],
+      "structure": "Each row = 1 tab with 2 columns: tab label | tab content"
+    },
+    {
+      "name": "accordion-faq",
+      "baseBlock": "accordion",
+      "usedIn": ["Section 5 Sequence 2"],
+      "structure": "Each row = 1 item with 2 columns: question | answer"
+    }
+  ],
+  "variantMapping": {
+    "columns": ["columns-hero", "columns-cta"],
+    "cards": ["cards-features", "cards-articles"],
+    "tabs": ["tabs-showcase"],
+    "accordion": ["accordion-faq"]
+  },
+  "summary": {
+    "totalSections": 6,
+    "totalSequences": 10,
+    "defaultContentSequences": 5,
+    "blockSequences": 5,
+    "uniqueBlocksUsed": 6
+  }
+}

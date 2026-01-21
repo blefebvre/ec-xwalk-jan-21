@@ -1,0 +1,21 @@
+{
+  "timestamp": "2026-01-21T18:11:53.611Z",
+  "stats": {
+    "total": 9,
+    "downloaded": 1,
+    "converted": 8,
+    "failed": 0,
+    "tooLarge": 0
+  },
+  "mapping": {
+    "https://cdn.prod.website-files.com/685659f2651d1abee4832887/6866041f9db06ce8f49634d3_Screenshot%202025-07-02%20at%2016.15.06.png": "./images/f96b98c4d7846e7179398125b85b2dae.png",
+    "https://cdn.prod.website-files.com/image-generation-assets/793c17eb-ae3c-458b-b8fa-a189b0052bc6.avif": "./images/14e0d2d718048447cba40b0f934c41d1.png",
+    "https://cdn.prod.website-files.com/image-generation-assets/f55b6d62-bc1d-4700-8258-318e659fa50c.avif": "./images/628213ef4d4ccddb4b55c6ae15e82e34.png",
+    "https://cdn.prod.website-files.com/685659f2651d1abee4832887/68565a6c53e53dcd1effd2b6_7101dd4d-174a-4d00-82a1-383912b95bdb.avif": "./images/72e1d1667398e478d89373172fc23d2b.png",
+    "https://cdn.prod.website-files.com/685659f2651d1abee4832887/68565a6c90d15f06db8c3063_05222b1a-c1f8-4466-a89e-8372f97aecc0.avif": "./images/353ed7f3d5328cb9a278386df8e1a1ce.png",
+    "https://cdn.prod.website-files.com/685659f2651d1abee4832887/68565a6cd421d169780374bf_9ad18339-65d0-40a9-9bff-7b374acace0a.avif": "./images/a45e03b3824176fc8ed9680c26a0ab1a.png",
+    "https://cdn.prod.website-files.com/685659f2651d1abee4832887/68565a6c58786282145eff60_deca1497-b229-4572-bcdf-56566120eec4.avif": "./images/bfc6f3def1d76441888fc281ecd839e0.png",
+    "https://cdn.prod.website-files.com/image-generation-assets/5db1565e-357f-43eb-93a8-3692f45b38d5.avif": "./images/f925f25f17b6af6ab06decee67bea8be.png",
+    "https://cdn.prod.website-files.com/image-generation-assets/e198cd7a-a7bd-4756-ab20-d81853a5b03f.avif": "./images/50584e527ca3f520b9e4c856507cad15.png"
+  }
+}

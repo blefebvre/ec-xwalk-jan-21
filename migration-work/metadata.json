@@ -1,0 +1,17 @@
+{
+  "url": "https://wknd-trendsetters.site/",
+  "timestamp": "2026-01-21T00:00:00.000Z",
+  "paths": {
+    "documentPath": "/index",
+    "htmlFilePath": "content/index.plain.html",
+    "mdFilePath": "content/index.md",
+    "dirPath": "content",
+    "filename": "index"
+  },
+  "previewPath": "/content/index",
+  "screenshot": "./migration-work/screenshot.png",
+  "metadata": {
+    "title": "Fashion Blog",
+    "viewport": "width=device-width, initial-scale=1"
+  }
+}

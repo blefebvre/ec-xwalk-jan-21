@@ -1,0 +1,50 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": ["https://wknd-trendsetters.site/"],
+      "description": "Homepage template with hero and featured content sections",
+      "blocks": [
+        {
+          "name": "columns-hero",
+          "instances": ["header .w-layout-grid.grid-layout.y-top"]
+        },
+        {
+          "name": "cards-features",
+          "instances": ["section.section > .container > .w-layout-grid.desktop-4-column"]
+        },
+        {
+          "name": "section-articles",
+          "instances": [".section.secondary-section:first-of-type"],
+          "section": "grey"
+        },
+        {
+          "name": "cards-articles",
+          "instances": [".section.secondary-section .w-layout-grid.tablet-1-column"]
+        },
+        {
+          "name": "section-tabs",
+          "instances": [".section.inverse-section"],
+          "section": "dark"
+        },
+        {
+          "name": "tabs-showcase",
+          "instances": [".section.inverse-section .w-tabs"]
+        },
+        {
+          "name": "section-faq",
+          "instances": [".section.secondary-section:nth-of-type(2)"],
+          "section": "grey"
+        },
+        {
+          "name": "accordion-faq",
+          "instances": [".flex-vertical .accordion.w-dropdown"]
+        },
+        {
+          "name": "columns-cta",
+          "instances": ["section.section:last-of-type .w-layout-grid.desktop-4-column.y-center"]
+        }
+      ]
+    }
+  ]
+}

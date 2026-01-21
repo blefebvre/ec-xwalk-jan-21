@@ -1,0 +1,113 @@
+{
+  "url": "https://wknd-trendsetters.site/",
+  "timestamp": "2026-01-21T00:00:00.000Z",
+  "sections": [
+    {
+      "number": 1,
+      "style": "light",
+      "overview": "Hero section with large heading, subtext, buttons, and two side-by-side images",
+      "contentSequences": [
+        {
+          "sequence": 1,
+          "description": "Large centered heading, paragraph, two call-to-action buttons"
+        },
+        {
+          "sequence": 2,
+          "description": "Two square images displayed side-by-side"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "style": "light",
+      "overview": "Features section with heading, icon grid, and buttons",
+      "contentSequences": [
+        {
+          "sequence": 1,
+          "description": "Single centered heading 'Trends made for your lifestyle'"
+        },
+        {
+          "sequence": 2,
+          "description": "Grid of 8 items in 4 columns, each with icon and short descriptive text paragraph"
+        },
+        {
+          "sequence": 3,
+          "description": "Two centered buttons (Browse, Join)"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "style": "grey",
+      "overview": "Article cards section with eyebrow, heading, and four horizontal cards",
+      "contentSequences": [
+        {
+          "sequence": 1,
+          "description": "Eyebrow text 'Hot right now', heading 'Style that never sleeps', paragraph, button aligned right"
+        },
+        {
+          "sequence": 2,
+          "description": "Four horizontal card items in grid, each with: square image, category tag, read time, heading, description, 'Read' link"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "style": "dark",
+      "overview": "Tabs section with three switchable content panels",
+      "contentSequences": [
+        {
+          "sequence": 1,
+          "description": "Three-tab navigation (Trends, Sporty, Nightlife) with switchable content panels, each containing heading and wide banner image"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "style": "grey",
+      "overview": "FAQ accordion section with questions and answers",
+      "contentSequences": [
+        {
+          "sequence": 1,
+          "description": "Centered heading 'Style Qs, real quick answers' and subheading"
+        },
+        {
+          "sequence": 2,
+          "description": "Four collapsible question/answer accordion items"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "style": "light",
+      "overview": "Call-to-action section with heading and signup buttons",
+      "contentSequences": [
+        {
+          "sequence": 1,
+          "description": "Two-column layout: heading and paragraph on left, two stacked buttons (Sign up, Connect) on right"
+        }
+      ]
+    }
+  ],
+  "blockInventory": {
+    "localBlocks": [
+      {"name": "accordion", "purpose": "Expandable Q&A sections"},
+      {"name": "cards", "purpose": "Grid of content items with images"},
+      {"name": "carousel", "purpose": "Rotating content displays"},
+      {"name": "columns", "purpose": "Side-by-side content layouts"},
+      {"name": "embed", "purpose": "External content embedding"},
+      {"name": "footer", "purpose": "Page footer (auto-populated)"},
+      {"name": "form", "purpose": "Form components"},
+      {"name": "fragment", "purpose": "Reusable content sections"},
+      {"name": "header", "purpose": "Page header (auto-populated)"},
+      {"name": "hero", "purpose": "Large heading with intro content"},
+      {"name": "modal", "purpose": "Popup dialogs"},
+      {"name": "quote", "purpose": "Highlighted testimonials"},
+      {"name": "search", "purpose": "Search functionality"},
+      {"name": "table", "purpose": "Data tables"},
+      {"name": "tabs", "purpose": "Tabbed content panels"},
+      {"name": "video", "purpose": "Video embeds"}
+    ],
+    "blockCollectionAvailable": ["hero", "cards", "columns", "accordion", "tabs", "carousel", "quote", "fragment"]
+  }
+}
