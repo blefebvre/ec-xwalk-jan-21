@@ -1,16 +1,11 @@
+/**
+ * Accordion FAQ Parser
+ * Parses accordion dropdown elements into Accordion-Faq blocks for EDS import.
+ */
 /* eslint-disable */
 /* global WebImporter */
 
-/**
- * Parser for accordion-faq block variant
- * Purpose: FAQ accordion with expandable question/answer items
- * Selector: .flex-vertical .accordion.w-dropdown
- * Generated: 2026-01-21
- *
- * Field hints for xwalk:
- * - summary: question text
- * - text: answer richtext
- */
+
 
 export default function parse(element, { document }) {
   const cells = [];
