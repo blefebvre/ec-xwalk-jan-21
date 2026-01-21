@@ -47,7 +47,7 @@ const PAGE_TEMPLATE = {
     },
     {
       name: 'cards-features',
-      instances: ['section.section > .container > .w-layout-grid.desktop-4-column']
+      instances: ['section.section > .container > .w-layout-grid.desktop-4-column:not(.y-center)']
     },
     {
       name: 'section-articles',

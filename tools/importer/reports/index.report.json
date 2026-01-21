@@ -2,12 +2,11 @@
   "status": "success",
   "url": "https://wknd-trendsetters.site/",
   "path": "index",
-  "timestamp": "2026-01-21T21:48:54.124Z",
+  "timestamp": "2026-01-21T21:53:05.529Z",
   "title": "Fashion Blog",
   "template": "homepage",
   "blocks": [
     "columns-hero",
-    "cards-features",
     "cards-features",
     "section-articles",
     "cards-articles",

@@ -200,11 +200,14 @@ Fresh tips for your everyday look.
 |                                  | jewelry. Even a cap can flip your vibe.            |
 +----------------------------------+----------------------------------------------------+
 
-+----------------+
-| Cards Features |
-+----------------+
-|                |
-+----------------+
++-----------------------------------------------------------------------------------------------------+
+| Columns Cta                                                                                         |
++----------------------------------------------------------+------------------------------------------+
+| ## Join the style revolution                             | [Sign up](/fashion-insights)\            |
+|                                                          | [Connect](/fashion-trends-of-the-season) |
+| Get trend alerts, style inspo, and exclusive tips. Fresh |                                          |
+| looks, fun vibes—straight to your inbox. Don’t miss out! |                                          |
++----------------------------------------------------------+------------------------------------------+
 
 +----------------------+
 | Metadata             |
