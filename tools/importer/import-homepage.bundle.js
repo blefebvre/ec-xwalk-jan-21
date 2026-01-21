@@ -52,9 +52,16 @@ var CustomImportScript = (() => {
       iconContainer.appendChild(document.createComment(" field:image "));
       const iconDiv = item.querySelector(".icon");
       if (iconDiv) {
-        const iconPlaceholder = document.createElement("span");
-        iconPlaceholder.textContent = "\u25CF";
-        iconContainer.appendChild(iconPlaceholder);
+        const svg = iconDiv.querySelector("svg");
+        if (svg) {
+          const serializer = new XMLSerializer();
+          const svgString = serializer.serializeToString(svg);
+          const dataUri = "data:image/svg+xml," + encodeURIComponent(svgString);
+          const img = document.createElement("img");
+          img.src = dataUri;
+          img.alt = "icon";
+          iconContainer.appendChild(img);
+        }
       }
       row.push(iconContainer);
       const textContainer = document.createElement("div");

@@ -21,16 +21,22 @@ export default function parse(element, { document }) {
   featureItems.forEach((item) => {
     const row = [];
 
-    // Column 1: Icon (as image placeholder since these are icon fonts)
+    // Column 1: Icon (inline SVG converted to img)
     const iconContainer = document.createElement('div');
-    // Add field hint for xwalk
     iconContainer.appendChild(document.createComment(' field:image '));
     const iconDiv = item.querySelector('.icon');
     if (iconDiv) {
-      // Icons are CSS-based, create placeholder
-      const iconPlaceholder = document.createElement('span');
-      iconPlaceholder.textContent = '●';
-      iconContainer.appendChild(iconPlaceholder);
+      const svg = iconDiv.querySelector('svg');
+      if (svg) {
+        // Convert SVG to data URI using XMLSerializer
+        const serializer = new XMLSerializer();
+        const svgString = serializer.serializeToString(svg);
+        const dataUri = 'data:image/svg+xml,' + encodeURIComponent(svgString);
+        const img = document.createElement('img');
+        img.src = dataUri;
+        img.alt = 'icon';
+        iconContainer.appendChild(img);
+      }
     }
     row.push(iconContainer);
 
