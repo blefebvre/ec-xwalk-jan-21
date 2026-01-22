@@ -9,7 +9,7 @@
   display: flex;
   gap: 0;
   margin-bottom: var(--spacing-l);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .tabs-showcase .tabs-showcase-list button {
@@ -19,7 +19,7 @@
   border: none;
   border-radius: 0;
   background-color: transparent;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(0, 0, 0, 0.5);
   font-family: var(--body-font-family);
   font-size: 15px;
   font-weight: 400;
@@ -46,16 +46,16 @@
 }
 
 .tabs-showcase .tabs-showcase-list button:hover {
-  color: var(--text-color-inverted);
+  color: var(--text-color);
 }
 
 .tabs-showcase .tabs-showcase-list button[aria-selected='true'] {
-  color: var(--text-color-inverted);
+  color: var(--text-color);
   cursor: default;
 }
 
 .tabs-showcase .tabs-showcase-list button[aria-selected='true']::after {
-  background-color: var(--text-color-inverted);
+  background-color: var(--text-color);
 }
 
 /* Tab panels */
@@ -80,7 +80,7 @@
   margin: 0 0 var(--spacing-m) 0;
   font-size: var(--heading-font-size-l);
   font-weight: 400;
-  color: var(--text-color-inverted);
+  color: var(--text-color);
 }
 
 .tabs-showcase .tabs-showcase-panel p {

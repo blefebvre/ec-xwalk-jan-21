@@ -83,8 +83,14 @@
   color: var(--text-color);
 }
 
-/* Read link */
+/* Read link - override button styles */
 .cards-articles .cards-articles-card-body p:last-child a {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
   font-size: var(--body-font-size-s);
   font-weight: 500;
   text-decoration: none;
@@ -92,7 +98,9 @@
 }
 
 .cards-articles .cards-articles-card-body p:last-child a:hover {
+  background-color: transparent;
   text-decoration: underline;
+  color: var(--text-color);
 }
 
 @media (width >= 600px) {

@@ -129,7 +129,7 @@ Get inspired by real looks, real stories, and the freshest trends in youth fashi
 +------------------+
 | Section Metadata |
 +---------+--------+
-| style   | dark   |
+| style   | grey   |
 +---------+--------+
 
 +--------------------------------------------------------------------+
