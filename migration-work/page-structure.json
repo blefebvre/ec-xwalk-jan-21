@@ -1,0 +1,112 @@
+{
+  "url": "https://www.wknd-trendsetters.site/",
+  "sections": [
+    {
+      "number": 1,
+      "name": "hero",
+      "style": "light",
+      "sequences": [
+        {
+          "number": 1,
+          "description": "Large centered H1 heading, paragraph, two CTA buttons (See more, Lookbook)"
+        },
+        {
+          "number": 2,
+          "description": "Two images displayed side-by-side in a grid"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "name": "trends",
+      "style": "light",
+      "sequences": [
+        {
+          "number": 1,
+          "description": "Centered H2 heading (Trends made for your lifestyle)"
+        },
+        {
+          "number": 2,
+          "description": "Grid of 8 items, each with an icon and short text paragraph"
+        },
+        {
+          "number": 3,
+          "description": "Two centered buttons (Browse, Join)"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "name": "style-stories",
+      "style": "grey",
+      "sequences": [
+        {
+          "number": 1,
+          "description": "Eyebrow text, H2 heading (Style that never sleeps), paragraph, Browse button"
+        },
+        {
+          "number": 2,
+          "description": "Four card items in a grid, each with image, category tag, read time, H3 heading, description, Read link"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "name": "tabs-section",
+      "style": "dark",
+      "sequences": [
+        {
+          "number": 1,
+          "description": "Tab navigation with 3 tabs (Trends, Sporty, Nightlife), each panel contains H3 heading and wide image"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "name": "faq",
+      "style": "grey",
+      "sequences": [
+        {
+          "number": 1,
+          "description": "Centered H2 heading (Style Qs, real quick answers), paragraph"
+        },
+        {
+          "number": 2,
+          "description": "Four expandable accordion items, each with question and answer"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "name": "cta",
+      "style": "light",
+      "sequences": [
+        {
+          "number": 1,
+          "description": "H2 heading (Join the style revolution), paragraph, two buttons (Sign up, Connect)"
+        }
+      ]
+    }
+  ],
+  "blockInventory": {
+    "local": [
+      "accordion",
+      "cards",
+      "carousel",
+      "columns",
+      "embed",
+      "footer",
+      "form",
+      "fragment",
+      "header",
+      "hero",
+      "modal",
+      "quote",
+      "search",
+      "table",
+      "tabs",
+      "video"
+    ],
+    "blockCollection": []
+  }
+}

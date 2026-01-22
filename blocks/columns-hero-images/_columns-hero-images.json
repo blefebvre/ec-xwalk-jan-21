@@ -1,0 +1,50 @@
+{
+  "definitions": [
+    {
+      "title": "Columns Hero Images",
+      "id": "columns-hero-images",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/columns/v1/columns",
+            "template": {
+              "columns": "2",
+              "rows": "1"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "columns-hero-images",
+      "fields": [
+        {
+          "component": "text",
+          "valueType": "number",
+          "name": "columns",
+          "value": "",
+          "label": "Columns"
+        },
+        {
+          "component": "text",
+          "valueType": "number",
+          "name": "rows",
+          "value": "",
+          "label": "Rows"
+        }
+      ]
+    }
+  ],
+  "filters": [
+    {
+      "id": "columns-hero-images",
+      "components": ["columns-hero-images-column"]
+    },
+    {
+      "id": "columns-hero-images-column",
+      "components": ["text", "image", "button", "title"]
+    }
+  ]
+}

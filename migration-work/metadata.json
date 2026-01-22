@@ -1,0 +1,41 @@
+{
+  "url": "https://www.wknd-trendsetters.site/",
+  "timestamp": "2026-01-22T00:00:00.000Z",
+  "paths": {
+    "documentPath": "content/index",
+    "htmlFilePath": "content/index.plain.html",
+    "mdFilePath": "content/index.md",
+    "dirPath": "content",
+    "filename": "index",
+    "previewPath": "/content/index"
+  },
+  "screenshot": "./migration-work/screenshot.png",
+  "html": {
+    "filePath": "./migration-work/cleaned.html",
+    "size": 15000
+  },
+  "metadata": {
+    "title": "Fashion Blog",
+    "description": "From courtside cool to beachy vibes, discover the freshest looks and real stories. Get inspired by bold styles for every adventure—day or night."
+  },
+  "images": {
+    "count": 10,
+    "mapping": {
+      "https://cdn.prod.website-files.com/685659f2651d1abee4832887/6866041f9db06ce8f49634d3_Screenshot%202025-07-02%20at%2016.15.06.png": "./images/logo.png",
+      "https://cdn.prod.website-files.com/image-generation-assets/793c17eb-ae3c-458b-b8fa-a189b0052bc6.avif": "./images/hero-dance.png",
+      "https://cdn.prod.website-files.com/image-generation-assets/f55b6d62-bc1d-4700-8258-318e659fa50c.avif": "./images/hero-concert.png",
+      "https://cdn.prod.website-files.com/685659f2651d1abee4832887/68565a6c53e53dcd1effd2b6_7101dd4d-174a-4d00-82a1-383912b95bdb.avif": "./images/card-students.png",
+      "https://cdn.prod.website-files.com/685659f2651d1abee4832887/68565a6c90d15f06db8c3063_05222b1a-c1f8-4466-a89e-8372f97aecc0.avif": "./images/card-beach.png",
+      "https://cdn.prod.website-files.com/685659f2651d1abee4832887/68565a6cd421d169780374bf_9ad18339-65d0-40a9-9bff-7b374acace0a.avif": "./images/card-night.png",
+      "https://cdn.prod.website-files.com/685659f2651d1abee4832887/68565a6c58786282145eff60_deca1497-b229-4572-bcdf-56566120eec4.avif": "./images/card-active.png",
+      "https://cdn.prod.website-files.com/image-generation-assets/5db1565e-357f-43eb-93a8-3692f45b38d5.avif": "./images/tab-trends.png",
+      "https://cdn.prod.website-files.com/image-generation-assets/e198cd7a-a7bd-4756-ab20-d81853a5b03f.avif": "./images/tab-sporty.png"
+    },
+    "stats": {
+      "total": 10,
+      "converted": 0,
+      "skipped": 0,
+      "failed": 0
+    }
+  }
+}

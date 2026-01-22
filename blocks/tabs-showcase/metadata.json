@@ -1,0 +1,38 @@
+{
+  "variantName": "tabs-showcase",
+  "baseBlock": "tabs",
+  "version": "1.0.0",
+  "created": "2026-01-22T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.wknd-trendsetters.site/",
+    "originPage": "homepage tabs section",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "showcase",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "tab title | heading + image",
+    "buttonCount": 0,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "content showcases",
+      "category displays",
+      "switchable content panels"
+    ],
+    "notSuitableFor": [
+      "simple text tabs",
+      "navigation menus"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-22T00:00:00.000Z"
+  }
+}

@@ -1,0 +1,159 @@
+{
+  "url": "https://www.wknd-trendsetters.site/",
+  "sections": [
+    {
+      "number": 1,
+      "name": "hero",
+      "style": null,
+      "sequences": [
+        {
+          "number": 1,
+          "description": "Large centered H1 heading, paragraph, two CTA buttons",
+          "decision": "DEFAULT_CONTENT",
+          "reason": "Author can type heading, paragraph, and links normally. Prominent styling is CSS."
+        },
+        {
+          "number": 2,
+          "description": "Two images displayed side-by-side in a grid",
+          "decision": "BLOCK",
+          "blockName": "columns-hero-images",
+          "blockVariant": "columns-hero-images",
+          "reason": "Side-by-side layout requires structure. Obvious match with columns block."
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "name": "trends",
+      "style": null,
+      "sequences": [
+        {
+          "number": 1,
+          "description": "Centered H2 heading",
+          "decision": "DEFAULT_CONTENT",
+          "reason": "Just a heading - author types it."
+        },
+        {
+          "number": 2,
+          "description": "Grid of 8 items, each with icon and short text",
+          "decision": "BLOCK",
+          "blockName": "cards-features",
+          "blockVariant": "cards-features",
+          "reason": "Repeating structured pattern in grid. Obvious match with cards block."
+        },
+        {
+          "number": 3,
+          "description": "Two centered buttons",
+          "decision": "DEFAULT_CONTENT",
+          "reason": "Just two links - author types them."
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "name": "style-stories",
+      "style": "highlight",
+      "sequences": [
+        {
+          "number": 1,
+          "description": "Eyebrow text, H2 heading, paragraph, button",
+          "decision": "DEFAULT_CONTENT",
+          "reason": "Author can type all this text content normally."
+        },
+        {
+          "number": 2,
+          "description": "Four card items in grid with image, tag, heading, description",
+          "decision": "BLOCK",
+          "blockName": "cards-articles",
+          "blockVariant": "cards-articles",
+          "reason": "Repeating structured pattern. Obvious match with cards block."
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "name": "tabs-section",
+      "style": "dark",
+      "sequences": [
+        {
+          "number": 1,
+          "description": "Tab navigation with 3 switchable content panels",
+          "decision": "BLOCK",
+          "blockName": "tabs-showcase",
+          "blockVariant": "tabs-showcase",
+          "reason": "Interactive component requiring decoration. Obvious match with tabs block."
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "name": "faq",
+      "style": "highlight",
+      "sequences": [
+        {
+          "number": 1,
+          "description": "Centered H2 heading, paragraph",
+          "decision": "DEFAULT_CONTENT",
+          "reason": "Just heading and paragraph - author types them."
+        },
+        {
+          "number": 2,
+          "description": "Four expandable accordion items",
+          "decision": "BLOCK",
+          "blockName": "accordion-faq",
+          "blockVariant": "accordion-faq",
+          "reason": "Interactive expand/collapse. Obvious match with accordion block."
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "name": "cta",
+      "style": null,
+      "sequences": [
+        {
+          "number": 1,
+          "description": "H2 heading, paragraph, two buttons in side-by-side layout",
+          "decision": "BLOCK",
+          "blockName": "columns-cta",
+          "blockVariant": "columns-cta",
+          "reason": "Side-by-side layout with content and buttons. Columns block."
+        }
+      ]
+    }
+  ],
+  "blocksUsed": ["columns-hero-images", "cards-features", "cards-articles", "tabs-showcase", "accordion-faq", "columns-cta"],
+  "variantMapping": {
+    "columns": ["columns-hero-images", "columns-cta"],
+    "cards": ["cards-features", "cards-articles"],
+    "tabs": ["tabs-showcase"],
+    "accordion": ["accordion-faq"]
+  },
+  "blockStructures": {
+    "cards": {
+      "description": "Each row = 1 card. First div with picture = cards-card-image, second div = cards-card-body",
+      "structure": "<div class='cards'><div>[picture]</div><div>[body content]</div></div>"
+    },
+    "tabs": {
+      "description": "Each row = 1 tab panel. First cell = tab title, remaining = panel content",
+      "structure": "<div class='tabs'><div>[tab title]</div><div>[tab content]</div></div>"
+    },
+    "accordion": {
+      "description": "Each row = 1 item. First cell = question/label, second cell = answer/body",
+      "structure": "<div class='accordion'><div>[question]</div><div>[answer]</div></div>"
+    },
+    "columns": {
+      "description": "Each row has multiple column divs side-by-side",
+      "structure": "<div class='columns'><div>[col1]</div><div>[col2]</div></div>"
+    }
+  },
+  "sectionStylingValidation": {
+    "section4": {
+      "block": "tabs-showcase",
+      "background": "Solid dark color",
+      "layout": "Content with visible padding",
+      "decision": "KEEP section-metadata style=dark",
+      "reason": "Section provides container styling for tabs block"
+    }
+  }
+}
