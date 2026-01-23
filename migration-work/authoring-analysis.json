@@ -1,0 +1,171 @@
+{
+  "url": "https://www.wknd-trendsetters.site/",
+  "timestamp": "2026-01-23T19:53:00.000Z",
+  "sections": [
+    {
+      "id": 1,
+      "name": "hero",
+      "background": "light",
+      "sectionMetadata": null,
+      "sequences": [
+        {
+          "id": 1,
+          "description": "Large centered H1 heading, descriptive paragraph, two CTA buttons",
+          "decision": "DEFAULT_CONTENT",
+          "blockName": null,
+          "reason": "Author types heading, paragraph, and links normally"
+        },
+        {
+          "id": 2,
+          "description": "Two square images displayed side-by-side",
+          "decision": "BLOCK",
+          "blockName": "columns-image-pair",
+          "blockVariant": "columns-image-pair",
+          "reason": "Side-by-side layout requires columns structure"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "features",
+      "background": "light",
+      "sectionMetadata": null,
+      "sequences": [
+        {
+          "id": 1,
+          "description": "Centered H2 heading (Trends made for your lifestyle)",
+          "decision": "DEFAULT_CONTENT",
+          "blockName": null,
+          "reason": "Just a heading - author types it"
+        },
+        {
+          "id": 2,
+          "description": "4x2 grid of 8 items with icon and short descriptive paragraph",
+          "decision": "BLOCK",
+          "blockName": "cards-icon-features",
+          "blockVariant": "cards-icon-features",
+          "reason": "Repeating structured grid pattern requires cards block"
+        },
+        {
+          "id": 3,
+          "description": "Two centered buttons (Browse, Join)",
+          "decision": "DEFAULT_CONTENT",
+          "blockName": null,
+          "reason": "Just two links - author types them"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "articles",
+      "background": "grey",
+      "sectionMetadata": "highlight",
+      "sequences": [
+        {
+          "id": 1,
+          "description": "Eyebrow text, H2 heading, paragraph, Browse button",
+          "decision": "DEFAULT_CONTENT",
+          "blockName": null,
+          "reason": "Text and link - normal typing"
+        },
+        {
+          "id": 2,
+          "description": "4 article cards with image, category tag, reading time, heading, description, Read link",
+          "decision": "BLOCK",
+          "blockName": "cards-articles",
+          "blockVariant": "cards-articles",
+          "reason": "Repeating structured grid of article cards"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "tabs",
+      "background": "dark",
+      "sectionMetadata": "dark",
+      "sequences": [
+        {
+          "id": 1,
+          "description": "Tab navigation with 3 tabs (Trends, Sporty, Nightlife), each panel has H3 heading and wide landscape image",
+          "decision": "BLOCK",
+          "blockName": "tabs-showcase",
+          "blockVariant": "tabs-showcase",
+          "reason": "Interactive tabbed component requires tabs block"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "faq",
+      "background": "grey",
+      "sectionMetadata": "highlight",
+      "sequences": [
+        {
+          "id": 1,
+          "description": "Centered H2 heading (Style Qs, real quick answers), subheading paragraph",
+          "decision": "DEFAULT_CONTENT",
+          "blockName": null,
+          "reason": "Just heading and paragraph - author types them"
+        },
+        {
+          "id": 2,
+          "description": "4 expandable Q&A accordion items",
+          "decision": "BLOCK",
+          "blockName": "accordion-faq",
+          "blockVariant": "accordion-faq",
+          "reason": "Expandable content requires accordion block"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "cta",
+      "background": "light",
+      "sectionMetadata": null,
+      "sequences": [
+        {
+          "id": 1,
+          "description": "H2 heading, descriptive paragraph, two vertically stacked buttons",
+          "decision": "DEFAULT_CONTENT",
+          "blockName": null,
+          "reason": "Heading, text, and links - normal typing"
+        }
+      ]
+    }
+  ],
+  "blockStructures": {
+    "columns-image-pair": {
+      "structure": "Multiple columns per row, each cell is a column",
+      "note": "Content side-by-side"
+    },
+    "cards-icon-features": {
+      "structure": "2 columns per row: [image/icon] | [title + description + optional CTA]",
+      "note": "Each row represents one card"
+    },
+    "cards-articles": {
+      "structure": "2 columns per row: [image] | [title + description + optional CTA]",
+      "note": "Each row represents one article card"
+    },
+    "tabs-showcase": {
+      "structure": "2 columns per row: [tab label] | [tab content with heading/image/text]",
+      "note": "Each row is one tab"
+    },
+    "accordion-faq": {
+      "structure": "2 columns per row: [title] | [content]",
+      "note": "Each row is one expandable item"
+    }
+  },
+  "variantMapping": {
+    "columns": "columns-image-pair",
+    "cards": ["cards-icon-features", "cards-articles"],
+    "tabs": "tabs-showcase",
+    "accordion": "accordion-faq"
+  },
+  "summary": {
+    "totalSections": 6,
+    "blocksUsed": ["columns-image-pair", "cards-icon-features", "cards-articles", "tabs-showcase", "accordion-faq"],
+    "defaultContentSections": 0,
+    "mixedSections": 5,
+    "singleBlockSections": 1
+  }
+}

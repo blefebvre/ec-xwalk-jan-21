@@ -1,0 +1,46 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://www.wknd-trendsetters.site/"
+      ],
+      "description": "Main landing page with hero, featured content, and promotional sections",
+      "blocks": [
+        {
+          "name": "columns-image-pair",
+          "instances": [
+            "header.section .w-layout-grid.y-top"
+          ]
+        },
+        {
+          "name": "cards-icon-features",
+          "instances": [
+            "section.section:not(.secondary-section):not(.inverse-section) .w-layout-grid.desktop-4-column.tablet-3-column"
+          ]
+        },
+        {
+          "name": "cards-articles",
+          "instances": [
+            ".w-layout-grid.tablet-1-column.grid-gap-md"
+          ],
+          "section": "highlight"
+        },
+        {
+          "name": "tabs-showcase",
+          "instances": [
+            "section.section.inverse-section .w-tabs"
+          ],
+          "section": "dark"
+        },
+        {
+          "name": "accordion-faq",
+          "instances": [
+            ".small-container .flex-vertical"
+          ],
+          "section": "highlight"
+        }
+      ]
+    }
+  ]
+}

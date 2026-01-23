@@ -1,0 +1,15 @@
+{
+  "status": "success",
+  "url": "https://www.wknd-trendsetters.site/",
+  "path": "index",
+  "timestamp": "2026-01-23T21:20:55.402Z",
+  "title": "Fashion Blog",
+  "template": "homepage",
+  "blocks": [
+    "columns-image-pair",
+    "cards-icon-features",
+    "cards-articles",
+    "tabs-showcase",
+    "accordion-faq"
+  ]
+}

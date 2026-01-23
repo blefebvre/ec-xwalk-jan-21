@@ -1,0 +1,132 @@
+{
+  "url": "https://www.wknd-trendsetters.site/",
+  "sections": [
+    {
+      "id": 1,
+      "name": "hero",
+      "background": "light",
+      "description": "Hero section with large heading and two images",
+      "sequences": [
+        {
+          "id": 1,
+          "description": "Large centered H1 heading, descriptive paragraph, two CTA buttons (See more, Lookbook)"
+        },
+        {
+          "id": 2,
+          "description": "Two square images displayed side-by-side (hip-hop dancer, concert crowd)"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "features",
+      "background": "light",
+      "description": "Feature grid with icons and text",
+      "sequences": [
+        {
+          "id": 1,
+          "description": "Centered H2 heading (Trends made for your lifestyle)"
+        },
+        {
+          "id": 2,
+          "description": "4x2 grid of 8 items, each with an icon and short descriptive paragraph"
+        },
+        {
+          "id": 3,
+          "description": "Two centered buttons (Browse, Join)"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "articles",
+      "background": "grey",
+      "styling": "highlight",
+      "description": "Article cards section with featured content",
+      "sequences": [
+        {
+          "id": 1,
+          "description": "Eyebrow text (Hot right now), H2 heading (Style that never sleeps), paragraph, single Browse button"
+        },
+        {
+          "id": 2,
+          "description": "4 article cards in horizontal grid, each with image, category tag, reading time, H3 heading, description, Read link"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "tabs",
+      "background": "dark",
+      "styling": "dark",
+      "description": "Tabbed content section",
+      "sequences": [
+        {
+          "id": 1,
+          "description": "Tab navigation with 3 tabs (Trends, Sporty, Nightlife), each panel has H3 heading and wide landscape image"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "faq",
+      "background": "grey",
+      "styling": "highlight",
+      "description": "FAQ accordion section",
+      "sequences": [
+        {
+          "id": 1,
+          "description": "Centered H2 heading (Style Qs, real quick answers), subheading paragraph"
+        },
+        {
+          "id": 2,
+          "description": "4 expandable accordion items with questions and hidden answer content"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "cta",
+      "background": "light",
+      "description": "Call to action section",
+      "sequences": [
+        {
+          "id": 1,
+          "description": "H2 heading (Join the style revolution), descriptive paragraph, two vertically stacked buttons (Sign up, Connect)"
+        }
+      ]
+    }
+  ],
+  "blockInventory": {
+    "local": [
+      "accordion",
+      "cards",
+      "carousel",
+      "columns",
+      "embed",
+      "footer",
+      "form",
+      "fragment",
+      "header",
+      "hero",
+      "modal",
+      "quote",
+      "search",
+      "table",
+      "tabs",
+      "video"
+    ],
+    "library": [
+      "Tabs",
+      "Accordion",
+      "Cards",
+      "Carousel",
+      "Columns",
+      "Embed",
+      "Hero",
+      "Search",
+      "Table",
+      "Video"
+    ]
+  }
+}
