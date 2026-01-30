@@ -1,0 +1,21 @@
+{
+  "status": "success",
+  "url": "https://www.gigamon.com/solutions/accelerate-cloud-migration.html",
+  "path": "solutions/accelerate-cloud-migration",
+  "timestamp": "2026-01-30T20:29:56.602Z",
+  "title": "Cloud Migration Strategies, Tools and Solutions | Gigamon",
+  "template": "solutions-page",
+  "blocks": [
+    "hero-dark",
+    "cards-gigamon",
+    "cards-gigamon",
+    "cards-gigamon",
+    "cards-gigamon",
+    "columns-gigamon",
+    "columns-gigamon",
+    "columns-gigamon",
+    "columns-gigamon",
+    "accordion-faq",
+    "accordion-faq"
+  ]
+}

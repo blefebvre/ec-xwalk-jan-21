@@ -1,0 +1,38 @@
+{
+  "variantName": "accordion-faq",
+  "baseBlock": "accordion",
+  "version": "1.0.0",
+  "created": "2026-01-30T15:55:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.gigamon.com/solutions/accelerate-cloud-migration.html",
+    "originPage": "Gigamon Cloud Migration Solutions",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "standard",
+    "purpose": "faq-section",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "question + answer pairs",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "FAQ sections",
+      "expandable Q&A content",
+      "collapsible information sections"
+    ],
+    "notSuitableFor": [
+      "tabbed content",
+      "non-expandable lists"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/solutions/accelerate-cloud-migration"],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-30T15:55:00.000Z"
+  }
+}

@@ -1,0 +1,41 @@
+.quote-analyst blockquote {
+  margin: 0 auto;
+  padding: 0 24px;
+  max-width: 900px;
+}
+
+@media (width >= 900px) {
+  .quote-analyst blockquote {
+    padding: 0 32px;
+  }
+}
+
+.quote-analyst blockquote .quote-analyst-quotation {
+  font-size: 120%;
+}
+
+.quote-analyst blockquote .quote-analyst-quotation > :first-child {
+  text-indent: -0.5ch;
+}
+
+.quote-analyst blockquote .quote-analyst-quotation p:first-child::before,
+.quote-analyst blockquote .quote-analyst-quotation p:last-child::after {
+  line-height: 0;
+}
+
+.quote-analyst blockquote .quote-analyst-quotation p:first-child::before {
+  content: '"';
+}
+
+.quote-analyst blockquote .quote-analyst-quotation p:last-child::after {
+  content: '"';
+}
+
+.quote-analyst blockquote .quote-analyst-attribution {
+  text-align: right;
+}
+
+.quote-analyst blockquote .quote-analyst-attribution p:first-child::before {
+  content: '—';
+  padding-right: 0.5ch;
+}

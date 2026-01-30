@@ -1,0 +1,38 @@
+{
+  "variantName": "hero-dark",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-01-30T15:55:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.gigamon.com/solutions/accelerate-cloud-migration.html",
+    "originPage": "Gigamon Cloud Migration Solutions",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "purpose": "page-hero",
+    "imagePattern": "background"
+  },
+  "contentPattern": {
+    "structure": "heading + subheading",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "solution landing pages",
+      "product pages with dark backgrounds",
+      "pages with prominent hero sections"
+    ],
+    "notSuitableFor": [
+      "light themed pages",
+      "pages without background images"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/solutions/accelerate-cloud-migration"],
+    "reuseCount": 1,
+    "lastUsed": "2026-01-30T15:55:00.000Z"
+  }
+}

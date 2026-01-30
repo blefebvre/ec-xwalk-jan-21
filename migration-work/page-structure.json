@@ -1,0 +1,203 @@
+{
+  "url": "https://www.gigamon.com/solutions/accelerate-cloud-migration.html",
+  "sections": [
+    {
+      "number": 1,
+      "name": "Hero",
+      "style": "dark teal background with abstract design",
+      "sequences": [
+        {
+          "sequence": 1,
+          "description": "Large centered heading 'Accelerate Cloud Migration' with subheading paragraph on dark background"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "name": "Jump Start Your Cloud Initiative",
+      "style": "light background",
+      "sequences": [
+        {
+          "sequence": 1,
+          "description": "Heading 'Jump Start Your Cloud Initiative' with multiple paragraphs of text content"
+        },
+        {
+          "sequence": 2,
+          "description": "Bullet point list of benefits"
+        },
+        {
+          "sequence": 3,
+          "description": "Sidebar callout box with badge, product name, description, and link"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "name": "How Gigamon Can Help",
+      "style": "light background",
+      "sequences": [
+        {
+          "sequence": 1,
+          "description": "Section heading 'How Gigamon Can Help' with intro paragraph"
+        },
+        {
+          "sequence": 2,
+          "description": "Three-column grid with icon, heading, and paragraph for each column: Elastic visibility, Cloud visibility, Network visibility"
+        },
+        {
+          "sequence": 3,
+          "description": "Centered call-to-action button 'Learn About Cloud Suite'"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "name": "Quote",
+      "style": "light background",
+      "sequences": [
+        {
+          "sequence": 1,
+          "description": "Large quoted text from analyst about deep observability, with attribution name, title, and company"
+        },
+        {
+          "sequence": 2,
+          "description": "'Read More' link button"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "name": "Resources",
+      "style": "light/grey background",
+      "sequences": [
+        {
+          "sequence": 1,
+          "description": "Section heading 'Resources'"
+        },
+        {
+          "sequence": 2,
+          "description": "Three resource cards in a row, each with category label, icon, title, description, file type indicator, and download/read link"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "name": "FAQ",
+      "style": "light background",
+      "sequences": [
+        {
+          "sequence": 1,
+          "description": "Section heading 'Frequently Asked Questions'"
+        },
+        {
+          "sequence": 2,
+          "description": "Five expandable question items with plus icons for expand/collapse"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "name": "Request a Demo",
+      "style": "light background",
+      "sequences": [
+        {
+          "sequence": 1,
+          "description": "Two-column layout: left side has heading 'Request a Live Cloud Demo', paragraph text, and CTA button; right side has product screenshot image"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "name": "Cloud Video Series",
+      "style": "grey background",
+      "sequences": [
+        {
+          "sequence": 1,
+          "description": "Section heading 'Cloud Video Series' with subheading"
+        },
+        {
+          "sequence": 2,
+          "description": "Three video cards with thumbnail images, play button overlays, titles, descriptions, and 'Watch Now' buttons"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "name": "Gigamon Community",
+      "style": "light background",
+      "sequences": [
+        {
+          "sequence": 1,
+          "description": "Two-column layout: left side with heading 'Gigamon Community', description paragraph, and CTA button; right side with community badge/logo image"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "name": "Related Pages",
+      "style": "light background",
+      "sequences": [
+        {
+          "sequence": 1,
+          "description": "Section heading 'Related Pages'"
+        },
+        {
+          "sequence": 2,
+          "description": "Four link cards in a row, each with category label, title, description, and arrow link"
+        }
+      ]
+    }
+  ],
+  "blockInventory": {
+    "local": [
+      "accordion",
+      "cards",
+      "carousel",
+      "columns",
+      "embed",
+      "footer",
+      "form",
+      "fragment",
+      "header",
+      "hero",
+      "modal",
+      "quote",
+      "search",
+      "table",
+      "tabs",
+      "video"
+    ],
+    "blockCollection": [
+      {
+        "name": "hero",
+        "purpose": "Large heading, text, and buttons for page introductions",
+        "example": "https://main--aem-block-collection--adobe.aem.live/block-collection/hero"
+      },
+      {
+        "name": "cards",
+        "purpose": "Grid of items with images, headings, and descriptions",
+        "example": "https://main--aem-block-collection--adobe.aem.live/block-collection/cards"
+      },
+      {
+        "name": "columns",
+        "purpose": "Side-by-side content in 2-3 columns",
+        "example": "https://main--aem-block-collection--adobe.aem.live/block-collection/columns"
+      },
+      {
+        "name": "accordion",
+        "purpose": "Expandable questions and answers",
+        "example": "https://main--aem-block-collection--adobe.aem.live/block-collection/accordion"
+      },
+      {
+        "name": "tabs",
+        "purpose": "Content organized in switchable tabs",
+        "example": "https://main--aem-block-collection--adobe.aem.live/block-collection/tabs"
+      },
+      {
+        "name": "quote",
+        "purpose": "Highlighted testimonial or pullquote with attribution",
+        "example": "https://main--aem-block-collection--adobe.aem.live/block-collection/quote"
+      }
+    ]
+  }
+}

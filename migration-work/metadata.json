@@ -1,0 +1,143 @@
+{
+  "url": "https://www.gigamon.com/solutions/accelerate-cloud-migration.html",
+  "timestamp": "2026-01-30T15:51:37.968Z",
+  "paths": {
+    "documentPath": "/solutions/accelerate-cloud-migration",
+    "htmlFilePath": "/solutions/accelerate-cloud-migration.plain.html",
+    "mdFilePath": "/solutions/accelerate-cloud-migration.md",
+    "dirPath": "/solutions",
+    "filename": "accelerate-cloud-migration"
+  },
+  "screenshot": "/workspace/repos/migration-work/screenshot.png",
+  "html": {
+    "filePath": "/workspace/repos/migration-work/cleaned.html",
+    "size": 906273
+  },
+  "metadata": {
+    "title": "Cloud Migration Strategies, Tools and Solutions | Gigamon",
+    "viewport": "width=device-width, initial-scale=1.0",
+    "description": "Whether you're looking to cut down on costs or improve efficiency via cloud migration, Gigamon can help facilitate the scalable cloud migration solutions you need.",
+    "twitter:card": "summary",
+    "og:title": "Cloud Migration Strategies, Tools and Solutions | Gigamon",
+    "og:description": "Whether you're looking to cut down on costs or improve efficiency via cloud migration, Gigamon can help facilitate the scalable cloud migration solutions you need.",
+    "og:image": "https://www.gigamon.com/content/dam/website-assets/thumbnails/social-dop.jpg.imgw.1000.1000.jpg",
+    "og:type": "website",
+    "og:url": "https://www.gigamon.com/solutions/accelerate-cloud-migration.html",
+    "canonical": "https://www.gigamon.com/solutions/accelerate-cloud-migration.html",
+    "jsonLd": {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is cloud migration?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "<p>Cloud migration is the process of moving your applications and data from an on-prem system to a cloud computing system. Cloud migration can also refer to the process of migrating your data, applications, and assets from one cloud provider to another. While migrating from an on-prem system to the cloud offers several potential benefits, it’s important to select the right provider and define clear cloud migration goals to ensure a smooth migration.</p>\r\n"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What are the benefits of cloud migration?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "<p>There are several potential benefits of&nbsp;<a href=\"/content/gigamon/en_us/resources/learning-center/cloud/cloud-migration.html\">cloud migration</a>, but it’s all centered around bringing your IT infrastructure into the modern world of cloud computing. Cloud computing systems are generally more cost-effective than on-prem systems, which means you can save money by migrating. Cloud migration can also result in a performance boost and give you access to modern software that might not have been compatible with your previous system.</p>\r\n"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do you optimize the cloud migration process?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "<p>A good cloud migration strategy is one of the biggest keys to optimizing the cloud migration process, and that starts with a pre-migration assessment. It’s important to understand how migrating to the cloud might affect your applications, infrastructure, and data, and you can take precautionary steps to ensure a smooth migration. Cloud migration tools can make the process easier, but there are several potential obstacles you can face during a cloud migration.</p>\r\n"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does on-prem to cloud migration work?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "<p>Migrating from an on-prem system to a cloud system involves switching from physical servers to cloud-based servers, adopting cloud-based software, and ensuring everything works in your new cloud environment. The cloud migration process is a little different depending on the cloud provider you choose, but transferring data is the easy part. You also need to make sure your cloud applications are able to interact with your data like your on-prem applications do, and you can’t lose sight of&nbsp;<a href=\"https://blog.gigamon.com/2021/12/21/revisiting-threat-models-in-the-cloud-era-a-webinar-series-from-esg-and-gigamon/\" target=\"_blank\">cloud migration cybersecurity</a>.</p>\r\n"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What are the 7 R’s of cloud migration?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "<p>The 7 R’s of cloud migration are refactor, replatform, repurchase, rehost, relocate, retain, and retire. These strategies can help you decide on the right approach to your cloud migration, with each R representing a different method for migrating to the cloud. While there are many&nbsp;<a href=\"https://blog.gigamon.com/2021/12/13/tapping-the-myths-of-cloud-migration/\" target=\"_blank\">cloud migration myths</a>, the 7 R’s of cloud migration are used by organizations of all sizes to ensure a smooth migration to the cloud.</p>\r\n"
+              }
+            }
+          ]
+        },
+        {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "English",
+              "item": "https://www.gigamon.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Accelerate Cloud Migration.",
+              "item": "https://www.gigamon.com/solutions/accelerate-cloud-migration.html"
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "images": {
+    "count": 33,
+    "mapping": {
+      "https://www.gigamon.com/content/dam/website-assets/spotlight/spotlight-hawk-v4.jpg": "./images/b558a3e13e17e6224e50fb9f89ab64bb.jpg",
+      "https://www.gigamon.com/content/dam/website-assets/icons/bar-light-meteor.svg": "./images/876e58a09d0dc3a7e65b6a306d491e5e.png",
+      "https://www.gigamon.com/content/dam/website-assets/spotlight/spotlight-hawk-v4.jpg.imgo.jpg": "./images/782cd067522ac588afcc3285e9109777.jpg",
+      "https://www.gigamon.com/content/dam/website-assets/icons/gigamon-logo-white.svg": "./images/f94ea665091f760c63522f99a6b74255.png",
+      "https://www.gigamon.com/content/dam/website-assets/awards/quote-bade-150x157px.png.imgo.png": "./images/60e72106ebad4860264ad98500d75237.png",
+      "https://www.gigamon.com/content/dam/website-assets/resource-icons/icon-casestudy-usecase-bwfill.svg": "./images/599321da43a83364bc922f5e2071bece.png",
+      "https://www.gigamon.com/content/dam/website-assets/promo-icons/promoicon-analyst-industry-report-drk.svg": "./images/fcfe312b8f751a7f33d18efe55aa8c10.png",
+      "https://www.gigamon.com/content/dam/website-assets/resource-icons/icon-analystrreport-bwfill.svg": "./images/3451609513e7ba8547d14a4a716ddee3.png",
+      "https://www.gigamon.com/content/dam/website-assets/resource-icons/icon-solutionbrief-bwfill.svg": "./images/8328b20e6bcde35858c4a09b8a16daf6.png",
+      "https://www.gigamon.com/content/dam/website-assets/icons/gig-sprite-sheet.svg": "./images/29a624ba04b9a3e65f1b1e2b9efac7ed.png",
+      "https://www.gigamon.com/content/dam/website-assets/icons/quote-carousel-orange.svg.imgo.svg": "./images/2e688642dd39202b2bf1e74829ed92c6.png",
+      "https://dpm.demdex.net/ibs:dpid=411&dpuuid=aXzTgAAAAD5WIAN2": "./images/1486ad07c7e6f4ab045d3f6dba38207a.png",
+      "https://b.6sc.co/v1/beacon/img.gif?token=4f8940777f901846f0ca8e9c86cb925a&svisitor=null&visitor=e067a27d-0629-43c6-893f-691716a25bbd&session=3f908a57-0ee3-45e9-88fa-cca02d953456&event=ni%3AasyncSettingsAudit&q=%7B%22settings%22%3A%22%5B%7B%5C%22name%5C%22%3A%5C%22enableEventTracking%5C%22%2C%5C%22value%5C%22%3A%5C%22true%5C%22%2C%5C%22dateTime%5C%22%3A%5C%22Fri%2C%2030%20Jan%202026%2015%3A51%3A28%20GMT%5C%22%2C%5C%22timeSincePageLoad%5C%22%3A%5C%220%5C%22%7D%2C%7B%5C%22name%5C%22%3A%5C%22setToken%5C%22%2C%5C%22value%5C%22%3A%5C%224f8940777f901846f0ca8e9c86cb925a%5C%22%2C%5C%22dateTime%5C%22%3A%5C%22Fri%2C%2030%20Jan%202026%2015%3A51%3A28%20GMT%5C%22%2C%5C%22timeSincePageLoad%5C%22%3A%5C%220%5C%22%7D%2C%7B%5C%22name%5C%22%3A%5C%22setEndpoint%5C%22%2C%5C%22value%5C%22%3A%5C%22b.6sc.co%5C%22%2C%5C%22dateTime%5C%22%3A%5C%22Fri%2C%2030%20Jan%202026%2015%3A51%3A28%20GMT%5C%22%2C%5C%22timeSincePageLoad%5C%22%3A%5C%220%5C%22%7D%2C%7B%5C%22name%5C%22%3A%5C%22enableRetargeting%5C%22%2C%5C%22value%5C%22%3A%5C%22true%5C%22%2C%5C%22dateTime%5C%22%3A%5C%22Fri%2C%2030%20Jan%202026%2015%3A51%3A28%20GMT%5C%22%2C%5C%22timeSincePageLoad%5C%22%3A%5C%220%5C%22%7D%2C%7B%5C%22name%5C%22%3A%5C%22setEpsilonKey%5C%22%2C%5C%22value%5C%22%3A%5C%22ddf12392dbe4d5adfc648c6b186ba049c40f03c4%5C%22%2C%5C%22dateTime%5C%22%3A%5C%22Fri%2C%2030%20Jan%202026%2015%3A51%3A28%20GMT%5C%22%2C%5C%22timeSincePageLoad%5C%22%3A%5C%220%5C%22%7D%2C%7B%5C%22name%5C%22%3A%5C%22enableCompanyDetails%5C%22%2C%5C%22value%5C%22%3A%5C%22%5Btrue%2Cnull%2C3%5D%5C%22%2C%5C%22dateTime%5C%22%3A%5C%22Fri%2C%2030%20Jan%202026%2015%3A51%3A28%20GMT%5C%22%2C%5C%22timeSincePageLoad%5C%22%3A%5C%220%5C%22%7D%5D%22%7D&isIframe=false&m=%7B%22description%22%3A%22Whether%20you%27re%20looking%20to%20cut%20down%20on%20costs%20or%20improve%20efficiency%20via%20cloud%20migration%2C%20Gigamon%20can%20help%20facilitate%20the%20scalable%20cloud%20migration%20solutions%20you%20need.%22%2C%22keywords%22%3A%22%22%2C%22title%22%3A%22Cloud%20Migration%20Strategies%2C%20Tools%20and%20Solutions%20%7C%20Gigamon%22%7D&cb=&r=&thirdParty=%7B%7D&v2=1&pageURL=https%3A%2F%2Fwww.gigamon.com%2Fsolutions%2Faccelerate-cloud-migration.html&pageViewId=b40d9a97-8ffb-4438-8aee-d6a60ae0bd45&an_uid=0&v=1.1.31": "./images/4b6691856e224409cb5ad7a94d2ff6ea.png",
+      "https://b.6sc.co/v1/beacon/img.gif?token=4f8940777f901846f0ca8e9c86cb925a&svisitor=null&visitor=e067a27d-0629-43c6-893f-691716a25bbd&session=3f908a57-0ee3-45e9-88fa-cca02d953456&event=a_pageload&q=%7B%22pageLoadTime%22%3A%22Fri%2C%2030%20Jan%202026%2015%3A51%3A28%20GMT%22%7D&isIframe=false&m=%7B%22description%22%3A%22Whether%20you%27re%20looking%20to%20cut%20down%20on%20costs%20or%20improve%20efficiency%20via%20cloud%20migration%2C%20Gigamon%20can%20help%20facilitate%20the%20scalable%20cloud%20migration%20solutions%20you%20need.%22%2C%22keywords%22%3A%22%22%2C%22title%22%3A%22Cloud%20Migration%20Strategies%2C%20Tools%20and%20Solutions%20%7C%20Gigamon%22%7D&cb=&r=&thirdParty=%7B%7D&v2=1&pageURL=https%3A%2F%2Fwww.gigamon.com%2Fsolutions%2Faccelerate-cloud-migration.html&pageViewId=b40d9a97-8ffb-4438-8aee-d6a60ae0bd45&an_uid=0&v=1.1.31": "./images/fe7f321a9a90801fffd96ebb35c25a60.png",
+      "https://yt3.ggpht.com/Qhk5ll0z80zOQw91hjJ120p8556MGcyiwAExbYDmLHZacJNx6TnYoTzxT4L_EWBUoCPsd_1gkrI=s68-c-k-c0x00ffffff-no-rj": "./images/1c55bb6ac895c9474bedc298227dff5b.jpg",
+      "https://i.ytimg.com/vi/p3YxUGOZNAI/default.jpg": "./images/488ec06e9f89c48180ed934dedbeaf56.jpg",
+      "https://gigamon.sc.omtrdc.net/b/ss/gigaem.esntls/1/JS-2.27.0-LEWM/s91847111145123?AQB=1&ndh=1&pf=1&t=30%2F0%2F2026%2015%3A51%3A29%205%200&sdid=174818A387145F90-43FFEF04764D6539&mid=27434611752041953921816370134349043954&aamlh=9&ce=UTF-8&pageName=solutions%3Aaccelerate-cloud-migration&g=https%3A%2F%2Fwww.gigamon.com%2Fsolutions%2Faccelerate-cloud-migration.html&c.&getPreviousValue=3.0.1&getValOnce=3.1&.c&cc=USD&ch=solutions&v0=NONE&aamb=6G1ynYcLPuiQxYZrsz_pkqfLG9yMXBpb2zX5dvJdYQJzPXImdj0y&v1=solutions%3Aaccelerate-cloud-migration&v2=https%3A%2F%2Fwww.gigamon.com%2Fsolutions%2Faccelerate-cloud-migration.html&c3=solutions%3Aaccelerate-cloud-migration&v33=0.7305775396763362_1769788289166&v36=English&s=1280x720&c=24&j=1.6&v=N&k=Y&bw=1280&bh=720&mcorgid=39F6555A58A470C30A495EF7%40AdobeOrg&AQE=1": "./images/67ef9d25a070d65bd5129209f33058dc.png",
+      "https://i.ytimg.com/vi_webp/o0sFVQA5dto/default.webp": "./images/668904dd8e82b03f9a5009c4326be9fa.png",
+      "https://i.ytimg.com/vi_webp/wuz6ewwiX2c/default.webp": "./images/30e945f117e260071bd8f92fceb73a2d.png",
+      "https://b.6sc.co/v1/beacon/img.gif?token=4f8940777f901846f0ca8e9c86cb925a&svisitor=421fd7170e71020081d37c69a80000007db40600&visitor=e067a27d-0629-43c6-893f-691716a25bbd&session=3f908a57-0ee3-45e9-88fa-cca02d953456&event=active_time_track&q=%7B%22currentTime%22%3A%22Fri%2C%2030%20Jan%202026%2015%3A51%3A29%20GMT%22%2C%22lastTrackTime%22%3A%22Fri%2C%2030%20Jan%202026%2015%3A51%3A28%20GMT%22%2C%22timeSpent%22%3A%221036%22%2C%22totalTimeSpent%22%3A%221036%22%7D&isIframe=false&m=%7B%22description%22%3A%22Whether%20you%27re%20looking%20to%20cut%20down%20on%20costs%20or%20improve%20efficiency%20via%20cloud%20migration%2C%20Gigamon%20can%20help%20facilitate%20the%20scalable%20cloud%20migration%20solutions%20you%20need.%22%2C%22keywords%22%3A%22%22%2C%22title%22%3A%22Cloud%20Migration%20Strategies%2C%20Tools%20and%20Solutions%20%7C%20Gigamon%22%7D&cb=&r=&thirdParty=%7B%7D&v2=1&pageURL=https%3A%2F%2Fwww.gigamon.com%2Fsolutions%2Faccelerate-cloud-migration.html&pageViewId=b40d9a97-8ffb-4438-8aee-d6a60ae0bd45&an_uid=0&v=1.1.31": "./images/7783266f78b7927bf13efbe0c7e91cdd.png",
+      "https://cdn.cookielaw.org/logos/static/poweredBy_ot_logo.svg": "./images/cc1945f86a39ff14eefdf290c733c532.png",
+      "https://www.google.ca/ads/ga-audiences?v=1&t=sr&slf_rd=1&_r=4&tid=G-8TBBTSEV1P&cid=484944839.1769788290&gtm=45je61r1v878250798za200zd878250798&aip=1&dma=0&gcd=13l3l3l3l1l1&npa=0&frm=0&tag_exp=103116026~103200004~104527907~104528500~104684208~104684211~115495938~115938466~115938469~116185181~116185182~116988315~117041587&z=2063990836": "./images/f50957a0a4dee89924b9bbe342c102da.png",
+      "https://www.gigamon.com/content/dam/website-assets/thumbnails/video-L2-cloud-defense-depth.jpg": "./images/aee7b04299f852234c73362d0a03e927.jpg",
+      "https://www.gigamon.com/content/dam/website-assets/thumbnails/video-L2-cloud-visibility.jpg": "./images/b555fa7d0ec88f208f3ca92af1b6550b.jpg",
+      "https://www.gigamon.com/content/dam/website-assets/thumbnails/video-L2-cloud-uniform-security.jpg": "./images/8ba0ebc0ab86dd2afa4a9baf10f53b74.jpg",
+      "https://b.6sc.co/v1/beacon/img.gif?token=4f8940777f901846f0ca8e9c86cb925a&svisitor=421fd7170e71020081d37c69a80000007db40600&visitor=e067a27d-0629-43c6-893f-691716a25bbd&session=3f908a57-0ee3-45e9-88fa-cca02d953456&event=active_time_track&q=%7B%22currentTime%22%3A%22Fri%2C%2030%20Jan%202026%2015%3A51%3A30%20GMT%22%2C%22lastTrackTime%22%3A%22Fri%2C%2030%20Jan%202026%2015%3A51%3A29%20GMT%22%2C%22timeSpent%22%3A%221004%22%2C%22totalTimeSpent%22%3A%222040%22%7D&isIframe=false&m=%7B%22description%22%3A%22Whether%20you%27re%20looking%20to%20cut%20down%20on%20costs%20or%20improve%20efficiency%20via%20cloud%20migration%2C%20Gigamon%20can%20help%20facilitate%20the%20scalable%20cloud%20migration%20solutions%20you%20need.%22%2C%22keywords%22%3A%22%22%2C%22title%22%3A%22Cloud%20Migration%20Strategies%2C%20Tools%20and%20Solutions%20%7C%20Gigamon%22%7D&cb=&r=&thirdParty=%7B%7D&v2=1&pageURL=https%3A%2F%2Fwww.gigamon.com%2Fsolutions%2Faccelerate-cloud-migration.html&pageViewId=b40d9a97-8ffb-4438-8aee-d6a60ae0bd45&an_uid=0&v=1.1.31": "./images/58a133bebca1de24fbeeb80315a3b7cd.png",
+      "https://www.gigamon.com/content/dam/website-assets/thumbnails/lhs-gigamon-community-people-v2.jpg.imgo.jpg": "./images/b206d05255daeadb8d03c4e09e44049b.jpg",
+      "https://b.6sc.co/v1/beacon/img.gif?token=4f8940777f901846f0ca8e9c86cb925a&svisitor=421fd7170e71020081d37c69a80000007db40600&visitor=e067a27d-0629-43c6-893f-691716a25bbd&session=3f908a57-0ee3-45e9-88fa-cca02d953456&event=active_time_track&q=%7B%22currentTime%22%3A%22Fri%2C%2030%20Jan%202026%2015%3A51%3A31%20GMT%22%2C%22lastTrackTime%22%3A%22Fri%2C%2030%20Jan%202026%2015%3A51%3A30%20GMT%22%2C%22timeSpent%22%3A%221001%22%2C%22totalTimeSpent%22%3A%223041%22%7D&isIframe=false&m=%7B%22description%22%3A%22Whether%20you%27re%20looking%20to%20cut%20down%20on%20costs%20or%20improve%20efficiency%20via%20cloud%20migration%2C%20Gigamon%20can%20help%20facilitate%20the%20scalable%20cloud%20migration%20solutions%20you%20need.%22%2C%22keywords%22%3A%22%22%2C%22title%22%3A%22Cloud%20Migration%20Strategies%2C%20Tools%20and%20Solutions%20%7C%20Gigamon%22%7D&cb=&r=&thirdParty=%7B%7D&v2=1&pageURL=https%3A%2F%2Fwww.gigamon.com%2Fsolutions%2Faccelerate-cloud-migration.html&pageViewId=b40d9a97-8ffb-4438-8aee-d6a60ae0bd45&an_uid=0&v=1.1.31": "./images/c1ecaf74eeed986a809345390ce93123.png",
+      "https://b.6sc.co/v1/beacon/img.gif?token=4f8940777f901846f0ca8e9c86cb925a&svisitor=421fd7170e71020081d37c69a80000007db40600&visitor=e067a27d-0629-43c6-893f-691716a25bbd&session=3f908a57-0ee3-45e9-88fa-cca02d953456&event=active_time_track&q=%7B%22currentTime%22%3A%22Fri%2C%2030%20Jan%202026%2015%3A51%3A32%20GMT%22%2C%22lastTrackTime%22%3A%22Fri%2C%2030%20Jan%202026%2015%3A51%3A31%20GMT%22%2C%22timeSpent%22%3A%221001%22%2C%22totalTimeSpent%22%3A%224042%22%7D&isIframe=false&m=%7B%22description%22%3A%22Whether%20you%27re%20looking%20to%20cut%20down%20on%20costs%20or%20improve%20efficiency%20via%20cloud%20migration%2C%20Gigamon%20can%20help%20facilitate%20the%20scalable%20cloud%20migration%20solutions%20you%20need.%22%2C%22keywords%22%3A%22%22%2C%22title%22%3A%22Cloud%20Migration%20Strategies%2C%20Tools%20and%20Solutions%20%7C%20Gigamon%22%7D&cb=&r=&thirdParty=%7B%7D&v2=1&pageURL=https%3A%2F%2Fwww.gigamon.com%2Fsolutions%2Faccelerate-cloud-migration.html&pageViewId=b40d9a97-8ffb-4438-8aee-d6a60ae0bd45&an_uid=0&v=1.1.31": "./images/4fad4c87cea0074bb33b7e9a1fa0e6c4.png",
+      "https://b.6sc.co/v1/beacon/img.gif?token=4f8940777f901846f0ca8e9c86cb925a&svisitor=421fd7170e71020081d37c69a80000007db40600&visitor=e067a27d-0629-43c6-893f-691716a25bbd&session=3f908a57-0ee3-45e9-88fa-cca02d953456&event=active_time_track&q=%7B%22currentTime%22%3A%22Fri%2C%2030%20Jan%202026%2015%3A51%3A33%20GMT%22%2C%22lastTrackTime%22%3A%22Fri%2C%2030%20Jan%202026%2015%3A51%3A32%20GMT%22%2C%22timeSpent%22%3A%221000%22%2C%22totalTimeSpent%22%3A%225042%22%7D&isIframe=false&m=%7B%22description%22%3A%22Whether%20you%27re%20looking%20to%20cut%20down%20on%20costs%20or%20improve%20efficiency%20via%20cloud%20migration%2C%20Gigamon%20can%20help%20facilitate%20the%20scalable%20cloud%20migration%20solutions%20you%20need.%22%2C%22keywords%22%3A%22%22%2C%22title%22%3A%22Cloud%20Migration%20Strategies%2C%20Tools%20and%20Solutions%20%7C%20Gigamon%22%7D&cb=&r=&thirdParty=%7B%7D&v2=1&pageURL=https%3A%2F%2Fwww.gigamon.com%2Fsolutions%2Faccelerate-cloud-migration.html&pageViewId=b40d9a97-8ffb-4438-8aee-d6a60ae0bd45&an_uid=0&v=1.1.31": "./images/62300e9bc00fbce9120913545a59395e.png",
+      "https://b.6sc.co/v1/beacon/img.gif?token=4f8940777f901846f0ca8e9c86cb925a&svisitor=421fd7170e71020081d37c69a80000007db40600&visitor=e067a27d-0629-43c6-893f-691716a25bbd&session=3f908a57-0ee3-45e9-88fa-cca02d953456&event=active_time_track&q=%7B%22currentTime%22%3A%22Fri%2C%2030%20Jan%202026%2015%3A51%3A34%20GMT%22%2C%22lastTrackTime%22%3A%22Fri%2C%2030%20Jan%202026%2015%3A51%3A33%20GMT%22%2C%22timeSpent%22%3A%221002%22%2C%22totalTimeSpent%22%3A%226044%22%7D&isIframe=false&m=%7B%22description%22%3A%22Whether%20you%27re%20looking%20to%20cut%20down%20on%20costs%20or%20improve%20efficiency%20via%20cloud%20migration%2C%20Gigamon%20can%20help%20facilitate%20the%20scalable%20cloud%20migration%20solutions%20you%20need.%22%2C%22keywords%22%3A%22%22%2C%22title%22%3A%22Cloud%20Migration%20Strategies%2C%20Tools%20and%20Solutions%20%7C%20Gigamon%22%7D&cb=&r=&thirdParty=%7B%7D&v2=1&pageURL=https%3A%2F%2Fwww.gigamon.com%2Fsolutions%2Faccelerate-cloud-migration.html&pageViewId=b40d9a97-8ffb-4438-8aee-d6a60ae0bd45&an_uid=0&v=1.1.31": "./images/7096e62f9ca8ba1ad1619f33e548ff7c.png",
+      "https://b.6sc.co/v1/beacon/img.gif?token=4f8940777f901846f0ca8e9c86cb925a&svisitor=421fd7170e71020081d37c69a80000007db40600&visitor=e067a27d-0629-43c6-893f-691716a25bbd&session=3f908a57-0ee3-45e9-88fa-cca02d953456&event=active_time_track&q=%7B%22currentTime%22%3A%22Fri%2C%2030%20Jan%202026%2015%3A51%3A35%20GMT%22%2C%22lastTrackTime%22%3A%22Fri%2C%2030%20Jan%202026%2015%3A51%3A34%20GMT%22%2C%22timeSpent%22%3A%221002%22%2C%22totalTimeSpent%22%3A%227046%22%7D&isIframe=false&m=%7B%22description%22%3A%22Whether%20you%27re%20looking%20to%20cut%20down%20on%20costs%20or%20improve%20efficiency%20via%20cloud%20migration%2C%20Gigamon%20can%20help%20facilitate%20the%20scalable%20cloud%20migration%20solutions%20you%20need.%22%2C%22keywords%22%3A%22%22%2C%22title%22%3A%22Cloud%20Migration%20Strategies%2C%20Tools%20and%20Solutions%20%7C%20Gigamon%22%7D&cb=&r=&thirdParty=%7B%7D&v2=1&pageURL=https%3A%2F%2Fwww.gigamon.com%2Fsolutions%2Faccelerate-cloud-migration.html&pageViewId=b40d9a97-8ffb-4438-8aee-d6a60ae0bd45&an_uid=0&v=1.1.31": "./images/5132be7e5136a40f659ada60587be47e.png",
+      "https://b.6sc.co/v1/beacon/img.gif?token=4f8940777f901846f0ca8e9c86cb925a&svisitor=421fd7170e71020081d37c69a80000007db40600&visitor=e067a27d-0629-43c6-893f-691716a25bbd&session=3f908a57-0ee3-45e9-88fa-cca02d953456&event=active_time_track&q=%7B%22currentTime%22%3A%22Fri%2C%2030%20Jan%202026%2015%3A51%3A36%20GMT%22%2C%22lastTrackTime%22%3A%22Fri%2C%2030%20Jan%202026%2015%3A51%3A35%20GMT%22%2C%22timeSpent%22%3A%221010%22%2C%22totalTimeSpent%22%3A%228056%22%7D&isIframe=false&m=%7B%22description%22%3A%22Whether%20you%27re%20looking%20to%20cut%20down%20on%20costs%20or%20improve%20efficiency%20via%20cloud%20migration%2C%20Gigamon%20can%20help%20facilitate%20the%20scalable%20cloud%20migration%20solutions%20you%20need.%22%2C%22keywords%22%3A%22%22%2C%22title%22%3A%22Cloud%20Migration%20Strategies%2C%20Tools%20and%20Solutions%20%7C%20Gigamon%22%7D&cb=&r=&thirdParty=%7B%7D&v2=1&pageURL=https%3A%2F%2Fwww.gigamon.com%2Fsolutions%2Faccelerate-cloud-migration.html&pageViewId=b40d9a97-8ffb-4438-8aee-d6a60ae0bd45&an_uid=0&v=1.1.31": "./images/ac7e2c9ab4f71bdfb9d771679193b7dc.png"
+    },
+    "stats": {
+      "total": 41,
+      "converted": 24,
+      "skipped": 11,
+      "failed": 6,
+      "tooLarge": 0,
+      "limitReached": 0
+    }
+  }
+}

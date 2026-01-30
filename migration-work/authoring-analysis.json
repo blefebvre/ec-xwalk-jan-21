@@ -1,0 +1,226 @@
+{
+  "url": "https://www.gigamon.com/solutions/accelerate-cloud-migration.html",
+  "sections": [
+    {
+      "number": 1,
+      "name": "Hero",
+      "style": "dark teal background with abstract design",
+      "sectionMetadata": false,
+      "sectionMetadataReason": "Background is hero's intrinsic design (gradient image), not section styling",
+      "sequences": [
+        {
+          "sequence": 1,
+          "description": "Large centered heading 'Accelerate Cloud Migration' with subheading paragraph on dark background",
+          "decision": "block",
+          "blockName": "hero-dark",
+          "reason": "Page introduction with prominent background styling - obvious match with hero block"
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "name": "Jump Start Your Cloud Initiative",
+      "style": "light background",
+      "sectionMetadata": false,
+      "sequences": [
+        {
+          "sequence": 1,
+          "description": "Heading 'Jump Start Your Cloud Initiative' with multiple paragraphs of text content",
+          "decision": "default",
+          "reason": "Author can type heading and paragraphs normally"
+        },
+        {
+          "sequence": 2,
+          "description": "Bullet point list of benefits",
+          "decision": "default",
+          "reason": "Author can type bullet list normally"
+        },
+        {
+          "sequence": 3,
+          "description": "Sidebar callout box with badge, product name, description, and link",
+          "decision": "block",
+          "blockName": "cards-gigamon",
+          "reason": "Structured promotional callout with badge/icon - repeating card pattern"
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "name": "How Gigamon Can Help",
+      "style": "light background",
+      "sectionMetadata": false,
+      "sequences": [
+        {
+          "sequence": 1,
+          "description": "Section heading 'How Gigamon Can Help' with intro paragraph",
+          "decision": "default",
+          "reason": "Author can type heading and paragraph normally"
+        },
+        {
+          "sequence": 2,
+          "description": "Three-column grid with icon, heading, and paragraph for each column",
+          "decision": "block",
+          "blockName": "columns-gigamon",
+          "reason": "Side-by-side layout with 3 columns - obvious match with columns block"
+        },
+        {
+          "sequence": 3,
+          "description": "Centered call-to-action button 'Learn About Cloud Suite'",
+          "decision": "default",
+          "reason": "Author can type a link normally"
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "name": "Quote",
+      "style": "light background",
+      "sectionMetadata": false,
+      "sequences": [
+        {
+          "sequence": 1,
+          "description": "Large quoted text from analyst about deep observability, with attribution name, title, and company",
+          "decision": "block",
+          "blockName": "quote-analyst",
+          "reason": "Testimonial with attribution - obvious match with quote block"
+        },
+        {
+          "sequence": 2,
+          "description": "'Read More' link button",
+          "decision": "default",
+          "reason": "Author can type a link normally"
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "name": "Resources",
+      "style": "light/grey background",
+      "sectionMetadata": false,
+      "sequences": [
+        {
+          "sequence": 1,
+          "description": "Section heading 'Resources'",
+          "decision": "default",
+          "reason": "Author can type heading normally"
+        },
+        {
+          "sequence": 2,
+          "description": "Three resource cards in a row, each with category label, icon, title, description, file type indicator, and download/read link",
+          "decision": "block",
+          "blockName": "cards-gigamon",
+          "reason": "Repeating card pattern with structured content - obvious match with cards block"
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "name": "FAQ",
+      "style": "light background",
+      "sectionMetadata": false,
+      "sequences": [
+        {
+          "sequence": 1,
+          "description": "Section heading 'Frequently Asked Questions'",
+          "decision": "default",
+          "reason": "Author can type heading normally"
+        },
+        {
+          "sequence": 2,
+          "description": "Five expandable question items with plus icons for expand/collapse",
+          "decision": "block",
+          "blockName": "accordion-faq",
+          "reason": "Interactive expandable Q&A - obvious match with accordion block"
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "name": "Request a Demo",
+      "style": "light background",
+      "sectionMetadata": false,
+      "sequences": [
+        {
+          "sequence": 1,
+          "description": "Two-column layout: left side has heading, paragraph text, and CTA button; right side has product screenshot image",
+          "decision": "block",
+          "blockName": "columns-gigamon",
+          "reason": "Side-by-side layout with text and image - obvious match with columns block"
+        }
+      ]
+    },
+    {
+      "number": 8,
+      "name": "Cloud Video Series",
+      "style": "grey background",
+      "sectionMetadata": true,
+      "sectionMetadataStyle": "grey",
+      "sectionMetadataReason": "Solid grey background provides container styling for content",
+      "sequences": [
+        {
+          "sequence": 1,
+          "description": "Section heading 'Cloud Video Series' with subheading",
+          "decision": "default",
+          "reason": "Author can type heading and subheading normally"
+        },
+        {
+          "sequence": 2,
+          "description": "Three video cards with thumbnail images, play button overlays, titles, descriptions, and 'Watch Now' buttons",
+          "decision": "block",
+          "blockName": "cards-gigamon",
+          "reason": "Repeating card pattern with video thumbnails - obvious match with cards block"
+        }
+      ]
+    },
+    {
+      "number": 9,
+      "name": "Gigamon Community",
+      "style": "light background",
+      "sectionMetadata": false,
+      "sequences": [
+        {
+          "sequence": 1,
+          "description": "Two-column layout: left side with heading, description paragraph, and CTA button; right side with community badge/logo image",
+          "decision": "block",
+          "blockName": "columns-gigamon",
+          "reason": "Side-by-side layout with text and image - obvious match with columns block"
+        }
+      ]
+    },
+    {
+      "number": 10,
+      "name": "Related Pages",
+      "style": "light background",
+      "sectionMetadata": false,
+      "sequences": [
+        {
+          "sequence": 1,
+          "description": "Section heading 'Related Pages'",
+          "decision": "default",
+          "reason": "Author can type heading normally"
+        },
+        {
+          "sequence": 2,
+          "description": "Four link cards in a row, each with category label, title, description, and arrow link",
+          "decision": "block",
+          "blockName": "cards-gigamon",
+          "reason": "Repeating card pattern for navigation links - obvious match with cards block"
+        }
+      ]
+    }
+  ],
+  "blocksSummary": {
+    "hero-dark": 1,
+    "cards-gigamon": 5,
+    "columns-gigamon": 3,
+    "quote-analyst": 1,
+    "accordion-faq": 1
+  },
+  "variantMapping": {
+    "hero": "hero-dark",
+    "cards": "cards-gigamon",
+    "columns": "columns-gigamon",
+    "quote": "quote-analyst",
+    "accordion": "accordion-faq"
+  }
+}

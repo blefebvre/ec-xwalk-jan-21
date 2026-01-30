@@ -1,0 +1,33 @@
+.columns-gigamon > div {
+  display: flex;
+  flex-direction: column;
+}
+
+.columns-gigamon img {
+  width: 100%;
+}
+
+.columns-gigamon > div > div {
+  order: 1;
+}
+
+.columns-gigamon > div > .columns-gigamon-img-col {
+  order: 0;
+}
+
+.columns-gigamon > div > .columns-gigamon-img-col img {
+  display: block;
+}
+
+@media (width >= 900px) {
+  .columns-gigamon > div {
+    align-items: center;
+    flex-direction: unset;
+    gap: 24px;
+  }
+
+  .columns-gigamon > div > div {
+    flex: 1;
+    order: unset;
+  }
+}
