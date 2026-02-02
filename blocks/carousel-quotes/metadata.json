@@ -1,0 +1,38 @@
+{
+  "variantName": "carousel-quotes",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-02-02T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.gigamon.com/solutions/accelerate-cloud-migration.html",
+    "originPage": "Solutions page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "testimonial-quotes",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "quote + author attribution + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "testimonial sections",
+      "customer quotes",
+      "analyst quotes"
+    ],
+    "notSuitableFor": [
+      "image galleries",
+      "product showcases"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/solutions/accelerate-cloud-migration"],
+    "reuseCount": 1,
+    "lastUsed": "2026-02-02T00:00:00.000Z"
+  }
+}

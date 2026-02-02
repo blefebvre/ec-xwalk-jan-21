@@ -1,0 +1,38 @@
+{
+  "variantName": "columns-features",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-02-02T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.gigamon.com/solutions/accelerate-cloud-migration.html",
+    "originPage": "Solutions page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "feature-columns",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "3 columns with bold headings + descriptions",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "feature highlights",
+      "benefit lists",
+      "comparison layouts"
+    ],
+    "notSuitableFor": [
+      "image galleries",
+      "product grids"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/solutions/accelerate-cloud-migration"],
+    "reuseCount": 1,
+    "lastUsed": "2026-02-02T00:00:00.000Z"
+  }
+}

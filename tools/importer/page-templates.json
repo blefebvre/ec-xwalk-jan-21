@@ -1,0 +1,50 @@
+{
+  "templates": [
+    {
+      "name": "solutions-page",
+      "urls": [
+        "https://www.gigamon.com/solutions/accelerate-cloud-migration.html"
+      ],
+      "description": "Solutions page showcasing Gigamon cloud migration capabilities and benefits",
+      "blocks": [
+        {
+          "name": "hero-solutions",
+          "instances": [
+            ".mega-banner"
+          ]
+        },
+        {
+          "name": "cards-promo",
+          "instances": [
+            ".columns .promo-card",
+            ".promo"
+          ]
+        },
+        {
+          "name": "columns-features",
+          "instances": [
+            ".site-content > .columns"
+          ]
+        },
+        {
+          "name": "carousel-quotes",
+          "instances": [
+            ".carousel"
+          ]
+        },
+        {
+          "name": "cards-resources",
+          "instances": [
+            ".responsive-layout"
+          ]
+        },
+        {
+          "name": "accordion-faq",
+          "instances": [
+            ".faq-accordion"
+          ]
+        }
+      ]
+    }
+  ]
+}

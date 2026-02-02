@@ -1,0 +1,138 @@
+{
+  "url": "https://www.gigamon.com/solutions/accelerate-cloud-migration.html",
+  "timestamp": "2026-02-02T00:00:00.000Z",
+  "sections": [
+    {
+      "id": "section-1",
+      "name": "Hero Banner",
+      "decision": "block",
+      "blockName": "hero-solutions",
+      "rationale": "Full-width hero with styled background, accent bar decoration, and prominent H1 - requires hero block for proper styling"
+    },
+    {
+      "id": "section-2",
+      "name": "Introduction Content",
+      "decision": "default-content",
+      "rationale": "Standard text content with H2, paragraphs, and bullet list - can be authored as default content"
+    },
+    {
+      "id": "section-2-promo",
+      "name": "Promo Card",
+      "decision": "block",
+      "blockName": "cards-promo",
+      "rationale": "Styled promotional card with icon, eyebrow text, and CTA - needs block for visual treatment"
+    },
+    {
+      "id": "section-3",
+      "name": "How Gigamon Can Help - Heading",
+      "decision": "default-content",
+      "rationale": "Section heading is default content"
+    },
+    {
+      "id": "section-3-columns",
+      "name": "Three Feature Columns",
+      "decision": "block",
+      "blockName": "columns-features",
+      "rationale": "Three-column layout with styled teal headings - requires columns block"
+    },
+    {
+      "id": "section-4",
+      "name": "CTA Button",
+      "decision": "default-content",
+      "rationale": "Single centered CTA button can be default content with button styling"
+    },
+    {
+      "id": "section-5",
+      "name": "Quotes Carousel",
+      "decision": "block",
+      "blockName": "carousel-quotes",
+      "rationale": "Rotating testimonial carousel with auto-play - requires carousel block"
+    },
+    {
+      "id": "section-6",
+      "name": "Resources Section",
+      "decision": "block",
+      "blockName": "cards-resources",
+      "rationale": "Three resource cards with icons, metadata, and CTAs - requires cards block"
+    },
+    {
+      "id": "section-7",
+      "name": "FAQ Accordion",
+      "decision": "block",
+      "blockName": "accordion-faq",
+      "rationale": "Expandable FAQ items - requires accordion block for interactivity"
+    },
+    {
+      "id": "section-8",
+      "name": "Demo CTA Section",
+      "decision": "block",
+      "blockName": "columns-features",
+      "rationale": "Two-column layout with video and CTA content"
+    },
+    {
+      "id": "section-9",
+      "name": "Video Series Cards",
+      "decision": "block",
+      "blockName": "cards-resources",
+      "rationale": "Three video thumbnail cards with watch CTAs"
+    },
+    {
+      "id": "section-10",
+      "name": "Community Section",
+      "decision": "block",
+      "blockName": "columns-features",
+      "rationale": "Two-column layout with text and image"
+    },
+    {
+      "id": "section-11",
+      "name": "Related Pages",
+      "decision": "block",
+      "blockName": "cards-resources",
+      "rationale": "Four linked cards with styled hover effects"
+    }
+  ],
+  "blocksUsed": [
+    {
+      "name": "hero-solutions",
+      "count": 1,
+      "instances": ["section-1"]
+    },
+    {
+      "name": "cards-promo",
+      "count": 1,
+      "instances": ["section-2-promo"]
+    },
+    {
+      "name": "columns-features",
+      "count": 3,
+      "instances": ["section-3-columns", "section-8", "section-10"]
+    },
+    {
+      "name": "carousel-quotes",
+      "count": 1,
+      "instances": ["section-5"]
+    },
+    {
+      "name": "cards-resources",
+      "count": 3,
+      "instances": ["section-6", "section-9", "section-11"]
+    },
+    {
+      "name": "accordion-faq",
+      "count": 1,
+      "instances": ["section-7"]
+    }
+  ],
+  "variantMapping": {
+    "hero": "hero-solutions",
+    "promo": "cards-promo",
+    "columns": "columns-features",
+    "carousel": "carousel-quotes",
+    "cards": "cards-resources",
+    "accordion": "accordion-faq"
+  },
+  "metadata": {
+    "title": "Accelerate Cloud Migration",
+    "description": "Cloud Migration Strategies, Tools and Solutions"
+  }
+}

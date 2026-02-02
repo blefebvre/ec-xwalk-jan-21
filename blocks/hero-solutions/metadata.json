@@ -1,0 +1,38 @@
+{
+  "variantName": "hero-solutions",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-02-02T00:00:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.gigamon.com/solutions/accelerate-cloud-migration.html",
+    "originPage": "Solutions page",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "purpose": "solutions-hero",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "heading + subtitle",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "solutions pages",
+      "product pages",
+      "landing pages without hero images"
+    ],
+    "notSuitableFor": [
+      "blog posts",
+      "pages with hero background images"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/solutions/accelerate-cloud-migration"],
+    "reuseCount": 1,
+    "lastUsed": "2026-02-02T00:00:00.000Z"
+  }
+}

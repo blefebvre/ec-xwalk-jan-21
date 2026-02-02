@@ -1,0 +1,167 @@
+{
+  "url": "https://www.gigamon.com/solutions/accelerate-cloud-migration.html",
+  "sections": [
+    {
+      "id": "section-1",
+      "name": "Hero Banner",
+      "selector": ".mega-banner",
+      "styling": "Dark background with teal/meteor accent bar",
+      "contentSequences": [
+        {
+          "type": "hero",
+          "description": "Full-width hero with H1 title, subtitle text, and accent decoration bar"
+        }
+      ]
+    },
+    {
+      "id": "section-2",
+      "name": "Introduction with Promo",
+      "selector": ".columns:first-of-type",
+      "styling": "Two-column layout, white background",
+      "contentSequences": [
+        {
+          "type": "text-content",
+          "description": "H2 heading, body text with links, bulleted list"
+        },
+        {
+          "type": "promo-card",
+          "description": "Promotional card with icon, eyebrow text, description, and CTA button"
+        }
+      ]
+    },
+    {
+      "id": "section-3",
+      "name": "How Gigamon Can Help",
+      "selector": ".text-jumbo + .columns",
+      "styling": "White background, three-column layout",
+      "contentSequences": [
+        {
+          "type": "heading",
+          "description": "Section heading H2"
+        },
+        {
+          "type": "columns",
+          "description": "Three equal columns with teal bold titles and descriptions"
+        }
+      ]
+    },
+    {
+      "id": "section-4",
+      "name": "CTA Button",
+      "selector": ".cta",
+      "styling": "Centered teal button",
+      "contentSequences": [
+        {
+          "type": "cta",
+          "description": "Primary call-to-action button"
+        }
+      ]
+    },
+    {
+      "id": "section-5",
+      "name": "Quotes Carousel",
+      "selector": ".carousel",
+      "styling": "Carousel with quote badge icons",
+      "contentSequences": [
+        {
+          "type": "carousel",
+          "description": "Rotating testimonial quotes with author attribution"
+        }
+      ]
+    },
+    {
+      "id": "section-6",
+      "name": "Resources",
+      "selector": ".resources, .resource-logo",
+      "styling": "Three-column resource cards",
+      "contentSequences": [
+        {
+          "type": "heading",
+          "description": "Section heading"
+        },
+        {
+          "type": "cards",
+          "description": "Three resource cards with icons, eyebrow text, titles, descriptions, and CTAs"
+        }
+      ]
+    },
+    {
+      "id": "section-7",
+      "name": "FAQ Accordion",
+      "selector": ".faq-accordion",
+      "styling": "Expandable accordion items",
+      "contentSequences": [
+        {
+          "type": "accordion",
+          "description": "FAQ section with expandable question/answer pairs"
+        }
+      ]
+    },
+    {
+      "id": "section-8",
+      "name": "Demo CTA",
+      "selector": ".responsive-layout:has(.mackbook-video)",
+      "styling": "Two-column with video and CTA",
+      "contentSequences": [
+        {
+          "type": "columns",
+          "description": "Video/image with heading, text and CTA button"
+        }
+      ]
+    },
+    {
+      "id": "section-9",
+      "name": "Video Series",
+      "selector": ".responsive-layout:has(.video-cards)",
+      "styling": "Three video promo cards",
+      "contentSequences": [
+        {
+          "type": "heading",
+          "description": "Section heading and subtitle"
+        },
+        {
+          "type": "cards",
+          "description": "Three video thumbnail cards with titles and watch CTAs"
+        }
+      ]
+    },
+    {
+      "id": "section-10",
+      "name": "Community",
+      "selector": ".responsive-layout:has(.gigamon-community)",
+      "styling": "Two-column with image",
+      "contentSequences": [
+        {
+          "type": "columns",
+          "description": "Text content with CTA alongside community image"
+        }
+      ]
+    },
+    {
+      "id": "section-11",
+      "name": "Related Pages",
+      "selector": ".related-pages",
+      "styling": "Four-column card layout",
+      "contentSequences": [
+        {
+          "type": "heading",
+          "description": "Section heading"
+        },
+        {
+          "type": "cards",
+          "description": "Four related page cards with eyebrow, title, description, and arrow icon"
+        }
+      ]
+    }
+  ],
+  "blockInventory": {
+    "identified": [
+      "hero",
+      "columns",
+      "cards",
+      "carousel",
+      "accordion",
+      "promo"
+    ]
+  }
+}

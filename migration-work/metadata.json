@@ -1,0 +1,39 @@
+{
+  "url": "https://www.gigamon.com/solutions/accelerate-cloud-migration.html",
+  "timestamp": "2026-02-02T00:00:00.000Z",
+  "paths": {
+    "documentPath": "/solutions/accelerate-cloud-migration",
+    "htmlFilePath": "content/solutions/accelerate-cloud-migration.plain.html",
+    "mdFilePath": "content/solutions/accelerate-cloud-migration.md",
+    "dirPath": "content/solutions",
+    "filename": "accelerate-cloud-migration",
+    "previewPath": "/solutions/accelerate-cloud-migration"
+  },
+  "screenshot": "./migration-work/screenshot.png",
+  "html": {
+    "filePath": "./migration-work/cleaned.html"
+  },
+  "metadata": {
+    "title": "Cloud Migration Strategies, Tools and Solutions | Gigamon",
+    "description": "Whether you're looking to cut down on costs or improve efficiency via cloud migration, Gigamon can help facilitate the scalable cloud migration solutions you need.",
+    "og:image": "https://www.gigamon.com/content/dam/website-assets/thumbnails/social-dop.jpg.imgw.1000.1000.jpg",
+    "canonical": "https://www.gigamon.com/solutions/accelerate-cloud-migration.html"
+  },
+  "images": {
+    "count": 25,
+    "mapping": {
+      "https://www.gigamon.com/content/dam/website-assets/icons/gigamon-logo-white.svg": "./images/gigamon-logo-white.svg",
+      "https://www.gigamon.com/content/dam/website-assets/icons/bar-light-meteor.svg": "./images/bar-light-meteor.svg",
+      "https://www.gigamon.com/content/dam/website-assets/promo-icons/promoicon-analyst-industry-report-drk.svg": "./images/promoicon-analyst-industry-report-drk.svg",
+      "https://www.gigamon.com/content/dam/website-assets/awards/quote-bade-150x157px.png.imgo.png": "./images/quote-badge.png",
+      "https://www.gigamon.com/content/dam/website-assets/icons/quote-carousel-orange.svg.imgo.svg": "./images/quote-carousel-orange.svg",
+      "https://www.gigamon.com/content/dam/website-assets/resource-icons/icon-solutionbrief-bwfill.svg": "./images/icon-solutionbrief.svg",
+      "https://www.gigamon.com/content/dam/website-assets/resource-icons/icon-casestudy-usecase-bwfill.svg": "./images/icon-casestudy.svg",
+      "https://www.gigamon.com/content/dam/website-assets/resource-icons/icon-analystrreport-bwfill.svg": "./images/icon-analystreport.svg",
+      "https://www.gigamon.com/content/dam/website-assets/thumbnails/video-L2-cloud-defense-depth.jpg": "./images/video-cloud-defense.jpg",
+      "https://www.gigamon.com/content/dam/website-assets/thumbnails/video-L2-cloud-visibility.jpg": "./images/video-cloud-visibility.jpg",
+      "https://www.gigamon.com/content/dam/website-assets/thumbnails/video-L2-cloud-uniform-security.jpg": "./images/video-cloud-security.jpg",
+      "https://www.gigamon.com/content/dam/website-assets/thumbnails/lhs-gigamon-community-people-v2.jpg.imgo.jpg": "./images/gigamon-community.jpg"
+    }
+  }
+}
