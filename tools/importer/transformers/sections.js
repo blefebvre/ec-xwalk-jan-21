@@ -64,15 +64,22 @@ export default function transform(hookName, element, payload) {
   }
 
   // Find the form-newsletter block (table after parsing)
-  const formNewsletter = element.querySelector('table.form-newsletter');
+  // Block name "Form Newsletter" becomes table header text
+  let formNewsletter = null;
+  const allTables = element.querySelectorAll('table');
+  for (const table of allTables) {
+    const header = table.querySelector('th');
+    if (header && header.textContent.includes('Form Newsletter')) {
+      formNewsletter = table;
+      break;
+    }
+  }
+  if (!formNewsletter) {
+    // Fallback: check by class
+    formNewsletter = element.querySelector('.form-newsletter, table.form-newsletter');
+  }
 
   if (connectElement && formNewsletter) {
-    // Find closest experience fragment or meaningful wrapper for the connect element
-    let connectWrapper = connectElement.closest('.experiencefragment') ||
-                         connectElement.closest('.xf-content-height') ||
-                         connectElement.closest('.text.parbase') ||
-                         connectElement.parentElement;
-
     // Create Section Metadata block for gray style
     const graySectionMetadata = WebImporter.Blocks.createBlock(document, {
       name: 'Section Metadata',
@@ -81,18 +88,14 @@ export default function transform(hookName, element, payload) {
       ]
     });
 
-    // Insert HR before the connect wrapper (start of gray section)
+    // Insert HR before the connect element (start of gray section)
     const hrBeforeContact = document.createElement('hr');
-    if (connectWrapper && connectWrapper.parentElement) {
-      connectWrapper.parentElement.insertBefore(hrBeforeContact, connectWrapper);
-    }
+    connectElement.parentElement.insertBefore(hrBeforeContact, connectElement);
 
-    // Insert Section Metadata and HR before the form-newsletter table (end of gray section)
+    // Insert Section Metadata and HR before the form-newsletter block (end of gray section)
     const hrAfterContact = document.createElement('hr');
-    if (formNewsletter.parentElement) {
-      formNewsletter.parentElement.insertBefore(graySectionMetadata, formNewsletter);
-      formNewsletter.parentElement.insertBefore(hrAfterContact, formNewsletter);
-    }
+    formNewsletter.parentElement.insertBefore(graySectionMetadata, formNewsletter);
+    formNewsletter.parentElement.insertBefore(hrAfterContact, formNewsletter);
   }
 }
 
