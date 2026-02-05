@@ -21,67 +21,66 @@
 
 ### Switch to FirstNet and take advantage of special offers available
 
-+--------------------------------------------------------------------------------+
-| Cards Offer                                                                    |
-+--------------------+-----------------------------------------------------------+
-| <!--field:image--> | <!--field:text-->                                         |
-|                    |                                                           |
-| ![image][image1]   | New & existing customers                                  |
-|                    |                                                           |
-|                    | ### Get iPhone 17 Pro for $0                              |
-|                    |                                                           |
-|                    | Learn how with iPhone trade-in. Any condition.            |
-|                    |                                                           |
-|                    | Requires trade-in of iPhone 14 Pro Max or higher          |
-|                    | (excludes iPhone 16e), installment plan and eligible      |
-|                    | wireless plan (minimum $42.99/mo. if new for FirstNet     |
-|                    | Unlimited plan; $28.50/mo. for FirstNet Mobile-Pooled     |
-|                    | plan).                                                    |
-|                    |                                                           |
-|                    | \*Up to $1,100 off (256GB for $0) off after 36 monthly    |
-|                    | credits. Requires minimum $1,100 installment plan. Other  |
-|                    | eligible plans available based on account type. If        |
-|                    | service canceled, credits stop and device balance due.    |
-|                    | $35 activation/upgrade and other terms apply. Subject to  |
-|                    | change. See offer details                                 |
-|                    |                                                           |
-|                    | [See offer details](https://www.firstnet.com/#)           |
-+--------------------+-----------------------------------------------------------+
-| <!--field:image--> | <!--field:text-->                                         |
-|                    |                                                           |
-| ![image][image2]   | New customers                                             |
-|                    |                                                           |
-|                    | ### Get $800/line to break your contract                  |
-|                    |                                                           |
-|                    | Up to $800 via reward card (redemption required).         |
-|                    | Restrictions apply.                                       |
-|                    |                                                           |
-|                    | \*Available only to verified FirstNet Subscriber Paid     |
-|                    | User. Available only to verified FirstNet public safety   |
-|                    | entities For Agency Paid User lines of service. Reward    |
-|                    | Card amount based on remaining balance owed on your       |
-|                    | competing wireless provider smartphone (up to $800/line,  |
-|                    | up to 10 lines). Must submit most recent bill within 60   |
-|                    | days of activation; card delivered within 8-10 weeks. $35 |
-|                    | Activation/line, additional fees and other charges and    |
-|                    | restrictions apply. Subject to change. See offer details  |
-|                    |                                                           |
-|                    | [See offer details](https://www.firstnet.com/#)           |
-+--------------------+-----------------------------------------------------------+
-| <!--field:image--> | <!--field:text-->                                         |
-|                    |                                                           |
-| ![image][image3]   | New & existing customers                                  |
-|                    |                                                           |
-|                    | ### Families save 25% on AT\&T lines                      |
-|                    |                                                           |
-|                    | With a FirstNet Unlimited smartphone plan line of service |
-|                    | (minimum $42.99/month) and an AT\&T Unlimited plan line   |
-|                    | of service (minimum $75.99/month before discounts).       |
-|                    |                                                           |
-|                    | See offer details                                         |
-|                    |                                                           |
-|                    | [See offer details](https://www.firstnet.com/#)           |
-+--------------------+-----------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------+
+| Cards Offer                                                                                                                |
++--------------------+-------------------------------------------------------------------------------------------------------+
+| <!--field:image--> | <!--field:text-->                                                                                     |
+|                    |                                                                                                       |
+| ![image][image1]   | New & existing customers                                                                              |
+|                    |                                                                                                       |
+|                    | ### Get iPhone 17 Pro for $0                                                                          |
+|                    |                                                                                                       |
+|                    | Learn how with iPhone trade-in. Any condition.                                                        |
+|                    |                                                                                                       |
+|                    | Requires trade-in of iPhone 14 Pro Max or higher (excludes iPhone 16e), installment plan and eligible |
+|                    | wireless plan (minimum $42.99/mo. if new for FirstNet Unlimited plan; $28.50/mo. for FirstNet         |
+|                    | Mobile-Pooled plan).                                                                                  |
+|                    |                                                                                                       |
+|                    | \*Up to $1,100 off (256GB for $0) off after 36 monthly credits. Requires minimum $1,100 installment   |
+|                    | plan. Other eligible plans available based on account type. If service canceled, credits stop and     |
+|                    | device balance due. $35 activation/upgrade and other terms apply. Subject to change. See offer        |
+|                    | details                                                                                               |
+|                    |                                                                                                       |
+|                    | [See offer details](https://www.firstnet.com/#)                                                       |
+|                    |                                                                                                       |
+|                    | [Shop now](https://www.att.com/buy/phones/apple-iphone-17-pro.html/?fnStatus=true\&bref=IOB139862602) |
+|                    |                                                                                                       |
+|                    | [View product details](https://www.firstnet.com/devices/phones/iphone-17-pro.html)                    |
++--------------------+-------------------------------------------------------------------------------------------------------+
+| <!--field:image--> | <!--field:text-->                                                                                     |
+|                    |                                                                                                       |
+| ![image][image2]   | New customers                                                                                         |
+|                    |                                                                                                       |
+|                    | ### Get $800/line to break your contract                                                              |
+|                    |                                                                                                       |
+|                    | Up to $800 via reward card (redemption required). Restrictions apply.                                 |
+|                    |                                                                                                       |
+|                    | \*Available only to verified FirstNet Subscriber Paid User. Available only to verified FirstNet       |
+|                    | public safety entities For Agency Paid User lines of service. Reward Card amount based on remaining   |
+|                    | balance owed on your competing wireless provider smartphone (up to $800/line, up to 10 lines). Must   |
+|                    | submit most recent bill within 60 days of activation; card delivered within 8-10 weeks. $35           |
+|                    | Activation/line, additional fees and other charges and restrictions apply. Subject to change. See     |
+|                    | offer details                                                                                         |
+|                    |                                                                                                       |
+|                    | [See offer details](https://www.firstnet.com/#)                                                       |
+|                    |                                                                                                       |
+|                    | [Shop now](https://www.att.com/buy/phones/?fnStatus=true\&bref=IOB411376355)                          |
++--------------------+-------------------------------------------------------------------------------------------------------+
+| <!--field:image--> | <!--field:text-->                                                                                     |
+|                    |                                                                                                       |
+| ![image][image3]   | New & existing customers                                                                              |
+|                    |                                                                                                       |
+|                    | ### Families save 25% on AT\&T lines                                                                  |
+|                    |                                                                                                       |
+|                    | With a FirstNet Unlimited smartphone plan line of service (minimum $42.99/month) and an AT\&T         |
+|                    | Unlimited plan line of service (minimum $75.99/month before discounts).                               |
+|                    |                                                                                                       |
+|                    | See offer details                                                                                     |
+|                    |                                                                                                       |
+|                    | [See offer details](https://www.firstnet.com/#)                                                       |
+|                    |                                                                                                       |
+|                    | [Learn more](https://www.firstnet.com/offers/firstnet-and-family.html)                                |
++--------------------+-------------------------------------------------------------------------------------------------------+
 
 ---
 

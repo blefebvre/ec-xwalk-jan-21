@@ -87,16 +87,20 @@ export default function parse(element, { document }) {
       }
     });
 
-    // CTA link
-    const cta = card.querySelector('a');
-    if (cta) {
-      const ctaP = document.createElement('p');
-      const anchor = document.createElement('a');
-      anchor.href = cta.href;
-      anchor.textContent = cta.textContent.trim();
-      ctaP.appendChild(anchor);
-      contentCell.appendChild(ctaP);
-    }
+    // CTA links - capture all links (Shop now, Learn more, View product details, etc.)
+    const allLinks = card.querySelectorAll('a');
+    allLinks.forEach((link) => {
+      const linkText = link.textContent.trim();
+      // Skip empty links or links that are just images
+      if (linkText && !link.querySelector('img')) {
+        const ctaP = document.createElement('p');
+        const anchor = document.createElement('a');
+        anchor.href = link.href;
+        anchor.textContent = linkText;
+        ctaP.appendChild(anchor);
+        contentCell.appendChild(ctaP);
+      }
+    });
 
     if (imageCell.children.length > 0 || contentCell.children.length > 0) {
       row.push(contentCell);
