@@ -1,0 +1,43 @@
+.cards-offer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.cards-offer > div {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  background: var(--background-color);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cards-offer > div > div:first-child {
+  flex: 0 0 auto;
+}
+
+.cards-offer > div > div:first-child img {
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+}
+
+.cards-offer > div > div:last-child {
+  flex: 1;
+  padding: 16px;
+}
+
+.cards-offer > div > div:last-child h3 {
+  margin: 8px 0;
+}
+
+.cards-offer > div > div:last-child p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.cards-offer > div > div:last-child a {
+  display: inline-block;
+  margin-top: 8px;
+}

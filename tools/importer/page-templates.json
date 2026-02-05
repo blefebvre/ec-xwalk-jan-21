@@ -1,0 +1,35 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": ["https://www.firstnet.com/"],
+      "description": "FirstNet homepage with hero, features, and promotional content sections",
+      "blocks": [
+        {
+          "name": "headband",
+          "instances": [".headband"]
+        },
+        {
+          "name": "hero",
+          "instances": [".marquee-heading"]
+        },
+        {
+          "name": "cards-offer",
+          "instances": [".new-offers-card .offersCard"]
+        },
+        {
+          "name": "columns-icons",
+          "instances": [".icon-grid"]
+        },
+        {
+          "name": "cards-news",
+          "instances": [".new-offers-card .offersCard"]
+        },
+        {
+          "name": "form-newsletter",
+          "instances": [".email-signup"]
+        }
+      ]
+    }
+  ]
+}

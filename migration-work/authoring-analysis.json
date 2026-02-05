@@ -1,0 +1,204 @@
+{
+  "url": "https://www.firstnet.com/",
+  "timestamp": "2026-02-05T14:51:00.000Z",
+  "sections": [
+    {
+      "sectionId": 1,
+      "name": "Quick Links Navigation",
+      "sectionStyle": null,
+      "authoring": {
+        "approach": "block",
+        "blockName": "headband",
+        "variantName": "headband",
+        "reason": "Horizontal scrollable icon navigation requires custom block behavior",
+        "isNewVariant": true
+      }
+    },
+    {
+      "sectionId": 2,
+      "name": "Hero Section",
+      "sectionStyle": null,
+      "authoring": {
+        "approach": "block",
+        "blockName": "hero",
+        "variantName": "hero",
+        "reason": "Full-width hero with background image, overlay text, and CTA button - standard hero pattern",
+        "isNewVariant": false
+      }
+    },
+    {
+      "sectionId": 3,
+      "name": "Offers Introduction",
+      "sectionStyle": null,
+      "authoring": {
+        "approach": "default-content",
+        "blockName": null,
+        "variantName": null,
+        "reason": "Simple centered heading and subheading - can be authored as default content"
+      }
+    },
+    {
+      "sectionId": 4,
+      "name": "Offers Cards",
+      "sectionStyle": null,
+      "authoring": {
+        "approach": "block",
+        "blockName": "cards",
+        "variantName": "cards-offer",
+        "reason": "Three-column card grid with images, eyebrows, headings, descriptions, and CTAs - product offer cards",
+        "isNewVariant": true
+      }
+    },
+    {
+      "sectionId": 5,
+      "name": "Why FirstNet Introduction",
+      "sectionStyle": "dark",
+      "authoring": {
+        "approach": "default-content",
+        "blockName": null,
+        "variantName": null,
+        "reason": "Section heading on dark background - can use section metadata for styling"
+      }
+    },
+    {
+      "sectionId": 6,
+      "name": "Features Grid",
+      "sectionStyle": "dark",
+      "authoring": {
+        "approach": "block",
+        "blockName": "columns",
+        "variantName": "columns-icons",
+        "reason": "Three-column icon grid with titles and descriptions on dark background",
+        "isNewVariant": true
+      }
+    },
+    {
+      "sectionId": 7,
+      "name": "Learn More CTA",
+      "sectionStyle": "dark",
+      "authoring": {
+        "approach": "default-content",
+        "blockName": null,
+        "variantName": null,
+        "reason": "Single CTA button with legal text - default content in dark section"
+      }
+    },
+    {
+      "sectionId": 8,
+      "name": "News Introduction",
+      "sectionStyle": null,
+      "authoring": {
+        "approach": "default-content",
+        "blockName": null,
+        "variantName": null,
+        "reason": "Simple section heading"
+      }
+    },
+    {
+      "sectionId": 9,
+      "name": "News Cards",
+      "sectionStyle": null,
+      "authoring": {
+        "approach": "block",
+        "blockName": "cards",
+        "variantName": "cards-news",
+        "reason": "Three-column news card grid with images, categories, headings, excerpts, and links",
+        "isNewVariant": true
+      }
+    },
+    {
+      "sectionId": 10,
+      "name": "Community CTA",
+      "sectionStyle": null,
+      "authoring": {
+        "approach": "default-content",
+        "blockName": null,
+        "variantName": null,
+        "reason": "Text link with arrow - simple default content"
+      }
+    },
+    {
+      "sectionId": 11,
+      "name": "Contact Section",
+      "sectionStyle": "highlight",
+      "authoring": {
+        "approach": "default-content",
+        "blockName": null,
+        "variantName": null,
+        "reason": "Heading with CTA button on light gray background"
+      }
+    },
+    {
+      "sectionId": 12,
+      "name": "Email Signup",
+      "sectionStyle": "highlight",
+      "authoring": {
+        "approach": "block",
+        "blockName": "form",
+        "variantName": "form-newsletter",
+        "reason": "Email signup form with multiple fields requires form block",
+        "isNewVariant": true
+      }
+    }
+  ],
+  "blocksIdentified": [
+    {
+      "blockName": "headband",
+      "variantName": "headband",
+      "instances": 1,
+      "selector": ".headband, #headbandFN",
+      "isNewVariant": true
+    },
+    {
+      "blockName": "hero",
+      "variantName": "hero",
+      "instances": 1,
+      "selector": ".marquee-heading, .marquee-item",
+      "isNewVariant": false
+    },
+    {
+      "blockName": "cards",
+      "variantName": "cards-offer",
+      "instances": 1,
+      "selector": ".new-offers-card:first-of-type",
+      "isNewVariant": true
+    },
+    {
+      "blockName": "cards",
+      "variantName": "cards-news",
+      "instances": 1,
+      "selector": ".new-offers-card:nth-of-type(2)",
+      "isNewVariant": true
+    },
+    {
+      "blockName": "columns",
+      "variantName": "columns-icons",
+      "instances": 1,
+      "selector": ".icon-grid, .icon-grid-description",
+      "isNewVariant": true
+    },
+    {
+      "blockName": "form",
+      "variantName": "form-newsletter",
+      "instances": 1,
+      "selector": ".email-signup, .firstnet-email-sub",
+      "isNewVariant": true
+    }
+  ],
+  "variantMapping": {
+    "headband": "headband",
+    "hero": "hero",
+    "cards-offer": "cards-offer",
+    "cards-news": "cards-news",
+    "columns-icons": "columns-icons",
+    "form-newsletter": "form-newsletter"
+  },
+  "summary": {
+    "totalSections": 12,
+    "defaultContentSections": 6,
+    "blockSections": 6,
+    "uniqueBlocks": 6,
+    "newVariants": 5,
+    "reusedVariants": 1
+  }
+}

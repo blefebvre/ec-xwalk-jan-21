@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0" jcr:primaryType="cq:Page">
+  <jcr:content cq:template="/libs/core/franklin/templates/page" sling:resourceType="core/franklin/components/page/v1/page" jcr:primaryType="cq:PageContent" jcr:title="Wireless Broadband for First Responders and Public Safety | FirstNet" jcr:description="The FirstNet mission is to deploy, operate, maintain and improve the first high-speed, nationwide wireless broadband network for first responders, public safety and emergency response teams.​" modelFields="[jcr:title,jcr:description,keywords]">
+    <root jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/root/v1/root">
+      <section sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]">
+        <block sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" image="https://www.firstnet.com/content/dam/firstnet/images/marquee/marquee-firstnet-officer-walking-talking.jpg" imageAlt="Hero background" model="hero" modelFields="[image,imageAlt,text]" name="Hero" text="&lt;p&gt;MISSION-CRITICAL COMMUNICATIONS&lt;/p&gt;&lt;p&gt;&lt;h1&gt;America&#x27;s first responder network&lt;/h1&gt;&lt;/p&gt;&lt;p&gt;With over 2.99 million square miles of coverage, FirstNet is an emergency network that keeps public safety at the forefront of lifesaving technology.​&lt;/p&gt;&lt;p&gt;&lt;a href&#x3D;&quot;https://www.firstnet.com/signup/orgAssignment&quot;&gt;Check eligibility&lt;/a&gt;&lt;/p&gt;"></block>
+        <title sling:resourceType="core/franklin/components/title/v1/title" jcr:primaryType="nt:unstructured" title="Discounts for first responders" titleType="h2"/>
+        <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;h3&gt;Switch to FirstNet and take advantage of special offers available&lt;/h3&gt;"/>
+        <block_1 sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" filter="cards-offer" name="Cards Offer">
+          <item_0 jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/block/v1/block/item" name="Card Offer" model="card-offer" modelFields="[image,text]" image="https://www.firstnet.com/content/dam/firstnet/images/offers/5275203-base-offer-image-iphone17-640x460.jpg" text="&lt;p&gt;New &amp;#x26; existing customers&lt;/p&gt;&lt;p&gt;&lt;h3&gt;Get iPhone 17 Pro for $0&lt;/h3&gt;&lt;/p&gt;&lt;p&gt;Learn how with iPhone trade-in. Any condition.&lt;/p&gt;&lt;p&gt;Requires trade-in of iPhone 14 Pro Max or higher (excludes iPhone 16e), installment plan and eligible wireless plan (minimum $42.99/mo. if new for FirstNet Unlimited plan; $28.50/mo. for FirstNet Mobile-Pooled plan).&lt;/p&gt;&lt;p&gt;*Up to $1,100 off (256GB for $0) off after 36 monthly credits. Requires minimum $1,100 installment plan. Other eligible plans available based on account type. If service canceled, credits stop and device balance due. $35 activation/upgrade and other terms apply. Subject to change. See offer details&lt;/p&gt;&lt;p&gt;&lt;a href&#x3D;&quot;https://www.firstnet.com/#&quot;&gt;See offer details&lt;/a&gt;&lt;/p&gt;"></item_0>
+          <item_1 jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/block/v1/block/item" name="Card Offer" model="card-offer" modelFields="[image,text]" image="https://www.firstnet.com/content/dam/firstnet/images/offers/offer-card-firstnet-fire-rescue-responder-device.jpg" text="&lt;p&gt;New customers&lt;/p&gt;&lt;p&gt;&lt;h3&gt;Get $800/line to break your contract&lt;/h3&gt;&lt;/p&gt;&lt;p&gt;Up to $800 via reward card (redemption required). Restrictions apply.&lt;/p&gt;&lt;p&gt;*Available only to verified FirstNet Subscriber Paid User. Available only to verified FirstNet public safety entities For Agency Paid User lines of service. Reward Card amount based on remaining balance owed on your competing wireless provider smartphone (up to $800/line, up to 10 lines). Must submit most recent bill within 60 days of activation; card delivered within 8-10 weeks. $35 Activation/line, additional fees and other charges and restrictions apply. Subject to change. See offer details&lt;/p&gt;&lt;p&gt;&lt;a href&#x3D;&quot;https://www.firstnet.com/#&quot;&gt;See offer details&lt;/a&gt;&lt;/p&gt;"></item_1>
+          <item_2 jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/block/v1/block/item" name="Card Offer" model="card-offer" modelFields="[image,text]" image="https://www.firstnet.com/content/dam/firstnet/images/offers/offer-card-firstnet-first-response-team-ambulance-loading.jpg" text="&lt;p&gt;New &amp;#x26; existing customers&lt;/p&gt;&lt;p&gt;&lt;h3&gt;Families save 25% on AT&amp;#x26;T lines&lt;/h3&gt;&lt;/p&gt;&lt;p&gt;With a FirstNet Unlimited smartphone plan line of service (minimum $42.99/month) and an AT&amp;#x26;T Unlimited plan line of service (minimum $75.99/month before discounts).&lt;/p&gt;&lt;p&gt;See offer details&lt;/p&gt;&lt;p&gt;&lt;a href&#x3D;&quot;https://www.firstnet.com/#&quot;&gt;See offer details&lt;/a&gt;&lt;/p&gt;"></item_2>
+        </block_1>
+        <title_1 sling:resourceType="core/franklin/components/title/v1/title" jcr:primaryType="nt:unstructured" title="Why FirstNet for 5G public safety" titleType="h2"/>
+        <text_1 sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;h3&gt;Built from the ground up to support emergency services&lt;/h3&gt;"/>
+        <columns sling:resourceType="core/franklin/components/columns/v1/columns" jcr:primaryType="nt:unstructured" rows="3" columns="2">
+          <row1 jcr:primaryType="nt:unstructured">
+            <col1 jcr:primaryType="nt:unstructured">
+              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text=""/>
+              <image sling:resourceType="core/franklin/components/image/v1/image" jcr:primaryType="nt:unstructured" image="https://www.firstnet.com/content/dam/firstnet/images/pictograms/picto-law-enforcement-white.svg" imageAlt="icon"/>
+            </col1>
+            <col2 jcr:primaryType="nt:unstructured">
+              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text=""/>
+              <title sling:resourceType="core/franklin/components/title/v1/title" jcr:primaryType="nt:unstructured" title="Enough capacity for every first responder" titleType="h4"/>
+              <text_1 sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;p&gt;FirstNet supports you with a dedicated lane exclusive to
+                    public safety when you need it – wherever the mission
+                    takes you.&lt;/p&gt;"/>
+            </col2>
+          </row1>
+          <row2 jcr:primaryType="nt:unstructured">
+            <col1 jcr:primaryType="nt:unstructured">
+              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text=""/>
+              <image sling:resourceType="core/franklin/components/image/v1/image" jcr:primaryType="nt:unstructured" image="https://www.firstnet.com/content/dam/firstnet/images/pictograms/picto-coverage-white.svg" imageAlt="icon"/>
+            </col1>
+            <col2 jcr:primaryType="nt:unstructured">
+              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text=""/>
+              <title sling:resourceType="core/franklin/components/title/v1/title" jcr:primaryType="nt:unstructured" title="The largest network for public safety" titleType="h4"/>
+              <text_1 sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;p&gt;FirstNet gives first responders First Priority®, speed,
+                    low latency, reliability and the 5G* connectivity they
+                    need to connect.&lt;/p&gt;"/>
+            </col2>
+          </row2>
+          <row3 jcr:primaryType="nt:unstructured">
+            <col1 jcr:primaryType="nt:unstructured">
+              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text=""/>
+              <image sling:resourceType="core/franklin/components/image/v1/image" jcr:primaryType="nt:unstructured" image="https://www.firstnet.com/content/dam/firstnet/images/pictograms/picto-government-white.svg" imageAlt="icon"/>
+            </col1>
+            <col2 jcr:primaryType="nt:unstructured">
+              <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text=""/>
+              <title sling:resourceType="core/franklin/components/title/v1/title" jcr:primaryType="nt:unstructured" title="Unprecedented accountability" titleType="h4"/>
+              <text_1 sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;p&gt;Built in a public-private partnership with the federal
+                    government to deliver public safety their own dedicated
+                    program.&lt;/p&gt;"/>
+            </col2>
+          </row3>
+        </columns>
+        <button sling:resourceType="core/franklin/components/button/v1/button" jcr:primaryType="nt:unstructured" link="/why-firstnet.html" linkText="Learn more"/>
+        <text_2 sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;p&gt;*FirstNet 5G requires a compatible device and is not available everywhere. See &lt;a href&#x3D;&quot;https://www.firstnet.com/coverage.html&quot;&gt;firstnet.com/coverage&lt;/a&gt; for details.&lt;/p&gt;&lt;h3&gt;Latest news from public safety’s network&lt;/h3&gt;"/>
+        <block_2 sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" filter="cards-news" name="Cards News">
+          <item_0 jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/block/v1/block/item" name="Card News" model="card-news" modelFields="[image,text]" image="https://www.firstnet.com/content/dam/firstnet/images/offers/offer-card-firstnet-ptt-police-patrolcar.jpg" text="&lt;p&gt;PRODUCT LAUNCH&lt;/p&gt;&lt;p&gt;&lt;h3&gt;Introducing FirstNet Fusion&lt;/h3&gt;&lt;/p&gt;&lt;p&gt;FirstNet Fusion will combine critical communications capabilities like push-to-talk, 9-1-1 dispatch and connected devices into one seamless experience.&lt;/p&gt;&lt;p&gt;&lt;a href&#x3D;&quot;https://www.firstnet.com/community/news/introducing-firstnet-fusion.html&quot;&gt;Read more&lt;/a&gt;&lt;/p&gt;"></item_0>
+          <item_1 jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/block/v1/block/item" name="Card News" model="card-news" modelFields="[image,text]" image="https://www.firstnet.com/content/dam/firstnet/images/offers/offer-card-firstnet-hospital-er-receiving-241217.jpg" text="&lt;p&gt;HEALTH AND WELLNESS&lt;/p&gt;&lt;p&gt;&lt;h3&gt;Stress relief for emergency physicians&lt;/h3&gt;&lt;/p&gt;&lt;p&gt;This Mental Health Awareness Month, Ryan Fields-Spack shares strategies he learned in his 25+ years in emergency response.&lt;/p&gt;&lt;p&gt;&lt;a href&#x3D;&quot;https://www.firstnet.com/community/news/stress-relief-techniques-for-emergency-physicians.html&quot;&gt;Read more&lt;/a&gt;&lt;/p&gt;"></item_1>
+          <item_2 jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/block/v1/block/item" name="Card News" model="card-news" modelFields="[image,text]" image="https://www.firstnet.com/content/dam/firstnet/images/offers/offer-card-town-of-duck-sea-rescue.jpg" text="&lt;p&gt;LAW ENFORCEMENT&lt;/p&gt;&lt;p&gt;&lt;h3&gt;Town of Duck keeps residents safe&lt;/h3&gt;&lt;/p&gt;&lt;p&gt;The Duck Police Department relies on FirstNet for priority, secure communications – especially during storms. FirstNet ensures officers stay connected for emergencies and traffic management.&lt;/p&gt;&lt;p&gt;&lt;a href&#x3D;&quot;https://www.firstnet.com/content/dam/firstnet/case-studies/customer-story-town-of-duck.pdf&quot;&gt;Read more&lt;/a&gt;&lt;/p&gt;"></item_2>
+        </block_2>
+        <button_1 sling:resourceType="core/franklin/components/button/v1/button" jcr:primaryType="nt:unstructured" link="/community.html" linkText="Explore more from the FirstNet community"/>
+        <text_3 sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;h3&gt;Connect with a FirstNet specialist&lt;/h3&gt;"/>
+        <button_2 sling:resourceType="core/franklin/components/button/v1/button" jcr:primaryType="nt:unstructured" link="/contact-us.html" linkText="Contact us"/>
+        <block_3 sling:resourceType="core/franklin/components/block/v1/block" jcr:primaryType="nt:unstructured" form="&lt;p&gt;Enter your email&lt;/p&gt;&lt;p&gt;Options: I am in...., Law Enforcement, Fire, EMS, Emergency Communications, Other Public Safety&lt;/p&gt;" heading="LEARN ABOUT AMERICA'S PUBLIC SAFETY NETWORK" model="form-newsletter" modelFields="[heading,subheading,form]" name="Form Newsletter" subheading="Get connected"></block_3>
+      </section>
+    </root>
+  </jcr:content>
+</jcr:root>
