@@ -83,6 +83,8 @@
 |                    | [See offer details](https://www.firstnet.com/#)           |
 +--------------------+-----------------------------------------------------------+
 
+---
+
 ## Why FirstNet for 5G public safety
 
 ### Built from the ground up to support emergency services
@@ -118,6 +120,14 @@
 [Learn more](/why-firstnet.html)
 
 \*FirstNet 5G requires a compatible device and is not available everywhere. See [firstnet.com/coverage](https://www.firstnet.com/coverage.html) for details.
+
++------------------+
+| Section Metadata |
++---------+--------+
+| Style   | dark   |
++---------+--------+
+
+---
 
 ### Latest news from public safety’s network
 

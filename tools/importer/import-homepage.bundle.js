@@ -569,6 +569,36 @@ var CustomImportScript = (() => {
     }
   }
 
+  // transformers/sections.js
+  function transform2(hookName, element, payload) {
+    if (hookName !== "afterTransform") return;
+    const { document } = payload;
+    const whyFirstNetH2 = Array.from(element.querySelectorAll("h2")).find(
+      (h2) => h2.textContent.trim() === "Why FirstNet for 5G public safety"
+    );
+    if (!whyFirstNetH2) return;
+    const latestNewsH3 = Array.from(element.querySelectorAll("h3")).find(
+      (h3) => h3.textContent.includes("Latest news from public safety")
+    );
+    if (!latestNewsH3) return;
+    const sectionMetadata = WebImporter.Blocks.createBlock(document, {
+      name: "Section Metadata",
+      cells: [
+        [createTextDiv(document, "Style"), createTextDiv(document, "dark")]
+      ]
+    });
+    const hrBefore = document.createElement("hr");
+    whyFirstNetH2.parentElement.insertBefore(hrBefore, whyFirstNetH2);
+    const hrAfter = document.createElement("hr");
+    latestNewsH3.parentElement.insertBefore(sectionMetadata, latestNewsH3);
+    latestNewsH3.parentElement.insertBefore(hrAfter, latestNewsH3);
+  }
+  function createTextDiv(document, text) {
+    const div = document.createElement("div");
+    div.textContent = text;
+    return div;
+  }
+
   // import-homepage.js
   var parsers = {
     "headband": parse,
@@ -579,7 +609,8 @@ var CustomImportScript = (() => {
     "form-newsletter": parse6
   };
   var transformers = [
-    transform
+    transform,
+    transform2
   ];
   var PAGE_TEMPLATE = {
     name: "homepage",
