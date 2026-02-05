@@ -1,0 +1,154 @@
+{
+  "url": "https://www.firstnet.com/",
+  "timestamp": "2026-02-05T14:51:00.000Z",
+  "sections": [
+    {
+      "id": 1,
+      "name": "Quick Links Navigation",
+      "selector": ".headband, #headbandFN",
+      "styling": "light background, horizontal scrollable icon buttons",
+      "sequences": [
+        {
+          "type": "navigation",
+          "description": "Horizontal row of 8 icon buttons linking to key pages (Rate plans, Phones, Offers, Pay bill, Coverage, Eligibility, Mission-critical, Referral)"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Hero Section",
+      "selector": ".marquee-heading, .marquee-item",
+      "styling": "full-width background image, dark overlay, white text on left",
+      "sequences": [
+        {
+          "type": "hero",
+          "description": "Full-width hero with background image of first responder, eyebrow text 'MISSION-CRITICAL COMMUNICATIONS', main heading 'America's first responder network', supporting paragraph, and CTA button"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Offers Introduction",
+      "selector": ".segment-heading[data-bg='white']",
+      "styling": "white background, centered text",
+      "sequences": [
+        {
+          "type": "default-content",
+          "description": "Section heading 'Discounts for first responders' with subheading"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Offers Cards",
+      "selector": ".new-offers-card, .offersCard",
+      "styling": "white background, 3-column card grid",
+      "sequences": [
+        {
+          "type": "cards",
+          "description": "Three product offer cards with images, eyebrow labels, headings, descriptions, and CTA links (iPhone offer, Contract break offer, Family discount offer)"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Why FirstNet Introduction",
+      "selector": ".segment-heading[data-bg='black']",
+      "styling": "black background, white centered text",
+      "sequences": [
+        {
+          "type": "default-content",
+          "description": "Section heading 'Why FirstNet for 5G public safety' with subheading on dark background"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Features Grid",
+      "selector": ".icon-grid, .icon-grid-description",
+      "styling": "black background, 3-column icon grid with white text",
+      "sequences": [
+        {
+          "type": "columns",
+          "description": "Three feature columns with icons, titles and descriptions (Capacity, Network size, Accountability)"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Learn More CTA",
+      "selector": ".call-to-action[data-bg='black']",
+      "styling": "black background, centered button with legal text",
+      "sequences": [
+        {
+          "type": "default-content",
+          "description": "CTA button 'Learn more' with legal disclaimer text"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "News Introduction",
+      "selector": ".segment-heading:has(h3:contains('Latest news'))",
+      "styling": "white background, centered heading",
+      "sequences": [
+        {
+          "type": "default-content",
+          "description": "Section heading 'Latest news from public safety's network'"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "name": "News Cards",
+      "selector": ".new-offers-card:nth-of-type(2)",
+      "styling": "white background, 3-column card grid",
+      "sequences": [
+        {
+          "type": "cards",
+          "description": "Three news article cards with images, category labels, headings, excerpts, and read more links"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Community CTA",
+      "selector": ".call-to-action:has(.icon-long-arrow)",
+      "styling": "white background, text link with arrow",
+      "sequences": [
+        {
+          "type": "default-content",
+          "description": "Link 'Explore more from the FirstNet community' with animated arrow icon"
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Contact Section",
+      "selector": ".experiencefragment:has([data-bg='light-gray'])",
+      "styling": "light gray background, centered text and button",
+      "sequences": [
+        {
+          "type": "default-content",
+          "description": "Heading 'Connect with a FirstNet specialist' with 'Contact us' CTA button"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Email Signup",
+      "selector": ".email-signup, .firstnet-email-sub",
+      "styling": "blue background, two-column layout with form",
+      "sequences": [
+        {
+          "type": "form",
+          "description": "Email newsletter signup form with heading, description, email input, category dropdown, and submit button"
+        }
+      ]
+    }
+  ],
+  "blockInventory": {
+    "local": [],
+    "library": ["hero", "cards", "columns", "form"]
+  }
+}

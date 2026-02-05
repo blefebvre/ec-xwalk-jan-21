@@ -1,0 +1,34 @@
+{
+  "url": "https://www.firstnet.com/",
+  "timestamp": "2026-02-05T14:51:00.000Z",
+  "paths": {
+    "documentPath": "/",
+    "htmlFilePath": "index.plain.html",
+    "mdFilePath": "index.md",
+    "dirPath": "",
+    "filename": "index"
+  },
+  "previewPath": "content/index.html",
+  "screenshot": "./migration-work/screenshot.png",
+  "html": {
+    "filePath": "./migration-work/cleaned.html"
+  },
+  "metadata": {
+    "title": "Wireless Broadband for First Responders and Public Safety | FirstNet",
+    "description": "The FirstNet mission is to deploy, operate, maintain and improve the first high-speed, nationwide wireless broadband network for first responders, public safety and emergency response teams.",
+    "keywords": "firstnet; firstnet rate plans; firstnet login; firstnet wireless; firstnet wireless offers; firstnet wireless phones; firstnet phones; firstnet plans",
+    "og:title": "Wireless Broadband for First Responders and Public Safety | FirstNet",
+    "og:description": "The FirstNet mission is to deploy, operate, maintain and improve the first high-speed, nationwide wireless broadband network for first responders, public safety and emergency response teams.",
+    "canonical": "https://www.firstnet.com/"
+  },
+  "images": {
+    "count": 0,
+    "mapping": {},
+    "stats": {
+      "total": 0,
+      "converted": 0,
+      "skipped": 0,
+      "failed": 0
+    }
+  }
+}

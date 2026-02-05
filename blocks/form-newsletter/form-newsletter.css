@@ -1,0 +1,27 @@
+.form-newsletter {
+  background: var(--dark-color, #1a1a1a);
+  color: var(--light-color, #fff);
+  padding: 40px;
+  text-align: center;
+}
+
+.form-newsletter .form-newsletter-heading {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+}
+
+.form-newsletter .form-newsletter-subheading {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.form-newsletter .form-newsletter-form {
+  margin-top: 24px;
+}
+
+.form-newsletter .form-newsletter-form p {
+  margin: 8px 0;
+}

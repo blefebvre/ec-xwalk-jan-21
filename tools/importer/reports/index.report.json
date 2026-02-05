@@ -1,0 +1,17 @@
+{
+  "status": "success",
+  "url": "https://www.firstnet.com/",
+  "path": "index",
+  "timestamp": "2026-02-05T16:38:54.924Z",
+  "title": "Wireless Broadband for First Responders and Public Safety | FirstNet",
+  "template": "homepage",
+  "blocks": [
+    "hero",
+    "cards-offer",
+    "cards-offer",
+    "columns-icons",
+    "cards-news",
+    "cards-news",
+    "form-newsletter"
+  ]
+}
