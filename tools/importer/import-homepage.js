@@ -11,6 +11,7 @@ import formNewsletterParser from './parsers/form-newsletter.js';
 
 // TRANSFORMER IMPORTS - Import all transformers found in tools/importer/transformers/
 import firstnetTransformer from './transformers/firstnet.js';
+import sectionsTransformer from './transformers/sections.js';
 
 // PARSER REGISTRY - Map parser names to functions
 const parsers = {
@@ -25,6 +26,7 @@ const parsers = {
 // TRANSFORMER REGISTRY - Array of transformer functions
 const transformers = [
   firstnetTransformer,
+  sectionsTransformer,
 ];
 
 // PAGE TEMPLATE CONFIGURATION - Embedded from page-templates.json
