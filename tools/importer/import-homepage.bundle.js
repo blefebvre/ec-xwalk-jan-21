@@ -17,13 +17,13 @@ var CustomImportScript = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // import-homepage.js
+  // tools/importer/import-homepage.js
   var import_homepage_exports = {};
   __export(import_homepage_exports, {
     default: () => import_homepage_default
   });
 
-  // parsers/headband.js
+  // tools/importer/parsers/headband.js
   function parse(element, { document }) {
     const cells = [];
     const links = element.querySelectorAll("a");
@@ -44,7 +44,7 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
-  // parsers/hero.js
+  // tools/importer/parsers/hero.js
   function parse2(element, { document }) {
     const cells = [];
     const imageRow = [];
@@ -104,7 +104,7 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
-  // parsers/cards-offer.js
+  // tools/importer/parsers/cards-offer.js
   function parse3(element, { document }) {
     const text = element.textContent.toLowerCase();
     const isOfferContent = text.includes("shop now") || text.includes("$") || text.includes("get iphone") || text.includes("break your contract") || text.includes("save 25%") || text.includes("families save");
@@ -162,15 +162,18 @@ var CustomImportScript = (() => {
           }
         }
       });
-      const cta = card.querySelector("a");
-      if (cta) {
-        const ctaP = document.createElement("p");
-        const anchor = document.createElement("a");
-        anchor.href = cta.href;
-        anchor.textContent = cta.textContent.trim();
-        ctaP.appendChild(anchor);
-        contentCell.appendChild(ctaP);
-      }
+      const allLinks = card.querySelectorAll("a");
+      allLinks.forEach((link) => {
+        const linkText = link.textContent.trim();
+        if (linkText && !link.querySelector("img")) {
+          const ctaP = document.createElement("p");
+          const anchor = document.createElement("a");
+          anchor.href = link.href;
+          anchor.textContent = linkText;
+          ctaP.appendChild(anchor);
+          contentCell.appendChild(ctaP);
+        }
+      });
       if (imageCell.children.length > 0 || contentCell.children.length > 0) {
         row.push(contentCell);
         cells.push(row);
@@ -185,7 +188,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // parsers/columns-icons.js
+  // tools/importer/parsers/columns-icons.js
   function parse4(element, { document }) {
     const cells = [];
     let columns = element.querySelectorAll(".ig-block");
@@ -229,7 +232,7 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
-  // parsers/cards-news.js
+  // tools/importer/parsers/cards-news.js
   function parse5(element, { document }) {
     const text = element.textContent.toLowerCase();
     const isNewsContent = text.includes("read more") || text.includes("product launch") || text.includes("health and wellness") || text.includes("law enforcement") || text.includes("firstnet fusion") || text.includes("stress relief") || text.includes("town of duck");
@@ -294,7 +297,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // parsers/form-newsletter.js
+  // tools/importer/parsers/form-newsletter.js
   function parse6(element, { document }) {
     const cells = [];
     const headingCell = document.createElement("div");
@@ -350,7 +353,7 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
-  // transformers/firstnet.js
+  // tools/importer/transformers/firstnet.js
   function transform(hookName, element) {
     if (hookName === "beforeTransform") {
       element.querySelectorAll("script, style, noscript, iframe").forEach((el) => el.remove());
@@ -569,29 +572,68 @@ var CustomImportScript = (() => {
     }
   }
 
-  // transformers/sections.js
+  // tools/importer/transformers/sections.js
   function transform2(hookName, element, payload) {
     if (hookName !== "afterTransform") return;
     const { document } = payload;
     const whyFirstNetH2 = Array.from(element.querySelectorAll("h2")).find(
       (h2) => h2.textContent.trim() === "Why FirstNet for 5G public safety"
     );
-    if (!whyFirstNetH2) return;
     const latestNewsH3 = Array.from(element.querySelectorAll("h3")).find(
       (h3) => h3.textContent.includes("Latest news from public safety")
     );
-    if (!latestNewsH3) return;
-    const sectionMetadata = WebImporter.Blocks.createBlock(document, {
-      name: "Section Metadata",
-      cells: [
-        [createTextDiv(document, "Style"), createTextDiv(document, "dark")]
-      ]
-    });
-    const hrBefore = document.createElement("hr");
-    whyFirstNetH2.parentElement.insertBefore(hrBefore, whyFirstNetH2);
-    const hrAfter = document.createElement("hr");
-    latestNewsH3.parentElement.insertBefore(sectionMetadata, latestNewsH3);
-    latestNewsH3.parentElement.insertBefore(hrAfter, latestNewsH3);
+    if (whyFirstNetH2 && latestNewsH3) {
+      const darkSectionMetadata = WebImporter.Blocks.createBlock(document, {
+        name: "Section Metadata",
+        cells: [
+          [createTextDiv(document, "Style"), createTextDiv(document, "dark")]
+        ]
+      });
+      const hrBeforeDark = document.createElement("hr");
+      whyFirstNetH2.parentElement.insertBefore(hrBeforeDark, whyFirstNetH2);
+      const hrAfterDark = document.createElement("hr");
+      latestNewsH3.parentElement.insertBefore(darkSectionMetadata, latestNewsH3);
+      latestNewsH3.parentElement.insertBefore(hrAfterDark, latestNewsH3);
+    }
+    let connectElement = null;
+    const allH3s = element.querySelectorAll("h3");
+    console.log("[sections] Found", allH3s.length, "H3 elements");
+    for (const h3 of allH3s) {
+      if (h3.textContent.includes("Connect with a FirstNet specialist")) {
+        connectElement = h3;
+        console.log("[sections] Found connect H3");
+        break;
+      }
+    }
+    let formNewsletter = null;
+    const allTables = element.querySelectorAll("table");
+    console.log("[sections] Found", allTables.length, "tables");
+    for (const table of allTables) {
+      const header = table.querySelector("th");
+      if (header && header.textContent.includes("Form Newsletter")) {
+        formNewsletter = table;
+        console.log("[sections] Found form-newsletter table via header");
+        break;
+      }
+    }
+    if (!formNewsletter) {
+      formNewsletter = element.querySelector(".form-newsletter, table.form-newsletter");
+      console.log("[sections] Form newsletter found by class:", !!formNewsletter);
+    }
+    if (connectElement && formNewsletter) {
+      console.log("[sections] Both elements found, inserting gray section markers");
+      const graySectionMetadata = WebImporter.Blocks.createBlock(document, {
+        name: "Section Metadata",
+        cells: [
+          [createTextDiv(document, "Style"), createTextDiv(document, "gray")]
+        ]
+      });
+      const hrBeforeContact = document.createElement("hr");
+      connectElement.parentElement.insertBefore(hrBeforeContact, connectElement);
+      const hrAfterContact = document.createElement("hr");
+      formNewsletter.parentElement.insertBefore(graySectionMetadata, formNewsletter);
+      formNewsletter.parentElement.insertBefore(hrAfterContact, formNewsletter);
+    }
   }
   function createTextDiv(document, text) {
     const div = document.createElement("div");
@@ -599,7 +641,7 @@ var CustomImportScript = (() => {
     return div;
   }
 
-  // import-homepage.js
+  // tools/importer/import-homepage.js
   var parsers = {
     "headband": parse,
     "hero": parse2,

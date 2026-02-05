@@ -169,9 +169,19 @@
 
 [Explore more from the FirstNet community](/community.html)
 
+---
+
 ### Connect with a FirstNet specialist
 
 [Contact us](/contact-us.html)
+
++------------------+
+| Section Metadata |
++---------+--------+
+| Style   | gray   |
++---------+--------+
+
+---
 
 +-------------------------------------------------------------------------------------------------+
 | Form Newsletter                                                                                 |
