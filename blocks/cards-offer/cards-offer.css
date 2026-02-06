@@ -37,6 +37,7 @@
   padding: var(--spacing-m);
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 
 /* Customer type label (e.g., "New & existing customers") */
@@ -48,14 +49,13 @@
 }
 
 /* Offer title (e.g., "Get the new iPhone 17 Pro for $0") */
-.cards-offer > div > div:last-child h3,
-.cards-offer > div > div:last-child p:nth-child(2) {
+.cards-offer > div > div:last-child h3 {
   font-family: var(--heading-font-family);
-  font-size: var(--heading-font-size-s);
+  font-size: var(--heading-font-size-l);
   font-weight: 500;
   line-height: var(--line-height-tight);
   color: var(--text-color);
-  margin: 0 0 var(--spacing-xs);
+  margin: 0 0 var(--spacing-s);
 }
 
 /* Description text */
@@ -75,15 +75,17 @@
 }
 
 /* CTA buttons container */
-.cards-offer > div > div:last-child p:last-child {
+.cards-offer > div > div:last-child .button-container {
   margin-top: auto;
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--spacing-xs);
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-s);
 }
 
-/* Primary button (Shop now) */
-.cards-offer > div > div:last-child a.button {
+/* Primary CTA button (Shop now, Learn more) - only external att.com links */
+.cards-offer > div > div:last-child a.button[href*="att.com"],
+.cards-offer > div > div:last-child a.button[href*="firstnet-and-family"] {
   background-color: var(--color-blue-link);
   border: none;
   color: var(--color-white);
@@ -92,17 +94,32 @@
   font-size: var(--body-font-size-m);
   font-weight: 500;
   text-decoration: none;
+  display: inline-block;
+  margin: var(--spacing-s) 0;
 }
 
-.cards-offer > div > div:last-child a.button:hover {
+.cards-offer > div > div:last-child a.button[href*="att.com"]:hover,
+.cards-offer > div > div:last-child a.button[href*="firstnet-and-family"]:hover {
   background-color: var(--color-blue-primary);
 }
 
-/* Secondary link (View product details) */
-.cards-offer > div > div:last-child a:not(.button) {
+/* Secondary links (See offer details, View product details) - styled as text links */
+.cards-offer > div > div:last-child a.button {
+  background-color: transparent;
+  border: none;
   color: var(--link-color);
+  border-radius: 0;
+  padding: 0;
   font-size: var(--body-font-size-s);
+  font-weight: 400;
   text-decoration: underline;
+  display: inline;
+  margin: var(--spacing-xs) 0;
+}
+
+.cards-offer > div > div:last-child a.button:hover {
+  background-color: transparent;
+  color: var(--link-hover-color);
 }
 
 /* Tablet: 2 columns */
