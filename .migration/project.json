@@ -1,4 +1,8 @@
 {
   "type": "xwalk",
-  "contentHostUrl": "author-p141866-e1455422.adobeaemcloud.com"
+  "contentHostUrl": "author-p141866-e1455422.adobeaemcloud.com",
+  "aemSitePath": "/content/blefebvr-firstnet",
+  "aemAssetsFolderPath": "/content/dam/blefebvr-firstnet",
+  "aemSiteName": "blefebvr-firstnet",
+  "aemSiteTitle": "ATT Firstnet"
 }

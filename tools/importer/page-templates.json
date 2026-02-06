@@ -44,6 +44,14 @@
           ]
         }
       ]
+    },
+    {
+      "name": "plans-page",
+      "urls": [
+        "https://www.firstnet.com/plans.html"
+      ],
+      "description": "FirstNet rate plans page with pricing and plan details",
+      "blocks": []
     }
   ]
 }

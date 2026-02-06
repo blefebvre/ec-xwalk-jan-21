@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:sling="http://sling.apache.org/jcr/sling/1.0" jcr:primaryType="cq:Page">
+  <jcr:content cq:template="/libs/core/franklin/templates/page" sling:resourceType="core/franklin/components/page/v1/page" jcr:primaryType="cq:PageContent">
+    <root jcr:primaryType="nt:unstructured" sling:resourceType="core/franklin/components/root/v1/root">
+      <section sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]">
+        <button sling:resourceType="core/franklin/components/button/v1/button" jcr:primaryType="nt:unstructured" link="/" linkText="FirstNet"/>
+      </section>
+      <section_1 sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]">
+        <text sling:resourceType="core/franklin/components/text/v1/text" jcr:primaryType="nt:unstructured" text="&lt;ul&gt;
+                    &lt;li&gt;
+                    &lt;p&gt;&lt;strong&gt;Products&lt;/strong&gt;&lt;/p&gt;
+                    &lt;ul&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/plans.html&quot;&gt;Rate Plans&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/devices.html&quot;&gt;Phones &amp;#x26; Devices&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/offers.html&quot;&gt;Offers&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/coverage.html&quot;&gt;Coverage Map&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                    &lt;p&gt;&lt;strong&gt;About&lt;/strong&gt;&lt;/p&gt;
+                    &lt;ul&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/power-of-firstnet.html&quot;&gt;Power of FirstNet&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/why-firstnet.html&quot;&gt;Why FirstNet&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/industry-solutions.html&quot;&gt;Industry Solutions&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/community.html&quot;&gt;Community&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;/li&gt;
+                    &lt;li&gt;
+                    &lt;p&gt;&lt;strong&gt;Support&lt;/strong&gt;&lt;/p&gt;
+                    &lt;ul&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/faq.html&quot;&gt;FAQ&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/help.html&quot;&gt;Help&lt;/a&gt;&lt;/li&gt;
+                    &lt;li&gt;&lt;a href&#x3D;&quot;/contact-us.html&quot;&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
+                    &lt;/ul&gt;
+                    &lt;/li&gt;
+                    &lt;/ul&gt;"/>
+      </section_1>
+      <section_2 sling:resourceType="core/franklin/components/section/v1/section" jcr:primaryType="nt:unstructured" model="section" modelFields="[name,style]">
+        <button sling:resourceType="core/franklin/components/button/v1/button" jcr:primaryType="nt:unstructured" link="/sign-up.html" linkText="Sign Up"/>
+        <button_1 sling:resourceType="core/franklin/components/button/v1/button" jcr:primaryType="nt:unstructured" link="https://localcontrol.firstnet.att.com/" linkText="Log In"/>
+      </section_2>
+    </root>
+  </jcr:content>
+</jcr:root>

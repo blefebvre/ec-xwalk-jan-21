@@ -1,0 +1,14 @@
+{
+  "siteName": "blefebvr-firstnet",
+  "siteContentPath": "/content/blefebvr-firstnet",
+  "assetDamPath": "/content/dam/blefebvr-firstnet",
+  "baseUrl": "https://www.firstnet.com",
+  "pages": [
+    {
+      "jcrPath": "/content/blefebvr-firstnet/footer",
+      "sourceUrl": "https://www.firstnet.com/footer"
+    }
+  ],
+  "images": [],
+  "createdAt": "2026-02-06T21:03:49.581Z"
+}

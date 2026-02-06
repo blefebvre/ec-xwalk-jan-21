@@ -286,37 +286,37 @@ main > .section:first-of-type {
    =================================== */
 
 /* Dark section - black background (FirstNet "Why FirstNet" section) */
-main > .section.dark {
+main .section.dark {
   background-color: var(--color-black);
   color: var(--color-white);
   margin: 0;
   padding: var(--spacing-xl) 0;
 }
 
-main > .section.dark h1,
-main > .section.dark h2,
-main > .section.dark h3,
-main > .section.dark h4,
-main > .section.dark h5,
-main > .section.dark h6 {
+main .section.dark h1,
+main .section.dark h2,
+main .section.dark h3,
+main .section.dark h4,
+main .section.dark h5,
+main .section.dark h6 {
   color: var(--color-white);
 }
 
-main > .section.dark p {
+main .section.dark p {
   color: var(--color-white);
 }
 
-main > .section.dark a:any-link {
+main .section.dark a:any-link {
   color: var(--color-white);
 }
 
-main > .section.dark a.button:any-link {
+main .section.dark a.button:any-link {
   background-color: transparent;
   border-color: var(--color-white);
   color: var(--color-white);
 }
 
-main > .section.dark a.button:hover {
+main .section.dark a.button:hover {
   background-color: var(--color-white);
   color: var(--color-black);
 }

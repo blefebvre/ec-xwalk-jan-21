@@ -1,30 +1,33 @@
-# Migration Plan: FirstNet Homepage
+# Migration Plan: FirstNet Plans Page
 
 **Mode:** Single Page
-**Source:** https://www.firstnet.com/
-**Generated:** 2026-02-05
+**Source:** https://www.firstnet.com/plans.html
+**Generated:** 2026-02-06
 
 ## Steps
-- [x] 1. Project Setup
+- [x] 1. Project Setup (reusing existing)
 - [x] 2. Site Analysis
-- [x] 3. Page Analysis
-- [x] 4. Block Mapping
-- [x] 5. Import Infrastructure
-- [x] 6. URL Classification and Content Import
+- [ ] 3. Page Analysis
+- [ ] 4. Block Mapping
+- [ ] 5. Import Infrastructure
+- [ ] 6. URL Classification and Content Import
 
 ## Current Status
-- **Active Step:** Complete
-- **Last Updated:** 2026-02-05
-- **Transformer Updated:** Header and footer content removal verified
+- **Active Step:** Step 3 - Page Analysis
+- **Last Updated:** 2026-02-06
+
+## Previous Migrations
+- Homepage (https://www.firstnet.com/) - Complete
 
 ## Artifacts
-- [x] `.excat/project.json`
-- [x] `./migration-work/authoring-analysis.json`
-- [x] `tools/importer/page-templates.json`
-- [x] `tools/importer/parsers/*.js` (6 parsers)
-- [x] `tools/importer/transformers/*.js` (1 transformer)
-- [x] `tools/importer/import-homepage.js`
-- [x] `content/index.plain.html`
+- [x] `.excat/project.json` (existing)
+- [ ] `./migration-work/authoring-analysis.json`
+- [ ] `tools/importer/page-templates.json`
+- [ ] `tools/importer/parsers/*.js`
+- [ ] `tools/importer/transformers/*.js`
+- [ ] `tools/importer/import-plans.js`
+- [ ] `content/plans.plain.html`
 
 ## Notes
-- Single page migration of FirstNet homepage
+- Single page migration of FirstNet Rate Plans page
+- Reusing existing project configuration
