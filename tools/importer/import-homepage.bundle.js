@@ -226,7 +226,7 @@ var CustomImportScript = (() => {
       cells.push(row);
     });
     const block = WebImporter.Blocks.createBlock(document, {
-      name: "Columns (icons)",
+      name: "Columns-icons",
       cells
     });
     element.replaceWith(block);
@@ -597,31 +597,25 @@ var CustomImportScript = (() => {
     }
     let connectElement = null;
     const allH3s = element.querySelectorAll("h3");
-    console.log("[sections] Found", allH3s.length, "H3 elements");
     for (const h3 of allH3s) {
       if (h3.textContent.includes("Connect with a FirstNet specialist")) {
         connectElement = h3;
-        console.log("[sections] Found connect H3");
         break;
       }
     }
     let formNewsletter = null;
     const allTables = element.querySelectorAll("table");
-    console.log("[sections] Found", allTables.length, "tables");
     for (const table of allTables) {
       const header = table.querySelector("th");
       if (header && header.textContent.includes("Form Newsletter")) {
         formNewsletter = table;
-        console.log("[sections] Found form-newsletter table via header");
         break;
       }
     }
     if (!formNewsletter) {
       formNewsletter = element.querySelector(".form-newsletter, table.form-newsletter");
-      console.log("[sections] Form newsletter found by class:", !!formNewsletter);
     }
     if (connectElement && formNewsletter) {
-      console.log("[sections] Both elements found, inserting gray section markers");
       const graySectionMetadata = WebImporter.Blocks.createBlock(document, {
         name: "Section Metadata",
         cells: [

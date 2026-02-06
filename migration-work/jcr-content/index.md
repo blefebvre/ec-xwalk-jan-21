@@ -28,18 +28,11 @@
 |                    |                                                                                                       |
 | ![image][image1]   | New & existing customers                                                                              |
 |                    |                                                                                                       |
-|                    | ### Get iPhone 17 Pro for $0                                                                          |
+|                    | ### Get the new iPhone 17 Pro for $0                                                                  |
 |                    |                                                                                                       |
-|                    | Learn how with iPhone trade-in. Any condition.                                                        |
+|                    | Learn how with eligible trade-in.                                                                     |
 |                    |                                                                                                       |
-|                    | Requires trade-in of iPhone 14 Pro Max or higher (excludes iPhone 16e), installment plan and eligible |
-|                    | wireless plan (minimum $42.99/mo. if new for FirstNet Unlimited plan; $28.50/mo. for FirstNet         |
-|                    | Mobile-Pooled plan).                                                                                  |
-|                    |                                                                                                       |
-|                    | \*Up to $1,100 off (256GB for $0) off after 36 monthly credits. Requires minimum $1,100 installment   |
-|                    | plan. Other eligible plans available based on account type. If service canceled, credits stop and     |
-|                    | device balance due. $35 activation/upgrade and other terms apply. Subject to change. See offer        |
-|                    | details                                                                                               |
+|                    | Terms and restrictions apply. Subject to change. See offer details                                    |
 |                    |                                                                                                       |
 |                    | [See offer details](https://www.firstnet.com/#)                                                       |
 |                    |                                                                                                       |
@@ -89,7 +82,7 @@
 ### Built from the ground up to support emergency services
 
 +------------------------------------------------------------------------------+
-| Columns (icons)                                                              |
+| Columns Icons                                                                |
 +-------------------+----------------------------------------------------------+
 | <!--field:icon--> | <!--field:text-->                                        |
 |                   |                                                          |

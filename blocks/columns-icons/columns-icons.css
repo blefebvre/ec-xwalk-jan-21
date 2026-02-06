@@ -1,6 +1,15 @@
 /*
- * FirstNet Columns Icons Block
+ * FirstNet Columns-Icons Block
  * Feature columns with icons - used in dark "Why FirstNet" section
+ *
+ * DOM Structure (from parser):
+ * .columns-icons
+ *   > div (row - one per feature)
+ *     > div (icon cell)
+ *       > p > img
+ *     > div (text cell)
+ *       > h4 (title)
+ *       > p (description)
  */
 
 .columns-icons {
@@ -12,31 +21,38 @@
   padding: var(--spacing-l) var(--spacing-m);
 }
 
-/* Each row of columns */
+/* Each feature row (icon + text) */
 .columns-icons > div {
   display: flex;
-  flex-direction: column;
-  gap: var(--spacing-l);
+  flex-direction: row;
+  gap: var(--spacing-m);
+  align-items: flex-start;
 }
 
-/* Individual column/feature item */
-.columns-icons > div > div {
+/* Icon cell - first child */
+.columns-icons > div > div:first-child {
+  flex: 0 0 auto;
+}
+
+/* Icon image sizing */
+.columns-icons > div > div:first-child img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+/* Remove default paragraph margin around icon */
+.columns-icons > div > div:first-child p {
+  margin: 0;
+}
+
+/* Text cell - second child */
+.columns-icons > div > div:last-child {
   flex: 1;
-  text-align: center;
-  padding: 0;
 }
 
-/* Icon styling - inherits color from section */
-.columns-icons > div > div img,
-.columns-icons > div > div .icon img {
-  width: 48px;
-  height: 48px;
-  margin-bottom: var(--spacing-s);
-}
-
-/* Feature title */
-.columns-icons > div > div p:first-of-type,
-.columns-icons > div > div h4 {
+/* Feature title (h4) */
+.columns-icons > div > div:last-child h4 {
   font-family: var(--heading-font-family);
   font-size: var(--heading-font-size-s);
   font-weight: 500;
@@ -47,7 +63,7 @@
 }
 
 /* Feature description */
-.columns-icons > div > div p:last-of-type {
+.columns-icons > div > div:last-child p {
   font-size: var(--body-font-size-m);
   line-height: var(--line-height-relaxed);
   margin: 0;
@@ -55,35 +71,36 @@
   /* Color inherited from parent section */
 }
 
-/* Tablet: 2 columns */
-@media (width >= 600px) {
-  .columns-icons > div {
-    flex-direction: row;
-  }
-
-  .columns-icons > div > div {
-    flex: 1 1 50%;
-  }
-}
-
 /* Desktop: 3 columns side by side */
 @media (width >= 900px) {
   .columns-icons {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--spacing-xl);
     padding: var(--spacing-xl) var(--spacing-m);
   }
 
+  /* Each feature becomes a column */
   .columns-icons > div {
-    flex-direction: row;
-    justify-content: center;
-  }
-
-  .columns-icons > div > div {
     flex: 1 1 33.333%;
     max-width: 350px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
   }
 
-  .columns-icons > div > div p:first-of-type,
-  .columns-icons > div > div h4 {
+  /* Icon on top with spacing below */
+  .columns-icons > div > div:first-child {
+    margin-bottom: var(--spacing-s);
+  }
+
+  .columns-icons > div > div:first-child img {
+    width: 80px;
+    height: 80px;
+  }
+
+  /* Larger title on desktop */
+  .columns-icons > div > div:last-child h4 {
     font-size: var(--heading-font-size-m);
   }
 }
