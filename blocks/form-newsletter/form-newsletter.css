@@ -1,27 +1,167 @@
-.form-newsletter {
-  background: var(--dark-color, #1a1a1a);
-  color: var(--light-color, #fff);
-  padding: 40px;
-  text-align: center;
+/*
+ * FirstNet Newsletter Form Block
+ * Dark background section with email subscription form
+ */
+
+.form-newsletter-container .form-newsletter-wrapper {
+  max-width: unset;
+  padding: 0;
 }
 
-.form-newsletter .form-newsletter-heading {
-  font-size: 12px;
+.form-newsletter {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: var(--spacing-xl) var(--spacing-m);
+}
+
+.form-newsletter > div {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-l);
+}
+
+/* Left column - text content */
+.form-newsletter > div > div:first-child {
+  flex: 1;
+}
+
+/* Heading (e.g., "LEARN ABOUT AMERICA'S PUBLIC SAFETY NETWORK") */
+.form-newsletter > div > div:first-child h2,
+.form-newsletter > div > div:first-child p:first-child {
+  font-size: var(--body-font-size-s);
+  font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 1px;
-  margin-bottom: 8px;
+  color: var(--color-white);
+  margin: 0 0 var(--spacing-xs);
 }
 
-.form-newsletter .form-newsletter-subheading {
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 16px;
+/* Subheading (e.g., "Get connected") */
+.form-newsletter > div > div:first-child h3,
+.form-newsletter > div > div:first-child p:nth-child(2) {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 500;
+  color: var(--color-white);
+  margin: 0 0 var(--spacing-s);
 }
 
-.form-newsletter .form-newsletter-form {
-  margin-top: 24px;
+/* Privacy text */
+.form-newsletter > div > div:first-child p:last-child {
+  font-size: var(--body-font-size-xs);
+  color: rgb(255 255 255 / 70%);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
 }
 
-.form-newsletter .form-newsletter-form p {
-  margin: 8px 0;
+/* Right column - form */
+.form-newsletter > div > div:last-child {
+  flex: 1;
+}
+
+/* Form container */
+.form-newsletter form,
+.form-newsletter > div > div:last-child > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+}
+
+/* Form inputs */
+.form-newsletter input[type="text"],
+.form-newsletter input[type="email"],
+.form-newsletter select {
+  padding: 14px 16px;
+  border: 1px solid rgb(255 255 255 / 30%);
+  border-radius: 4px;
+  background-color: transparent;
+  color: var(--color-white);
+  font-size: var(--body-font-size-m);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-newsletter input::placeholder {
+  color: rgb(255 255 255 / 60%);
+}
+
+.form-newsletter select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23fff' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+.form-newsletter select option {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.form-newsletter input:focus,
+.form-newsletter select:focus {
+  border-color: var(--color-white);
+  outline: none;
+}
+
+/* Submit button */
+.form-newsletter button,
+.form-newsletter input[type="submit"] {
+  background-color: var(--color-blue-link);
+  border: none;
+  color: var(--color-white);
+  border-radius: var(--button-border-radius);
+  padding: 14px 40px;
+  font-size: var(--body-font-size-m);
+  font-weight: 500;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s ease;
+}
+
+.form-newsletter button:hover,
+.form-newsletter input[type="submit"]:hover {
+  background-color: var(--color-blue-primary);
+}
+
+/* Tablet and desktop: side by side layout */
+@media (width >= 900px) {
+  .form-newsletter {
+    padding: var(--spacing-xxl) var(--spacing-m);
+  }
+
+  .form-newsletter > div {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--spacing-xl);
+  }
+
+  .form-newsletter > div > div:first-child {
+    flex: 1;
+    max-width: 500px;
+  }
+
+  .form-newsletter > div > div:last-child {
+    flex: 1;
+    max-width: 400px;
+  }
+
+  .form-newsletter form,
+  .form-newsletter > div > div:last-child > div {
+    flex-flow: row wrap;
+    gap: var(--spacing-s);
+  }
+
+  .form-newsletter input[type="email"],
+  .form-newsletter select {
+    flex: 1 1 calc(50% - var(--spacing-s) / 2);
+  }
+
+  .form-newsletter button,
+  .form-newsletter input[type="submit"] {
+    width: auto;
+    flex: 0 0 auto;
+  }
 }

@@ -31,3 +31,85 @@
     order: unset;
   }
 }
+
+/* ==========================================
+   ICONS VARIANT - Feature columns with icons
+   Used in dark "Why FirstNet" section
+   ========================================== */
+
+.columns.icons > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-l);
+}
+
+.columns.icons > div > div {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-m);
+  align-items: flex-start;
+  text-align: left;
+}
+
+/* Icon container - first child div contains the icon */
+.columns.icons > div > div:first-child {
+  flex: 0 0 auto;
+}
+
+/* Icon sizing - img is inside a p inside the first div */
+.columns.icons > div > div:first-child img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+/* Content container - second child div contains text */
+.columns.icons > div > div:last-child {
+  flex: 1;
+}
+
+/* Feature title (h4) */
+.columns.icons > div > div > div:last-child h4 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-s);
+  font-weight: 500;
+  line-height: var(--line-height-tight);
+  margin: 0 0 var(--spacing-xs);
+}
+
+/* Feature description */
+.columns.icons > div > div > div:last-child p {
+  font-size: var(--body-font-size-m);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+}
+
+/* Desktop: 3 columns side by side */
+@media (width >= 900px) {
+  .columns.icons > div {
+    flex-direction: row;
+    justify-content: center;
+    gap: var(--spacing-xl);
+  }
+
+  .columns.icons > div > div {
+    flex: 1 1 33.333%;
+    max-width: 350px;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+
+  .columns.icons > div > div:first-child {
+    margin-bottom: var(--spacing-s);
+  }
+
+  .columns.icons > div > div:first-child img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .columns.icons > div > div > div:last-child h4 {
+    font-size: var(--heading-font-size-m);
+  }
+}
