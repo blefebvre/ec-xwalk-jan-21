@@ -1,50 +1,104 @@
+/*
+ * FirstNet News Cards Block
+ * News/story cards with category labels and horizontal layout
+ */
+
 .cards-news {
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+  flex-direction: column;
+  gap: var(--spacing-m);
 }
 
+/* Individual card */
 .cards-news > div {
   display: flex;
-  flex-direction: row;
-  gap: 16px;
-  background: var(--background-color);
-  border-radius: 8px;
+  flex-direction: column;
+  background: var(--color-white);
   overflow: hidden;
 }
 
+/* Image container */
 .cards-news > div > div:first-child {
   flex: 0 0 auto;
+  aspect-ratio: 16/10;
+  overflow: hidden;
 }
 
 .cards-news > div > div:first-child img {
-  width: 200px;
-  height: auto;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
+/* Content container */
 .cards-news > div > div:last-child {
   flex: 1;
-  padding: 16px;
+  padding: var(--spacing-m);
+  display: flex;
+  flex-direction: column;
 }
 
-.cards-news > div > div:last-child h3 {
-  margin: 8px 0;
-}
-
-.cards-news > div > div:last-child p {
-  margin: 8px 0;
-  font-size: 14px;
-}
-
+/* Category label (e.g., "PRODUCT LAUNCH", "LAW ENFORCEMENT") */
 .cards-news > div > div:last-child p:first-child {
+  font-size: var(--body-font-size-xs);
+  font-weight: 400;
   text-transform: uppercase;
-  font-size: 12px;
-  font-weight: bold;
-  color: var(--link-color);
+  letter-spacing: 0.5px;
+  color: var(--text-color);
+  margin: 0 0 var(--spacing-xs);
 }
 
+/* Article title */
+.cards-news > div > div:last-child h3,
+.cards-news > div > div:last-child p:nth-child(2) {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-s);
+  font-weight: 500;
+  line-height: var(--line-height-tight);
+  color: var(--text-color);
+  margin: 0 0 var(--spacing-xs);
+}
+
+/* Article excerpt/description */
+.cards-news > div > div:last-child p:nth-child(3) {
+  font-size: var(--body-font-size-s);
+  line-height: var(--line-height-relaxed);
+  color: var(--text-color);
+  margin: 0 0 var(--spacing-s);
+  flex-grow: 1;
+}
+
+/* Read more link */
 .cards-news > div > div:last-child a {
-  display: inline-block;
-  margin-top: 8px;
+  color: var(--link-color);
+  font-size: var(--body-font-size-s);
+  font-weight: 500;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cards-news > div > div:last-child a:hover {
+  text-decoration: underline;
+}
+
+/* Tablet: 2 columns */
+@media (width >= 600px) {
+  .cards-news {
+    flex-flow: row wrap;
+  }
+
+  .cards-news > div {
+    flex: 1 1 calc(50% - var(--spacing-m) / 2);
+    max-width: calc(50% - var(--spacing-m) / 2);
+  }
+}
+
+/* Desktop: 3 columns */
+@media (width >= 900px) {
+  .cards-news > div {
+    flex: 1 1 calc(33.333% - var(--spacing-m) * 2 / 3);
+    max-width: calc(33.333% - var(--spacing-m) * 2 / 3);
+  }
 }
