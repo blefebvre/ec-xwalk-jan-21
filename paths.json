@@ -1,10 +1,10 @@
 {
   "mappings": [
-    "/content/ec-xwalk-jan-21/:/",
-    "/content/ec-xwalk-jan-21/metadata:/metadata.json",
-    "/content/ec-xwalk-jan-21/configuration:/.helix/config.json"
+    "/content/blefebvr-firstnet/:/",
+    "/content/blefebvr-firstnet/metadata:/metadata.json",
+    "/content/blefebvr-firstnet/configuration:/.helix/config.json"
   ],
   "includes": [
-    "/content/ec-xwalk-jan-21/"
+    "/content/blefebvr-firstnet/"
   ]
 }
