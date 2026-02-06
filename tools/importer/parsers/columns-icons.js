@@ -62,7 +62,7 @@ export default function parse(element, { document }) {
   });
 
   const block = WebImporter.Blocks.createBlock(document, {
-    name: 'Columns (icons)',
+    name: 'Columns-icons',
     cells,
   });
 
