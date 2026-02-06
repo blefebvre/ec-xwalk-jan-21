@@ -1,6 +1,6 @@
 /*
  * FirstNet Newsletter Form Block
- * Dark background section with email subscription form
+ * Blue background section with email subscription form
  */
 
 .form-newsletter-container .form-newsletter-wrapper {
@@ -8,28 +8,30 @@
   padding: 0;
 }
 
+/* Main container - mobile first (stacked) */
 .form-newsletter {
-  background-color: var(--color-black);
+  background-color: #0057b8; /* AT&T Blue */
   color: var(--color-white);
   padding: var(--spacing-xl) var(--spacing-m);
-}
-
-.form-newsletter > div {
-  max-width: var(--max-width);
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: var(--spacing-l);
+  max-width: var(--max-width);
+  margin: 0 auto;
 }
 
 /* Left column - text content */
-.form-newsletter > div > div:first-child {
+.form-newsletter-left {
+  flex: 1;
+}
+
+/* Right column - form */
+.form-newsletter-right {
   flex: 1;
 }
 
 /* Heading (e.g., "LEARN ABOUT AMERICA'S PUBLIC SAFETY NETWORK") */
-.form-newsletter > div > div:first-child h2,
-.form-newsletter > div > div:first-child p:first-child {
+.form-newsletter-heading p {
   font-size: var(--body-font-size-s);
   font-weight: 400;
   text-transform: uppercase;
@@ -39,31 +41,27 @@
 }
 
 /* Subheading (e.g., "Get connected") */
-.form-newsletter > div > div:first-child h3,
-.form-newsletter > div > div:first-child p:nth-child(2) {
+.form-newsletter-subheading p {
   font-family: var(--heading-font-family);
-  font-size: var(--heading-font-size-l);
-  font-weight: 500;
+  font-size: var(--heading-font-size-xl);
+  font-weight: 300;
+  font-style: italic;
   color: var(--color-white);
   margin: 0 0 var(--spacing-s);
+  text-transform: none;
+  letter-spacing: normal;
 }
 
-/* Privacy text */
-.form-newsletter > div > div:first-child p:last-child {
+/* Privacy disclaimer */
+.form-newsletter-disclaimer {
   font-size: var(--body-font-size-xs);
   color: rgb(255 255 255 / 70%);
   line-height: var(--line-height-relaxed);
-  margin: 0;
-}
-
-/* Right column - form */
-.form-newsletter > div > div:last-child {
-  flex: 1;
+  margin: var(--spacing-s) 0 0;
 }
 
 /* Form container */
-.form-newsletter form,
-.form-newsletter > div > div:last-child > div {
+.form-newsletter form {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-s);
@@ -96,7 +94,7 @@
 }
 
 .form-newsletter select option {
-  background-color: var(--color-black);
+  background-color: #0057b8;
   color: var(--color-white);
 }
 
@@ -106,13 +104,13 @@
   outline: none;
 }
 
-/* Submit button */
+/* Submit button - blue with white text */
 .form-newsletter button,
 .form-newsletter input[type="submit"] {
-  background-color: var(--color-blue-link);
-  border: none;
+  background-color: #0057b8;
+  border: 2px solid var(--color-white);
   color: var(--color-white);
-  border-radius: var(--button-border-radius);
+  border-radius: 25px;
   padding: 14px 40px;
   font-size: var(--body-font-size-m);
   font-weight: 500;
@@ -123,33 +121,29 @@
 
 .form-newsletter button:hover,
 .form-newsletter input[type="submit"]:hover {
-  background-color: var(--color-blue-primary);
+  background-color: #004494;
 }
 
 /* Tablet and desktop: side by side layout */
 @media (width >= 900px) {
   .form-newsletter {
-    padding: var(--spacing-xxl) var(--spacing-m);
-  }
-
-  .form-newsletter > div {
     flex-direction: row;
     align-items: flex-start;
     gap: var(--spacing-xl);
+    padding: var(--spacing-xxl) var(--spacing-m);
   }
 
-  .form-newsletter > div > div:first-child {
+  .form-newsletter-left {
     flex: 1;
     max-width: 500px;
   }
 
-  .form-newsletter > div > div:last-child {
+  .form-newsletter-right {
     flex: 1;
     max-width: 400px;
   }
 
-  .form-newsletter form,
-  .form-newsletter > div > div:last-child > div {
+  .form-newsletter form {
     flex-flow: row wrap;
     gap: var(--spacing-s);
   }
