@@ -53,7 +53,7 @@
 
 /* Feature title (h4) */
 .columns-icons > div > div:last-child h4 {
-  font-family: var(--heading-font-family);
+  font-family: var(--body-font-family);
   font-size: var(--heading-font-size-s);
   font-weight: 500;
   line-height: var(--line-height-tight);
@@ -99,8 +99,10 @@
     height: 80px;
   }
 
-  /* Larger title on desktop */
+  /* Larger title on desktop - matches original 34px/700 weight */
   .columns-icons > div > div:last-child h4 {
-    font-size: var(--heading-font-size-m);
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.1;
   }
 }
