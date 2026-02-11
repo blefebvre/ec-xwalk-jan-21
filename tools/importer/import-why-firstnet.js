@@ -5,6 +5,7 @@
 import heroParser from './parsers/hero.js';
 import columnsIconsParser from './parsers/columns-icons.js';
 import cardsParser from './parsers/cards.js';
+import cardsInsightsParser from './parsers/cards-insights.js';
 import columnsParser from './parsers/columns.js';
 import accordionParser from './parsers/accordion.js';
 import formNewsletterParser from './parsers/form-newsletter.js';
@@ -18,6 +19,7 @@ const parsers = {
   'hero': heroParser,
   'columns-icons': columnsIconsParser,
   'cards': cardsParser,
+  'cards-insights': cardsInsightsParser,
   'columns': columnsParser,
   'accordion': accordionParser,
   'form-newsletter': formNewsletterParser,
@@ -47,7 +49,11 @@ const PAGE_TEMPLATE = {
     },
     {
       name: 'cards',
-      instances: ['.new-offers-card', '.content-teaser .list-wrapper']
+      instances: ['.new-offers-card']
+    },
+    {
+      name: 'cards-insights',
+      instances: ['.content-teaser .list-wrapper']
     },
     {
       name: 'columns',
@@ -108,7 +114,7 @@ const PAGE_TEMPLATE = {
       name: 'First Responder Insights',
       selector: '#insights',
       style: null,
-      blocks: ['cards'],
+      blocks: ['cards-insights'],
       defaultContent: ['.segment-heading h2', '.segment-heading h3']
     },
     {
@@ -200,6 +206,20 @@ export default {
 
     const main = document.body;
 
+    // Fetch raw HTML source for parsers that need pre-JS-execution data (e.g., lazy-loaded bg images)
+    // payload.html is the rendered DOM (post-JS), where lazy loaders have stripped image URLs
+    let rawHtml = null;
+    try {
+      const xhr = new XMLHttpRequest();
+      xhr.open('GET', params.originalURL || url, false); // synchronous
+      xhr.send();
+      if (xhr.status === 200) {
+        rawHtml = xhr.responseText;
+      }
+    } catch (e) {
+      console.warn('Failed to fetch raw HTML:', e.message);
+    }
+
     // 1. Execute beforeTransform transformers (initial cleanup)
     executeTransformers('beforeTransform', main, payload);
 
@@ -211,7 +231,7 @@ export default {
       const parser = parsers[block.name];
       if (parser) {
         try {
-          parser(block.element, { document, url, params });
+          parser(block.element, { document, url, params, html: rawHtml || html });
         } catch (e) {
           console.error(`Failed to parse ${block.name} (${block.selector}):`, e);
         }

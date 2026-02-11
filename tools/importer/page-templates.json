@@ -75,7 +75,12 @@
         {
           "name": "cards",
           "instances": [
-            ".new-offers-card",
+            ".new-offers-card"
+          ]
+        },
+        {
+          "name": "cards-insights",
+          "instances": [
             ".content-teaser .list-wrapper"
           ]
         },

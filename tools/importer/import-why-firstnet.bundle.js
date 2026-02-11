@@ -241,8 +241,89 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
+  // tools/importer/parsers/cards-insights.js
+  function extractBgUrlsFromRawHtml(html) {
+    if (!html) return [];
+    const urls = [];
+    const pattern = /lzy-background image-wrapper"[^>]*style="[^"]*background-image:\s*url\(([^)]+)\)/g;
+    let match;
+    while ((match = pattern.exec(html)) !== null) {
+      const url = match[1].replace(/['"]/g, "").trim();
+      if (url && !url.startsWith("data:")) {
+        urls.push(url);
+      }
+    }
+    return urls;
+  }
+  function parse4(element, { document, html }) {
+    const cells = [];
+    const bgUrls = extractBgUrlsFromRawHtml(html);
+    const teaserItems = element.querySelectorAll(".swiper-wrapper .item");
+    teaserItems.forEach((item, index) => {
+      const row = [];
+      const imageCell = document.createElement("div");
+      let imgUrl = null;
+      if (index < bgUrls.length) {
+        imgUrl = bgUrls[index];
+      }
+      if (!imgUrl) {
+        const bgEl = item.querySelector('.lzy-background, .image-wrapper, [style*="background-image"]');
+        if (bgEl) {
+          const styleAttr = bgEl.getAttribute("style") || "";
+          const bgMatch = styleAttr.match(/url\(['"]?([^'")\s]+)['"]?\)/);
+          if (bgMatch && !bgMatch[1].startsWith("data:")) {
+            imgUrl = bgMatch[1];
+          }
+          if (!imgUrl && bgEl.style && bgEl.style.backgroundImage) {
+            const computedMatch = bgEl.style.backgroundImage.match(/url\(['"]?([^'")\s]+)['"]?\)/);
+            if (computedMatch && !computedMatch[1].startsWith("data:")) {
+              imgUrl = computedMatch[1];
+            }
+          }
+        }
+      }
+      if (imgUrl) {
+        const img = document.createElement("img");
+        img.src = imgUrl;
+        img.alt = "";
+        imageCell.appendChild(img);
+      }
+      row.push(imageCell);
+      const textCell = document.createElement("div");
+      const title = item.querySelector(".item-title");
+      if (title) {
+        const h3 = document.createElement("h3");
+        h3.textContent = title.textContent.trim();
+        textCell.appendChild(h3);
+      }
+      const desc = item.querySelector(".item-description");
+      if (desc) {
+        const p = document.createElement("p");
+        p.textContent = desc.textContent.trim();
+        textCell.appendChild(p);
+      }
+      const link = item.querySelector("a.att-track") || item.closest("a");
+      if (link && link.href) {
+        const ctaP = document.createElement("p");
+        const anchor = document.createElement("a");
+        anchor.href = link.href;
+        const ctaText = item.querySelector(".cta-btn .att-button");
+        anchor.textContent = ctaText ? ctaText.textContent.trim() : "Read more";
+        ctaP.appendChild(anchor);
+        textCell.appendChild(ctaP);
+      }
+      row.push(textCell);
+      cells.push(row);
+    });
+    const block = WebImporter.Blocks.createBlock(document, {
+      name: "Cards-Insights",
+      cells
+    });
+    element.replaceWith(block);
+  }
+
   // tools/importer/parsers/columns.js
-  function parse4(element, { document }) {
+  function parse5(element, { document }) {
     const cells = [];
     const imageTextContainer = element.querySelector(".image-text-container");
     if (imageTextContainer) {
@@ -342,7 +423,7 @@ var CustomImportScript = (() => {
   }
 
   // tools/importer/parsers/accordion.js
-  function parse5(element, { document }) {
+  function parse6(element, { document }) {
     const cells = [];
     let faqItems = element.querySelectorAll('[itemprop="mainEntity"]');
     if (faqItems.length === 0) {
@@ -407,7 +488,7 @@ var CustomImportScript = (() => {
   }
 
   // tools/importer/parsers/form-newsletter.js
-  function parse6(element, { document }) {
+  function parse7(element, { document }) {
     const cells = [];
     const headingCell = document.createElement("div");
     headingCell.appendChild(document.createComment("field:heading"));
@@ -766,9 +847,10 @@ var CustomImportScript = (() => {
     "hero": parse,
     "columns-icons": parse2,
     "cards": parse3,
-    "columns": parse4,
-    "accordion": parse5,
-    "form-newsletter": parse6
+    "cards-insights": parse4,
+    "columns": parse5,
+    "accordion": parse6,
+    "form-newsletter": parse7
   };
   var transformers = [
     transform,
@@ -791,7 +873,11 @@ var CustomImportScript = (() => {
       },
       {
         name: "cards",
-        instances: [".new-offers-card", ".content-teaser .list-wrapper"]
+        instances: [".new-offers-card"]
+      },
+      {
+        name: "cards-insights",
+        instances: [".content-teaser .list-wrapper"]
       },
       {
         name: "columns",
@@ -852,7 +938,7 @@ var CustomImportScript = (() => {
         name: "First Responder Insights",
         selector: "#insights",
         style: null,
-        blocks: ["cards"],
+        blocks: ["cards-insights"],
         defaultContent: [".segment-heading h2", ".segment-heading h3"]
       },
       {
@@ -921,13 +1007,24 @@ var CustomImportScript = (() => {
     transform: (payload) => {
       const { document, url, html, params } = payload;
       const main = document.body;
+      let rawHtml = null;
+      try {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", params.originalURL || url, false);
+        xhr.send();
+        if (xhr.status === 200) {
+          rawHtml = xhr.responseText;
+        }
+      } catch (e) {
+        console.warn("Failed to fetch raw HTML:", e.message);
+      }
       executeTransformers("beforeTransform", main, payload);
       const pageBlocks = findBlocksOnPage(document, PAGE_TEMPLATE);
       pageBlocks.forEach((block) => {
         const parser = parsers[block.name];
         if (parser) {
           try {
-            parser(block.element, { document, url, params });
+            parser(block.element, { document, url, params, html: rawHtml || html });
           } catch (e) {
             console.error(`Failed to parse ${block.name} (${block.selector}):`, e);
           }
