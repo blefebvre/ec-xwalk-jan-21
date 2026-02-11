@@ -1,0 +1,18 @@
+{
+  "status": "success",
+  "url": "https://www.firstnet.com/why-firstnet.html",
+  "path": "why-firstnet",
+  "timestamp": "2026-02-11T16:10:15.754Z",
+  "title": "Why Choose FirstNet for First Responder Communication Systems",
+  "template": "why-firstnet",
+  "blocks": [
+    "hero",
+    "columns-icons",
+    "cards",
+    "cards",
+    "columns",
+    "columns",
+    "accordion",
+    "form-newsletter"
+  ]
+}

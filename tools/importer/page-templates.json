@@ -52,6 +52,165 @@
       ],
       "description": "FirstNet rate plans page with pricing and plan details",
       "blocks": []
+    },
+    {
+      "name": "why-firstnet",
+      "urls": [
+        "https://www.firstnet.com/why-firstnet.html"
+      ],
+      "description": "Why FirstNet informational page explaining the benefits and features of FirstNet",
+      "blocks": [
+        {
+          "name": "hero",
+          "instances": [
+            ".marquee-heading"
+          ]
+        },
+        {
+          "name": "columns-icons",
+          "instances": [
+            ".icon-grid-description"
+          ]
+        },
+        {
+          "name": "cards",
+          "instances": [
+            ".new-offers-card",
+            ".content-teaser .list-wrapper"
+          ]
+        },
+        {
+          "name": "columns",
+          "instances": [
+            ".image-text",
+            ".icon-list"
+          ]
+        },
+        {
+          "name": "accordion",
+          "instances": [
+            ".accordion"
+          ]
+        },
+        {
+          "name": "form-newsletter",
+          "instances": [
+            ".email-signup"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero",
+          "selector": ".marquee-heading",
+          "style": null,
+          "blocks": [
+            "hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "Benefits",
+          "selector": "#benefits",
+          "style": null,
+          "blocks": [
+            "columns-icons"
+          ],
+          "defaultContent": [
+            ".segment-heading h2",
+            ".segment-heading h3"
+          ]
+        },
+        {
+          "id": "section-4",
+          "name": "Competitive Comparison",
+          "selector": "#compare",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".segment-heading h2",
+            ".segment-heading h3",
+            ".image-heading img"
+          ]
+        },
+        {
+          "id": "section-5",
+          "name": "Eligibility",
+          "selector": "#eligibility",
+          "style": null,
+          "blocks": [
+            "cards"
+          ],
+          "defaultContent": [
+            ".segment-heading h2",
+            ".segment-heading h3"
+          ]
+        },
+        {
+          "id": "section-6",
+          "name": "FirstNet Promise",
+          "selector": "#firstnet-promise",
+          "style": null,
+          "blocks": [
+            "columns"
+          ],
+          "defaultContent": [
+            ".segment-heading h2",
+            ".segment-heading h3"
+          ]
+        },
+        {
+          "id": "section-7",
+          "name": "First Responder Insights",
+          "selector": "#insights",
+          "style": null,
+          "blocks": [
+            "cards"
+          ],
+          "defaultContent": [
+            ".segment-heading h2",
+            ".segment-heading h3"
+          ]
+        },
+        {
+          "id": "section-8",
+          "name": "FAQ",
+          "selector": "#faq",
+          "style": null,
+          "blocks": [
+            "accordion"
+          ],
+          "defaultContent": [
+            ".segment-heading h2",
+            ".segment-heading h3"
+          ]
+        },
+        {
+          "id": "section-9",
+          "name": "Get Started",
+          "selector": "#get-started",
+          "style": "grey",
+          "blocks": [
+            "columns"
+          ],
+          "defaultContent": [
+            ".segment-heading h2",
+            ".segment-heading h3"
+          ]
+        },
+        {
+          "id": "section-10",
+          "name": "Email Signup",
+          "selector": ".email-signup",
+          "style": "dark",
+          "blocks": [
+            "form-newsletter"
+          ],
+          "defaultContent": []
+        }
+      ]
     }
   ]
 }

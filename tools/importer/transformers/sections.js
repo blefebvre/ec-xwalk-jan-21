@@ -1,101 +1,134 @@
 /**
  * Section Transformer
- * Creates EDS sections with section metadata for styled areas
+ * Creates EDS sections with section metadata for styled areas.
  *
  * Sections in EDS are created using horizontal rules (<hr>) as dividers.
- * Section Metadata blocks are added to apply styles (e.g., "dark" background).
+ * Section Metadata blocks are added to apply styles (e.g., "dark", "grey").
  *
- * Dark section includes:
- * - H2: "Why FirstNet for 5G public safety"
- * - H3: "Built from the ground up..."
- * - Columns (icons) block
- * - "Learn more" link
- * - Legal text about 5G
+ * This transformer reads section definitions from payload.template.sections
+ * and inserts section breaks and metadata blocks between content sections.
  *
- * Contact section (gray style) includes:
- * - H3: "Connect with a FirstNet specialist"
- * - "Contact us" link
+ * IMPORTANT: During afterTransform, parsed blocks are TABLE elements (from createBlock),
+ * not DIVs with class names. Block names are in the TH header text of each table.
  */
+
+/* global WebImporter */
 
 export default function transform(hookName, element, payload) {
   if (hookName !== 'afterTransform') return;
 
-  const { document } = payload;
+  const { document, template } = payload;
+  if (!template || !template.sections || template.sections.length < 2) return;
 
-  // === DARK SECTION ===
-  // Find the specific H2 that starts the dark section
-  const whyFirstNetH2 = Array.from(element.querySelectorAll('h2')).find(
-    (h2) => h2.textContent.trim() === 'Why FirstNet for 5G public safety'
-  );
+  const sections = template.sections;
+  const claimed = new Set();
 
-  // Find the H3 that marks the end of the dark section
-  const latestNewsH3 = Array.from(element.querySelectorAll('h3')).find(
-    (h3) => h3.textContent.includes('Latest news from public safety')
-  );
+  /**
+   * Find a parsed block TABLE by its block name (text in TH header).
+   * During afterTransform, createBlock produces TABLE elements with TH headers.
+   */
+  function findBlockTable(blockName, searchRoot) {
+    const tables = searchRoot.querySelectorAll('table');
+    for (const table of tables) {
+      if (claimed.has(table)) continue;
+      const th = table.querySelector('th');
+      if (th) {
+        // Block names in TH: "Hero", "Cards", "Columns", "Accordion", etc.
+        const thText = th.textContent.trim().toLowerCase().replace(/\s+/g, '-');
+        if (thText === blockName.toLowerCase()) {
+          return table;
+        }
+      }
+    }
+    return null;
+  }
 
-  if (whyFirstNetH2 && latestNewsH3) {
-    // Create Section Metadata block for dark style
-    const darkSectionMetadata = WebImporter.Blocks.createBlock(document, {
+  // Find the first block table to determine the correct content level
+  const firstTable = element.querySelector('table');
+  if (!firstTable) return;
+
+  // The content container is the parent that directly contains block tables and headings
+  const contentContainer = firstTable.parentElement;
+  if (!contentContainer) return;
+
+  const sectionAnchors = [];
+
+  for (const section of sections) {
+    let anchor = null;
+
+    // Try blocks first - find TABLE elements with matching TH headers
+    if (section.blocks && section.blocks.length > 0) {
+      for (const blockName of section.blocks) {
+        const table = findBlockTable(blockName, contentContainer);
+        if (table) {
+          anchor = table;
+          claimed.add(table);
+          break;
+        }
+      }
+    }
+
+    // If no block found, try to find by heading content
+    if (!anchor && section.defaultContent && section.defaultContent.length > 0) {
+      const headings = contentContainer.querySelectorAll('h2');
+      for (const h of headings) {
+        if (!claimed.has(h)) {
+          anchor = h;
+          claimed.add(h);
+          break;
+        }
+      }
+    }
+
+    sectionAnchors.push({ section, anchor });
+  }
+
+  // Insert section breaks and metadata
+  for (let i = 1; i < sectionAnchors.length; i++) {
+    const { anchor } = sectionAnchors[i];
+    if (!anchor) continue;
+
+    // Walk up anchor to be a direct child of contentContainer
+    let target = anchor;
+    while (target.parentElement && target.parentElement !== contentContainer) {
+      target = target.parentElement;
+    }
+    // Safety check: target must actually be a child of contentContainer
+    if (target.parentElement !== contentContainer) continue;
+
+    // If previous section had a style, add Section Metadata before the break
+    const prevSection = sectionAnchors[i - 1].section;
+    if (prevSection.style) {
+      const sectionMetadata = WebImporter.Blocks.createBlock(document, {
+        name: 'Section Metadata',
+        cells: [
+          [createTextDiv(document, 'style'), createTextDiv(document, prevSection.style)],
+        ],
+      });
+      contentContainer.insertBefore(sectionMetadata, target);
+    }
+
+    // Insert section break <hr>
+    const hr = document.createElement('hr');
+    contentContainer.insertBefore(hr, target);
+  }
+
+  // Handle the last section's style
+  const lastSection = sectionAnchors[sectionAnchors.length - 1];
+  if (lastSection && lastSection.section.style) {
+    const sectionMetadata = WebImporter.Blocks.createBlock(document, {
       name: 'Section Metadata',
       cells: [
-        [createTextDiv(document, 'Style'), createTextDiv(document, 'dark')]
-      ]
+        [createTextDiv(document, 'style'), createTextDiv(document, lastSection.section.style)],
+      ],
     });
-
-    // Insert HR before the H2 (creates section break before dark section)
-    const hrBeforeDark = document.createElement('hr');
-    whyFirstNetH2.parentElement.insertBefore(hrBeforeDark, whyFirstNetH2);
-
-    // Insert Section Metadata and HR before the "Latest news" H3
-    const hrAfterDark = document.createElement('hr');
-    latestNewsH3.parentElement.insertBefore(darkSectionMetadata, latestNewsH3);
-    latestNewsH3.parentElement.insertBefore(hrAfterDark, latestNewsH3);
-  }
-
-  // === CONTACT SECTION ===
-  // Find the "Connect with a FirstNet specialist" H3 element
-  let connectElement = null;
-  const allH3s = element.querySelectorAll('h3');
-  for (const h3 of allH3s) {
-    if (h3.textContent.includes('Connect with a FirstNet specialist')) {
-      connectElement = h3;
-      break;
+    // Insert before the page Metadata table
+    const metadataTable = findBlockTable('metadata', contentContainer);
+    if (metadataTable) {
+      contentContainer.insertBefore(sectionMetadata, metadataTable);
+    } else {
+      contentContainer.appendChild(sectionMetadata);
     }
-  }
-
-  // Find the form-newsletter block (table after parsing)
-  // Block name "Form Newsletter" becomes table header text
-  let formNewsletter = null;
-  const allTables = element.querySelectorAll('table');
-  for (const table of allTables) {
-    const header = table.querySelector('th');
-    if (header && header.textContent.includes('Form Newsletter')) {
-      formNewsletter = table;
-      break;
-    }
-  }
-  if (!formNewsletter) {
-    // Fallback: check by class
-    formNewsletter = element.querySelector('.form-newsletter, table.form-newsletter');
-  }
-
-  if (connectElement && formNewsletter) {
-    // Create Section Metadata block for gray style
-    const graySectionMetadata = WebImporter.Blocks.createBlock(document, {
-      name: 'Section Metadata',
-      cells: [
-        [createTextDiv(document, 'Style'), createTextDiv(document, 'gray')]
-      ]
-    });
-
-    // Insert HR before the connect element (start of gray section)
-    const hrBeforeContact = document.createElement('hr');
-    connectElement.parentElement.insertBefore(hrBeforeContact, connectElement);
-
-    // Insert Section Metadata and HR before the form-newsletter block (end of gray section)
-    const hrAfterContact = document.createElement('hr');
-    formNewsletter.parentElement.insertBefore(graySectionMetadata, formNewsletter);
-    formNewsletter.parentElement.insertBefore(hrAfterContact, formNewsletter);
   }
 }
 

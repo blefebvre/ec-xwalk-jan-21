@@ -8,48 +8,32 @@ export default function transform(hookName, element) {
     // Basic cleanup - remove scripts, styles, iframes
     element.querySelectorAll('script, style, noscript, iframe').forEach((el) => el.remove());
     element.querySelectorAll('[hidden]').forEach((el) => el.remove());
+
+    // HEADER/NAV REMOVAL: Find hero source element and remove everything before it
+    // Must run in beforeTransform since afterTransform only has TABLE elements (from createBlock)
+    const heroSource = element.querySelector('.marquee-heading');
+    if (heroSource) {
+      // Walk up the entire ancestor chain from hero to body,
+      // at each level removing all previous siblings (nav, empty divs, breadcrumbs)
+      let current = heroSource;
+      while (current && current !== element) {
+        let sibling = current.previousElementSibling;
+        while (sibling) {
+          const toRemove = sibling;
+          sibling = sibling.previousElementSibling;
+          toRemove.remove();
+        }
+        current = current.parentElement;
+      }
+    }
   }
 
   if (hookName === 'afterTransform') {
-    // HEADER REMOVAL: Find hero block by unique text content and remove everything before it
-    let heroBlock = null;
-    element.querySelectorAll('div').forEach((div) => {
-      if (div.textContent.includes('MISSION-CRITICAL COMMUNICATIONS') ||
-          div.textContent.includes("America's first responder network")) {
-        // Find the outermost container that has this text
-        if (!heroBlock || div.contains(heroBlock)) {
-          heroBlock = div;
-        }
-      }
-    });
-
-    // Also check for parsed .hero block
-    if (!heroBlock) {
-      heroBlock = element.querySelector('.hero');
-    }
-
-    if (heroBlock) {
-      // Walk up to find the direct child of element
-      let contentStart = heroBlock;
-      while (contentStart.parentElement && contentStart.parentElement !== element) {
-        contentStart = contentStart.parentElement;
-      }
-
-      // Remove all elements before contentStart
-      const allChildren = Array.from(element.children);
-      let foundContent = false;
-      allChildren.forEach((child) => {
-        if (child === contentStart || child.contains(heroBlock)) {
-          foundContent = true;
-        }
-        if (!foundContent && !child.classList.contains('metadata') && !child.classList.contains('hero')) {
-          child.remove();
-        }
-      });
-    }
 
     // Remove navigation paragraphs by content patterns
+    // Skip paragraphs inside TABLE elements (parsed blocks from createBlock)
     element.querySelectorAll('p').forEach((p) => {
+      if (p.closest('table')) return;
       const text = p.textContent.toLowerCase().trim();
       // Menu and search patterns
       if (text === 'menu' || text.includes('search form') || text.includes('search search')) {

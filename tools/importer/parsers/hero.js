@@ -48,8 +48,8 @@ export default function parse(element, { document }) {
     contentCell.appendChild(eyebrowEl);
   }
 
-  // Main heading
-  const heading = element.querySelector('h2');
+  // Main heading (try h1 first, then h2)
+  const heading = element.querySelector('h1') || element.querySelector('h2');
   if (heading) {
     const headingEl = document.createElement('h1');
     headingEl.textContent = heading.textContent.trim();
