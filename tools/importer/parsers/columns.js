@@ -19,7 +19,10 @@ export default function parse(element, { document }) {
   const cells = [];
 
   // Pattern 1: Image-text component (.image-text)
-  const imageTextContainer = element.querySelector('.image-text-container');
+  // Handle both cases: element IS the container, or element contains it
+  const imageTextContainer = element.classList.contains('image-text-container')
+    ? element
+    : element.querySelector('.image-text-container');
   if (imageTextContainer) {
     const row = [];
 
@@ -28,7 +31,8 @@ export default function parse(element, { document }) {
     const imgEl = imageTextContainer.querySelector('.col-image img');
     if (imgEl) {
       const newImg = document.createElement('img');
-      newImg.src = imgEl.src;
+      // Handle lazy-loaded images (data-src) and regular src
+      newImg.src = imgEl.getAttribute('data-src') || imgEl.src;
       newImg.alt = imgEl.alt || '';
       imageCell.appendChild(newImg);
     }
@@ -60,7 +64,7 @@ export default function parse(element, { document }) {
     }
 
     // CTA buttons/links
-    const links = imageTextContainer.querySelectorAll('.col-text > div > a');
+    const links = imageTextContainer.querySelectorAll('.col-text > div > a, .col-text a.youtube-player-link');
     links.forEach((link) => {
       const text = link.textContent.trim();
       if (text && link.href) {

@@ -216,6 +216,73 @@
           "defaultContent": []
         }
       ]
+    },
+    {
+      "name": "power-of-firstnet",
+      "urls": [
+        "https://www.firstnet.com/power-of-firstnet.html"
+      ],
+      "description": "Power of FirstNet page showcasing network capabilities, features, and value propositions",
+      "blocks": [
+        {
+          "name": "hero",
+          "instances": [".marquee-heading"]
+        },
+        {
+          "name": "columns",
+          "instances": [".image-text .image-text-container"]
+        },
+        {
+          "name": "cards-insights",
+          "instances": [".content-teaser .list-wrapper"]
+        },
+        {
+          "name": "form-newsletter",
+          "instances": [".email-signup"]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero",
+          "selector": ".marquee-heading",
+          "style": null,
+          "blocks": ["hero"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Introduction",
+          "selector": [".segment-heading:has(h3.no-title)", ".segment-heading h3.no-title"],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [".segment-heading h3", ".text .wrapper p", ".call-to-action .cta-btn a"]
+        },
+        {
+          "id": "section-3",
+          "name": "Video Feature",
+          "selector": "#agencies-choose-firstnet",
+          "style": null,
+          "blocks": ["columns"],
+          "defaultContent": [".segment-heading h3"]
+        },
+        {
+          "id": "section-4",
+          "name": "Content Teasers",
+          "selector": ".content-teaser",
+          "style": null,
+          "blocks": ["cards-insights"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5",
+          "name": "Email Signup",
+          "selector": ".email-signup",
+          "style": "dark",
+          "blocks": ["form-newsletter"],
+          "defaultContent": []
+        }
+      ]
     }
   ]
 }

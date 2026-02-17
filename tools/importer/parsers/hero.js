@@ -30,6 +30,16 @@ export default function parse(element, { document }) {
       imageCell.appendChild(img);
     }
   }
+  // Fallback: direct <img> inside marquee-item (e.g., power-of-firstnet)
+  if (!imageCell.querySelector('img')) {
+    const directImg = element.querySelector('.marquee-item > img, .marquee-item img:first-child');
+    if (directImg) {
+      const img = document.createElement('img');
+      img.src = directImg.src;
+      img.alt = directImg.alt || 'Hero background';
+      imageCell.appendChild(img);
+    }
+  }
   imageRow.push(imageCell);
   cells.push(imageRow);
 

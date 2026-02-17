@@ -46,7 +46,8 @@ export default function parse(element, { document, html }) {
   // Pre-extract all background image URLs from raw HTML (before lazy loader modifies DOM)
   const bgUrls = extractBgUrlsFromRawHtml(html);
 
-  const teaserItems = element.querySelectorAll('.swiper-wrapper .item');
+  // Support both swiper-wrapper (why-firstnet) and items-wrapper (power-of-firstnet)
+  const teaserItems = element.querySelectorAll('.swiper-wrapper .item, .items-wrapper .item');
   teaserItems.forEach((item, index) => {
     const row = [];
 
@@ -54,12 +55,18 @@ export default function parse(element, { document, html }) {
     const imageCell = document.createElement('div');
     let imgUrl = null;
 
-    // Primary: use URL from raw HTML (reliable, not affected by lazy loader)
-    if (index < bgUrls.length) {
+    // Try direct <img> in image-wrapper first (power-of-firstnet pattern)
+    const directImg = item.querySelector('.image-wrapper img');
+    if (directImg && directImg.src && !directImg.src.startsWith('data:')) {
+      imgUrl = directImg.src;
+    }
+
+    // Fallback: use URL from raw HTML for lazy-loaded background-images (why-firstnet pattern)
+    if (!imgUrl && index < bgUrls.length) {
       imgUrl = bgUrls[index];
     }
 
-    // Fallback: try DOM-based extraction
+    // Fallback: try DOM-based background-image extraction
     if (!imgUrl) {
       const bgEl = item.querySelector('.lzy-background, .image-wrapper, [style*="background-image"]');
       if (bgEl) {
@@ -104,13 +111,15 @@ export default function parse(element, { document, html }) {
       textCell.appendChild(p);
     }
 
-    // CTA link (from parent anchor wrapping the entire card)
+    // CTA link - try multiple patterns
     const link = item.querySelector('a.att-track') || item.closest('a');
     if (link && link.href) {
       const ctaP = document.createElement('p');
       const anchor = document.createElement('a');
       anchor.href = link.href;
-      const ctaText = item.querySelector('.cta-btn .att-button');
+      // Try various CTA text sources
+      const ctaText = item.querySelector('.cta-btn .att-button')
+        || item.querySelector('.cta-link span');
       anchor.textContent = ctaText ? ctaText.textContent.trim() : 'Read more';
       ctaP.appendChild(anchor);
       textCell.appendChild(ctaP);
