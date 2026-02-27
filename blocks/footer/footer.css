@@ -1,20 +1,136 @@
+/* FirstNet Footer - Dark theme matching original site */
 footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
+  background-color: #000;
+  color: #fff;
+  font-family: var(--body-font-family);
+}
+
+footer .footer {
+  visibility: hidden;
+}
+
+footer .footer[data-block-status="loaded"] {
+  visibility: visible;
 }
 
 footer .footer > div {
   margin: auto;
   max-width: 1200px;
-  padding: 40px 24px 24px;
+  padding: 0 24px;
 }
 
-footer .footer p {
+/* Logo section */
+footer .footer .footer-logo {
+  padding: 30px 0 20px;
+  border-bottom: 1px solid #333;
+}
+
+footer .footer .footer-logo p {
   margin: 0;
+}
+
+footer .footer .footer-logo a {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+/* Nav columns section */
+footer .footer .footer-nav {
+  padding: 24px 0 40px;
+}
+
+footer .footer .footer-nav-columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (width >= 600px) {
+  footer .footer .footer-nav-columns {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 38px;
+  }
+}
+
+footer .footer .footer-nav-col h2 {
+  color: #fff;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  margin: 0 0 10px;
+  line-height: 1.4;
+}
+
+footer .footer .footer-nav-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer .footer .footer-nav-col li {
+  margin: 15px 0 0;
+  padding: 0;
+}
+
+footer .footer .footer-nav-col li:first-child {
+  margin-top: 0;
+}
+
+footer .footer .footer-nav-col a {
+  color: #fff;
+  font-size: 14px;
+  line-height: 20px;
+  text-decoration: none;
+}
+
+footer .footer .footer-nav-col a:hover {
+  text-decoration: underline;
+}
+
+/* Legal section */
+footer .footer .footer-legal {
+  padding: 20px 0 30px;
+  border-top: 1px solid #333;
+}
+
+footer .footer .footer-legal .default-content-wrapper {
+  margin: 0;
+  padding: 0;
+}
+
+footer .footer .footer-legal p {
+  margin: 0 0 10px;
+  color: #fff;
+}
+
+footer .footer .footer-legal p:first-child {
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+footer .footer .footer-legal p:first-child a {
+  color: #fff;
+  font-size: 11px;
+  text-decoration: none;
+}
+
+footer .footer .footer-legal p:first-child a:hover {
+  text-decoration: underline;
+}
+
+footer .footer .footer-legal p:last-child {
+  font-size: 10px;
+  line-height: 12px;
+  color: #fff;
+  margin-top: 10px;
 }
 
 @media (width >= 900px) {
   footer .footer > div {
-    padding: 40px 32px 24px;
+    padding: 0 32px;
   }
 }

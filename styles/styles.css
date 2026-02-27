@@ -95,13 +95,11 @@ header {
   height: var(--header-height);
 }
 
-header .header,
-footer .footer {
+header .header {
   visibility: hidden;
 }
 
-header .header[data-block-status="loaded"],
-footer .footer[data-block-status="loaded"] {
+header .header[data-block-status="loaded"] {
   visibility: visible;
 }
 
