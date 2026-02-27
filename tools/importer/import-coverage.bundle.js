@@ -1,8 +1,25 @@
 var CustomImportScript = (() => {
   var __defProp = Object.defineProperty;
+  var __defProps = Object.defineProperties;
   var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
   var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __getOwnPropSymbols = Object.getOwnPropertySymbols;
   var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __propIsEnum = Object.prototype.propertyIsEnumerable;
+  var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+  var __spreadValues = (a, b) => {
+    for (var prop in b || (b = {}))
+      if (__hasOwnProp.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    if (__getOwnPropSymbols)
+      for (var prop of __getOwnPropSymbols(b)) {
+        if (__propIsEnum.call(b, prop))
+          __defNormalProp(a, prop, b[prop]);
+      }
+    return a;
+  };
+  var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   var __export = (target, all) => {
     for (var name in all)
       __defProp(target, name, { get: all[name], enumerable: true });
@@ -17,35 +34,14 @@ var CustomImportScript = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // tools/importer/import-homepage.js
-  var import_homepage_exports = {};
-  __export(import_homepage_exports, {
-    default: () => import_homepage_default
+  // ../../../../../../../../../../../workspace/tools/importer/import-coverage.js
+  var import_coverage_exports = {};
+  __export(import_coverage_exports, {
+    default: () => import_coverage_default
   });
 
-  // tools/importer/parsers/headband.js
+  // ../../../../../../../../../../../workspace/tools/importer/parsers/hero.js
   function parse(element, { document }) {
-    const cells = [];
-    const links = element.querySelectorAll("a");
-    links.forEach((link) => {
-      const row = [];
-      const cell = document.createElement("div");
-      const anchor = document.createElement("a");
-      anchor.href = link.href;
-      anchor.textContent = link.textContent.trim();
-      cell.appendChild(anchor);
-      row.push(cell);
-      cells.push(row);
-    });
-    const block = WebImporter.Blocks.createBlock(document, {
-      name: "headband",
-      cells
-    });
-    element.replaceWith(block);
-  }
-
-  // tools/importer/parsers/hero.js
-  function parse2(element, { document }) {
     const cells = [];
     const imageRow = [];
     const imageCell = document.createElement("div");
@@ -113,92 +109,69 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
-  // tools/importer/parsers/cards-offer.js
-  function parse3(element, { document }) {
-    const text = element.textContent.toLowerCase();
-    const isOfferContent = text.includes("shop now") || text.includes("$") || text.includes("get iphone") || text.includes("break your contract") || text.includes("save 25%") || text.includes("families save");
-    if (!isOfferContent) {
-      return;
-    }
+  // ../../../../../../../../../../../workspace/tools/importer/parsers/embed.js
+  function parse2(element, { document, html }) {
     const cells = [];
-    let cards = element.querySelectorAll(".card-tile");
-    if (cards.length === 0) {
-      cards = element.querySelectorAll('[class*="offer"]');
+    let iframeSrc = null;
+    const iframe = element.querySelector("iframe");
+    if (iframe && iframe.src) {
+      iframeSrc = iframe.src;
     }
-    if (cards.length === 0) {
-      cards = element.querySelectorAll('[class*="card"]');
-    }
-    if (cards.length === 0) {
-      cards = element.querySelectorAll(":scope > div");
-    }
-    cards.forEach((card, index) => {
-      const row = [];
-      const imageCell = document.createElement("div");
-      imageCell.appendChild(document.createComment("field:image"));
-      const img = card.querySelector("img");
-      if (img) {
-        const newImg = document.createElement("img");
-        newImg.src = img.src;
-        newImg.alt = img.alt || "offer image";
-        imageCell.appendChild(newImg);
-      }
-      row.push(imageCell);
-      const contentCell = document.createElement("div");
-      contentCell.appendChild(document.createComment("field:text"));
-      let eyebrow = card.querySelector(".eyebrow");
-      if (!eyebrow) eyebrow = card.querySelector('[class*="eyebrow"]');
-      if (!eyebrow) eyebrow = card.querySelector("span:first-of-type");
-      if (eyebrow) {
-        const eyebrowP = document.createElement("p");
-        eyebrowP.textContent = eyebrow.textContent.trim();
-        contentCell.appendChild(eyebrowP);
-      }
-      let heading = card.querySelector(".heading");
-      if (!heading) heading = card.querySelector('[class*="heading"]');
-      if (!heading) heading = card.querySelector("h2, h3, h4");
-      if (heading) {
-        const headingEl = document.createElement("h3");
-        headingEl.textContent = heading.textContent.trim();
-        contentCell.appendChild(headingEl);
-      }
-      const allPs = card.querySelectorAll("p");
-      allPs.forEach((p) => {
-        if (!p.classList.contains("eyebrow") && !p.classList.contains("heading")) {
-          const descP = document.createElement("p");
-          descP.textContent = p.textContent.trim();
-          if (descP.textContent) {
-            contentCell.appendChild(descP);
+    if (!iframeSrc) {
+      const scripts = element.querySelectorAll("script");
+      const candidates = [];
+      scripts.forEach((script) => {
+        if (script.textContent) {
+          const matches = script.textContent.matchAll(/iframe\s+src=["']([^"']+)["']/g);
+          for (const m of matches) {
+            candidates.push(m[1]);
           }
         }
       });
-      const allLinks = card.querySelectorAll("a");
-      allLinks.forEach((link) => {
-        const linkText = link.textContent.trim();
-        if (linkText && !link.querySelector("img")) {
-          const ctaP = document.createElement("p");
-          const anchor = document.createElement("a");
-          anchor.href = link.href;
-          anchor.textContent = linkText;
-          ctaP.appendChild(anchor);
-          contentCell.appendChild(ctaP);
-        }
-      });
-      if (imageCell.children.length > 0 || contentCell.children.length > 0) {
-        row.push(contentCell);
-        cells.push(row);
+      if (candidates.length > 0) {
+        iframeSrc = candidates.find((url) => !url.includes("mobile")) || candidates[0];
       }
-    });
-    if (cells.length > 0) {
-      const block = WebImporter.Blocks.createBlock(document, {
-        name: "Cards Offer",
-        cells
-      });
-      element.replaceWith(block);
     }
+    if (!iframeSrc && html) {
+      const classMatch = element.className.match(/(\S+)/);
+      const className = classMatch ? classMatch[0] : "";
+      if (className) {
+        const regex = new RegExp(`class="[^"]*${className}[^"]*"[\\s\\S]*?iframe\\s+src=["']([^"']+)["']`);
+        const match = html.match(regex);
+        if (match) {
+          iframeSrc = match[1];
+        }
+      }
+    }
+    if (iframeSrc && iframeSrc.includes("-mobile") && html) {
+      const allIframes = [...html.matchAll(/iframe\s+src=["']([^"']+)["']/g)];
+      const desktopUrl = allIframes.map((m) => m[1]).find((url) => !url.includes("mobile"));
+      if (desktopUrl) {
+        iframeSrc = desktopUrl;
+      }
+    }
+    if (iframeSrc) {
+      if (iframeSrc.startsWith("/")) {
+        iframeSrc = `https://www.firstnet.com${iframeSrc}`;
+      }
+      const row = [];
+      const cell = document.createElement("div");
+      const anchor = document.createElement("a");
+      anchor.href = iframeSrc;
+      anchor.textContent = iframeSrc;
+      cell.appendChild(anchor);
+      row.push(cell);
+      cells.push(row);
+    }
+    const block = WebImporter.Blocks.createBlock(document, {
+      name: "Embed",
+      cells
+    });
+    element.replaceWith(block);
   }
 
-  // tools/importer/parsers/columns-icons.js
-  function parse4(element, { document }) {
+  // ../../../../../../../../../../../workspace/tools/importer/parsers/columns-icons.js
+  function parse3(element, { document }) {
     const cells = [];
     let columns = element.querySelectorAll(".ig-block");
     if (columns.length === 0) {
@@ -241,73 +214,290 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
-  // tools/importer/parsers/cards-news.js
-  function parse5(element, { document }) {
-    const text = element.textContent.toLowerCase();
-    const isNewsContent = text.includes("read more") || text.includes("product launch") || text.includes("health and wellness") || text.includes("law enforcement") || text.includes("firstnet fusion") || text.includes("stress relief") || text.includes("town of duck");
-    if (!isNewsContent) {
-      return;
-    }
+  // ../../../../../../../../../../../workspace/tools/importer/parsers/cards.js
+  function parse4(element, { document }) {
     const cells = [];
-    let cards = element.querySelectorAll(".card-tile");
-    if (cards.length === 0) {
-      cards = element.querySelectorAll(":scope > div");
+    const cardTiles = element.querySelectorAll(".card-tile");
+    if (cardTiles.length > 0) {
+      cardTiles.forEach((card) => {
+        const row = [];
+        const imageCell = document.createElement("div");
+        const img = card.querySelector(".img-section img");
+        if (img) {
+          const newImg = document.createElement("img");
+          newImg.src = img.src;
+          newImg.alt = img.alt || "";
+          imageCell.appendChild(newImg);
+        }
+        row.push(imageCell);
+        const textCell = document.createElement("div");
+        const eyebrow = card.querySelector(".eyebrow");
+        if (eyebrow) {
+          const eyebrowP = document.createElement("p");
+          const em = document.createElement("em");
+          em.textContent = eyebrow.textContent.trim();
+          eyebrowP.appendChild(em);
+          textCell.appendChild(eyebrowP);
+        }
+        const heading = card.querySelector(".heading");
+        if (heading) {
+          const h3 = document.createElement("h3");
+          h3.textContent = heading.textContent.trim();
+          textCell.appendChild(h3);
+        }
+        const bodyText = card.querySelector(".bodyText p");
+        if (bodyText) {
+          const p = document.createElement("p");
+          p.textContent = bodyText.textContent.trim();
+          textCell.appendChild(p);
+        }
+        const cta = card.querySelector(".cta-section a");
+        if (cta) {
+          const ctaP = document.createElement("p");
+          const anchor = document.createElement("a");
+          anchor.href = cta.href;
+          anchor.textContent = cta.textContent.trim();
+          ctaP.appendChild(anchor);
+          textCell.appendChild(ctaP);
+        }
+        row.push(textCell);
+        cells.push(row);
+      });
     }
-    cards.forEach((card, index) => {
+    const teaserItems = element.querySelectorAll(".swiper-wrapper .item");
+    if (teaserItems.length > 0 && cardTiles.length === 0) {
+      teaserItems.forEach((item) => {
+        const row = [];
+        const imageCell = document.createElement("div");
+        const img = item.querySelector(".image-wrapper img") || item.querySelector(".image-wrapper-container img") || item.querySelector("img");
+        if (img) {
+          const newImg = document.createElement("img");
+          newImg.src = img.src;
+          newImg.alt = img.alt || "";
+          imageCell.appendChild(newImg);
+        }
+        row.push(imageCell);
+        const textCell = document.createElement("div");
+        const title = item.querySelector(".item-title");
+        if (title) {
+          const h3 = document.createElement("h3");
+          h3.textContent = title.textContent.trim();
+          textCell.appendChild(h3);
+        }
+        const desc = item.querySelector(".item-description");
+        if (desc) {
+          const p = document.createElement("p");
+          p.textContent = desc.textContent.trim();
+          textCell.appendChild(p);
+        }
+        const link = item.querySelector("a.att-track");
+        if (link && link.href) {
+          const ctaP = document.createElement("p");
+          const anchor = document.createElement("a");
+          anchor.href = link.href;
+          const ctaText = item.querySelector(".cta-btn .att-button");
+          anchor.textContent = ctaText ? ctaText.textContent.trim() : "Read more";
+          ctaP.appendChild(anchor);
+          textCell.appendChild(ctaP);
+        }
+        row.push(textCell);
+        cells.push(row);
+      });
+    }
+    const block = WebImporter.Blocks.createBlock(document, {
+      name: "Cards",
+      cells
+    });
+    element.replaceWith(block);
+  }
+
+  // ../../../../../../../../../../../workspace/tools/importer/parsers/columns.js
+  function parse5(element, { document }) {
+    const cells = [];
+    const imageTextContainer = element.classList.contains("image-text-container") ? element : element.querySelector(".image-text-container");
+    if (imageTextContainer) {
       const row = [];
       const imageCell = document.createElement("div");
-      imageCell.appendChild(document.createComment("field:image"));
-      const img = card.querySelector("img");
-      if (img) {
+      const imgEl = imageTextContainer.querySelector(".col-image img");
+      if (imgEl) {
         const newImg = document.createElement("img");
-        newImg.src = img.src;
-        newImg.alt = img.alt || "news image";
+        newImg.src = imgEl.getAttribute("data-src") || imgEl.src;
+        newImg.alt = imgEl.alt || "";
         imageCell.appendChild(newImg);
       }
       row.push(imageCell);
-      const contentCell = document.createElement("div");
-      contentCell.appendChild(document.createComment("field:text"));
-      const eyebrow = card.querySelector('.eyebrow, [class*="eyebrow"]');
-      if (eyebrow) {
-        const eyebrowP = document.createElement("p");
-        eyebrowP.textContent = eyebrow.textContent.trim();
-        contentCell.appendChild(eyebrowP);
+      const textCell = document.createElement("div");
+      const title = imageTextContainer.querySelector(".imgtxt-title");
+      if (title) {
+        const h3 = document.createElement("h3");
+        h3.textContent = title.textContent.trim();
+        textCell.appendChild(h3);
       }
-      const heading = card.querySelector(".heading, h2, h3, h4");
-      if (heading) {
-        const headingEl = document.createElement("h3");
-        headingEl.textContent = heading.textContent.trim();
-        contentCell.appendChild(headingEl);
+      const subtitleDiv = imageTextContainer.querySelector(".imgtxt-subtitle");
+      if (subtitleDiv) {
+        const paragraphs = subtitleDiv.querySelectorAll("p");
+        paragraphs.forEach((p) => {
+          const text = p.textContent.trim();
+          if (text) {
+            const newP = document.createElement("p");
+            newP.textContent = text;
+            textCell.appendChild(newP);
+          }
+        });
       }
-      const desc = card.querySelector("p:not(.eyebrow):not(.heading)");
-      if (desc) {
-        const descP = document.createElement("p");
-        descP.textContent = desc.textContent.trim();
-        contentCell.appendChild(descP);
-      }
-      const link = card.querySelector("a");
-      if (link) {
-        const linkP = document.createElement("p");
-        const anchor = document.createElement("a");
-        anchor.href = link.href;
-        anchor.textContent = link.textContent.trim() || "Read more";
-        linkP.appendChild(anchor);
-        contentCell.appendChild(linkP);
-      }
-      row.push(contentCell);
-      cells.push(row);
-    });
-    if (cells.length > 0) {
-      const block = WebImporter.Blocks.createBlock(document, {
-        name: "Cards News",
-        cells
+      const links = imageTextContainer.querySelectorAll(".col-text > div > a, .col-text a.youtube-player-link");
+      links.forEach((link) => {
+        const text = link.textContent.trim();
+        if (text && link.href) {
+          const ctaP = document.createElement("p");
+          const anchor = document.createElement("a");
+          anchor.href = link.href;
+          anchor.textContent = text;
+          ctaP.appendChild(anchor);
+          textCell.appendChild(ctaP);
+        }
       });
-      element.replaceWith(block);
+      row.push(textCell);
+      cells.push(row);
     }
+    const iconListContainer = element.querySelector(".icon-list-container");
+    if (iconListContainer && !imageTextContainer) {
+      const listItems = iconListContainer.querySelectorAll("ul > li");
+      if (listItems.length > 0) {
+        const row = [];
+        listItems.forEach((li) => {
+          const cell = document.createElement("div");
+          const icon = li.querySelector(".icon-list-image");
+          if (icon) {
+            const newImg = document.createElement("img");
+            newImg.src = icon.src;
+            newImg.alt = icon.alt || "";
+            cell.appendChild(newImg);
+          }
+          const heading = li.querySelector("h3");
+          if (heading) {
+            const h3 = document.createElement("h3");
+            h3.textContent = heading.textContent.trim();
+            cell.appendChild(h3);
+          }
+          const paragraphs = li.querySelectorAll("p");
+          paragraphs.forEach((p) => {
+            if (p.children.length === 1 && p.querySelector("a")) return;
+            const text = p.textContent.trim();
+            if (text) {
+              const newP = document.createElement("p");
+              newP.textContent = text;
+              cell.appendChild(newP);
+            }
+          });
+          const link = li.querySelector("p > a");
+          if (link) {
+            const ctaP = document.createElement("p");
+            const anchor = document.createElement("a");
+            anchor.href = link.href;
+            anchor.textContent = link.textContent.trim();
+            ctaP.appendChild(anchor);
+            cell.appendChild(ctaP);
+          }
+          row.push(cell);
+        });
+        cells.push(row);
+      }
+    }
+    const block = WebImporter.Blocks.createBlock(document, {
+      name: "Columns",
+      cells
+    });
+    element.replaceWith(block);
   }
 
-  // tools/importer/parsers/form-newsletter.js
-  function parse6(element, { document }) {
+  // ../../../../../../../../../../../workspace/tools/importer/parsers/cards-insights.js
+  function extractBgUrlsFromRawHtml(html) {
+    if (!html) return [];
+    const urls = [];
+    const pattern = /lzy-background image-wrapper"[^>]*style="[^"]*background-image:\s*url\(([^)]+)\)/g;
+    let match;
+    while ((match = pattern.exec(html)) !== null) {
+      const url = match[1].replace(/['"]/g, "").trim();
+      if (url && !url.startsWith("data:")) {
+        urls.push(url);
+      }
+    }
+    return urls;
+  }
+  function parse6(element, { document, html }) {
+    const cells = [];
+    const bgUrls = extractBgUrlsFromRawHtml(html);
+    const teaserItems = element.querySelectorAll(".swiper-wrapper .item, .items-wrapper .item");
+    teaserItems.forEach((item, index) => {
+      const row = [];
+      const imageCell = document.createElement("div");
+      let imgUrl = null;
+      const directImg = item.querySelector(".image-wrapper img");
+      if (directImg && directImg.src && !directImg.src.startsWith("data:")) {
+        imgUrl = directImg.src;
+      }
+      if (!imgUrl && index < bgUrls.length) {
+        imgUrl = bgUrls[index];
+      }
+      if (!imgUrl) {
+        const bgEl = item.querySelector('.lzy-background, .image-wrapper, [style*="background-image"]');
+        if (bgEl) {
+          const styleAttr = bgEl.getAttribute("style") || "";
+          const bgMatch = styleAttr.match(/url\(['"]?([^'")\s]+)['"]?\)/);
+          if (bgMatch && !bgMatch[1].startsWith("data:")) {
+            imgUrl = bgMatch[1];
+          }
+          if (!imgUrl && bgEl.style && bgEl.style.backgroundImage) {
+            const computedMatch = bgEl.style.backgroundImage.match(/url\(['"]?([^'")\s]+)['"]?\)/);
+            if (computedMatch && !computedMatch[1].startsWith("data:")) {
+              imgUrl = computedMatch[1];
+            }
+          }
+        }
+      }
+      if (imgUrl) {
+        const img = document.createElement("img");
+        img.src = imgUrl;
+        img.alt = "";
+        imageCell.appendChild(img);
+      }
+      row.push(imageCell);
+      const textCell = document.createElement("div");
+      const title = item.querySelector(".item-title");
+      if (title) {
+        const h3 = document.createElement("h3");
+        h3.textContent = title.textContent.trim();
+        textCell.appendChild(h3);
+      }
+      const desc = item.querySelector(".item-description");
+      if (desc) {
+        const p = document.createElement("p");
+        p.textContent = desc.textContent.trim();
+        textCell.appendChild(p);
+      }
+      const link = item.querySelector("a.att-track") || item.closest("a");
+      if (link && link.href) {
+        const ctaP = document.createElement("p");
+        const anchor = document.createElement("a");
+        anchor.href = link.href;
+        const ctaText = item.querySelector(".cta-btn .att-button") || item.querySelector(".cta-link span");
+        anchor.textContent = ctaText ? ctaText.textContent.trim() : "Read more";
+        ctaP.appendChild(anchor);
+        textCell.appendChild(ctaP);
+      }
+      row.push(textCell);
+      cells.push(row);
+    });
+    const block = WebImporter.Blocks.createBlock(document, {
+      name: "Cards-Insights",
+      cells
+    });
+    element.replaceWith(block);
+  }
+
+  // ../../../../../../../../../../../workspace/tools/importer/parsers/form-newsletter.js
+  function parse7(element, { document }) {
     const cells = [];
     const headingCell = document.createElement("div");
     headingCell.appendChild(document.createComment("field:heading"));
@@ -362,7 +552,7 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
-  // tools/importer/transformers/firstnet.js
+  // ../../../../../../../../../../../workspace/tools/importer/transformers/firstnet.js
   function transform(hookName, element) {
     if (hookName === "beforeTransform") {
       element.querySelectorAll("script, style, noscript, iframe").forEach((el) => el.remove());
@@ -568,7 +758,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // tools/importer/transformers/sections.js
+  // ../../../../../../../../../../../workspace/tools/importer/transformers/sections.js
   function transform2(hookName, element, payload) {
     if (hookName !== "afterTransform") return;
     const { document, template } = payload;
@@ -661,56 +851,138 @@ var CustomImportScript = (() => {
     return div;
   }
 
-  // tools/importer/import-homepage.js
+  // ../../../../../../../../../../../workspace/tools/importer/import-coverage.js
   var parsers = {
-    "headband": parse,
-    "hero": parse2,
-    "cards-offer": parse3,
-    "columns-icons": parse4,
-    "cards-news": parse5,
-    "form-newsletter": parse6
+    "hero": parse,
+    "embed": parse2,
+    "columns-icons": parse3,
+    "cards": parse4,
+    "columns": parse5,
+    "cards-insights": parse6,
+    "form-newsletter": parse7
   };
   var transformers = [
     transform,
     transform2
   ];
   var PAGE_TEMPLATE = {
-    name: "homepage",
-    description: "FirstNet homepage with hero, features, and promotional content sections",
+    name: "coverage",
+    description: "FirstNet Coverage page with coverage map, benefits, connectivity solutions, customer stories, and get started sections",
     urls: [
-      "https://www.firstnet.com/"
+      "https://www.firstnet.com/coverage.html"
     ],
     blocks: [
-      {
-        name: "headband",
-        instances: [".headband"]
-      },
       {
         name: "hero",
         instances: [".marquee-heading"]
       },
       {
-        name: "cards-offer",
-        instances: [".new-offers-card .offersCard"]
+        name: "embed",
+        instances: [".coverage-map"]
       },
       {
         name: "columns-icons",
-        instances: [".icon-grid"]
+        instances: [".icon-grid-description"]
       },
       {
-        name: "cards-news",
+        name: "cards",
         instances: [".new-offers-card .offersCard"]
+      },
+      {
+        name: "columns",
+        instances: [".image-text", ".icon-list"]
+      },
+      {
+        name: "cards-insights",
+        instances: [".content-teaser .list-wrapper"]
       },
       {
         name: "form-newsletter",
         instances: [".email-signup"]
       }
+    ],
+    sections: [
+      {
+        id: "section-1",
+        name: "Hero",
+        selector: ".marquee-heading",
+        style: null,
+        blocks: ["hero"],
+        defaultContent: []
+      },
+      {
+        id: "section-2",
+        name: "Coverage Map",
+        selector: "#coverage-map",
+        style: null,
+        blocks: ["embed"],
+        defaultContent: [".segment-heading h2", ".segment-heading h3"]
+      },
+      {
+        id: "section-3",
+        name: "Coverage Benefits",
+        selector: "#benefits",
+        style: null,
+        blocks: ["columns-icons"],
+        defaultContent: [".segment-heading h2", ".segment-heading h3"]
+      },
+      {
+        id: "section-4",
+        name: "Connectivity Ecosystem",
+        selector: "#solutions",
+        style: null,
+        blocks: ["cards"],
+        defaultContent: [".segment-heading h2", ".segment-heading h3"]
+      },
+      {
+        id: "section-5",
+        name: "Connectivity Innovation",
+        selector: "#innovations",
+        style: null,
+        blocks: ["columns"],
+        defaultContent: [".segment-heading h2", ".segment-heading h3"]
+      },
+      {
+        id: "section-6",
+        name: "Response Operations Group",
+        selector: ".marquee-heading:nth-of-type(2)",
+        style: null,
+        blocks: ["hero"],
+        defaultContent: []
+      },
+      {
+        id: "section-7",
+        name: "Customer Stories",
+        selector: "#customer-stories",
+        style: null,
+        blocks: ["cards-insights"],
+        defaultContent: [".segment-heading h2", ".segment-heading h3"]
+      },
+      {
+        id: "section-8",
+        name: "Get Started",
+        selector: "#get-started",
+        style: "grey",
+        blocks: ["columns"],
+        defaultContent: [".segment-heading h2", ".segment-heading h3"]
+      },
+      {
+        id: "section-9",
+        name: "Email Signup",
+        selector: ".email-signup",
+        style: "dark",
+        blocks: ["form-newsletter"],
+        defaultContent: []
+      }
     ]
   };
   function executeTransformers(hookName, element, payload) {
+    const enhancedPayload = __spreadProps(__spreadValues({}, payload), {
+      template: PAGE_TEMPLATE
+    });
     transformers.forEach((transformerFn) => {
       try {
-        transformerFn.call(null, hookName, element, payload);
+        transformerFn.call(null, hookName, element, enhancedPayload);
       } catch (e) {
         console.error(`Transformer failed at ${hookName}:`, e);
       }
@@ -737,20 +1009,31 @@ var CustomImportScript = (() => {
     console.log(`Found ${pageBlocks.length} block instances on page`);
     return pageBlocks;
   }
-  var import_homepage_default = {
+  var import_coverage_default = {
     /**
      * Main transformation function
      */
     transform: (payload) => {
       const { document, url, html, params } = payload;
       const main = document.body;
+      let rawHtml = null;
+      try {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", params.originalURL || url, false);
+        xhr.send();
+        if (xhr.status === 200) {
+          rawHtml = xhr.responseText;
+        }
+      } catch (e) {
+        console.warn("Failed to fetch raw HTML:", e.message);
+      }
       executeTransformers("beforeTransform", main, payload);
       const pageBlocks = findBlocksOnPage(document, PAGE_TEMPLATE);
       pageBlocks.forEach((block) => {
         const parser = parsers[block.name];
         if (parser) {
           try {
-            parser(block.element, { document, url, params });
+            parser(block.element, { document, url, params, html: rawHtml || html });
           } catch (e) {
             console.error(`Failed to parse ${block.name} (${block.selector}):`, e);
           }
@@ -759,6 +1042,8 @@ var CustomImportScript = (() => {
         }
       });
       executeTransformers("afterTransform", main, payload);
+      const hr = document.createElement("hr");
+      main.appendChild(hr);
       WebImporter.rules.createMetadata(main, document);
       WebImporter.rules.transformBackgroundImages(main, document);
       WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
@@ -776,5 +1061,5 @@ var CustomImportScript = (() => {
       }];
     }
   };
-  return __toCommonJS(import_homepage_exports);
+  return __toCommonJS(import_coverage_exports);
 })();

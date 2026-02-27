@@ -50,8 +50,134 @@
       "urls": [
         "https://www.firstnet.com/plans.html"
       ],
-      "description": "FirstNet rate plans page with pricing and plan details",
-      "blocks": []
+      "description": "FirstNet rate plans page with individual, agency, and international plan pricing, tabbed sections, and comparison cards",
+      "blocks": [
+        {
+          "name": "tabs",
+          "instances": [
+            ".tabs.parbase"
+          ]
+        },
+        {
+          "name": "columns-icons",
+          "instances": [
+            ".icon-list"
+          ]
+        },
+        {
+          "name": "hero",
+          "instances": [
+            ".marquee-heading"
+          ]
+        },
+        {
+          "name": "cards-pricing",
+          "instances": [
+            ".table-comparison"
+          ]
+        },
+        {
+          "name": "form-newsletter",
+          "instances": [
+            ".email-signup"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Page Header",
+          "selector": ".text.parbase:first-child",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".text h1",
+            ".text h4",
+            ".sticky-nav"
+          ]
+        },
+        {
+          "id": "section-2",
+          "name": "Individual Plans",
+          "selector": "#individual-plans",
+          "style": null,
+          "blocks": [
+            "tabs"
+          ],
+          "defaultContent": [
+            ".segment-heading h3"
+          ]
+        },
+        {
+          "id": "section-3",
+          "name": "Rate Plan Features",
+          "selector": ".icon-list",
+          "style": null,
+          "blocks": [
+            "columns-icons"
+          ],
+          "defaultContent": [
+            ".segment-heading h3"
+          ]
+        },
+        {
+          "id": "section-4",
+          "name": "Promo",
+          "selector": ".marquee-heading",
+          "style": null,
+          "blocks": [
+            "hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-5",
+          "name": "Agency Plans",
+          "selector": "#agency-plans",
+          "style": null,
+          "blocks": [
+            "tabs"
+          ],
+          "defaultContent": [
+            ".segment-heading h3"
+          ]
+        },
+        {
+          "id": "section-6",
+          "name": "International Plans",
+          "selector": "#international-plans",
+          "style": null,
+          "blocks": [
+            "cards-pricing"
+          ],
+          "defaultContent": [
+            ".segment-heading h3",
+            ".call-to-action a"
+          ]
+        },
+        {
+          "id": "section-7",
+          "name": "Contact",
+          "selector": ".segment-heading:has(h2)",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".segment-heading h2",
+            ".segment-heading h3",
+            ".call-to-action a"
+          ]
+        },
+        {
+          "id": "section-8",
+          "name": "Email Signup",
+          "selector": ".email-signup",
+          "style": "dark",
+          "blocks": [
+            "form-newsletter"
+          ],
+          "defaultContent": []
+        }
+      ]
     },
     {
       "name": "why-firstnet",
@@ -226,19 +352,27 @@
       "blocks": [
         {
           "name": "hero",
-          "instances": [".marquee-heading"]
+          "instances": [
+            ".marquee-heading"
+          ]
         },
         {
           "name": "columns",
-          "instances": [".image-text .image-text-container"]
+          "instances": [
+            ".image-text .image-text-container"
+          ]
         },
         {
           "name": "cards-insights",
-          "instances": [".content-teaser .list-wrapper"]
+          "instances": [
+            ".content-teaser .list-wrapper"
+          ]
         },
         {
           "name": "form-newsletter",
-          "instances": [".email-signup"]
+          "instances": [
+            ".email-signup"
+          ]
         }
       ],
       "sections": [
@@ -247,31 +381,46 @@
           "name": "Hero",
           "selector": ".marquee-heading",
           "style": null,
-          "blocks": ["hero"],
+          "blocks": [
+            "hero"
+          ],
           "defaultContent": []
         },
         {
           "id": "section-2",
           "name": "Introduction",
-          "selector": [".segment-heading:has(h3.no-title)", ".segment-heading h3.no-title"],
+          "selector": [
+            ".segment-heading:has(h3.no-title)",
+            ".segment-heading h3.no-title"
+          ],
           "style": null,
           "blocks": [],
-          "defaultContent": [".segment-heading h3", ".text .wrapper p", ".call-to-action .cta-btn a"]
+          "defaultContent": [
+            ".segment-heading h3",
+            ".text .wrapper p",
+            ".call-to-action .cta-btn a"
+          ]
         },
         {
           "id": "section-3",
           "name": "Video Feature",
           "selector": "#agencies-choose-firstnet",
           "style": null,
-          "blocks": ["columns"],
-          "defaultContent": [".segment-heading h3"]
+          "blocks": [
+            "columns"
+          ],
+          "defaultContent": [
+            ".segment-heading h3"
+          ]
         },
         {
           "id": "section-4",
           "name": "Content Teasers",
           "selector": ".content-teaser",
           "style": null,
-          "blocks": ["cards-insights"],
+          "blocks": [
+            "cards-insights"
+          ],
           "defaultContent": []
         },
         {
@@ -279,7 +428,303 @@
           "name": "Email Signup",
           "selector": ".email-signup",
           "style": "dark",
-          "blocks": ["form-newsletter"],
+          "blocks": [
+            "form-newsletter"
+          ],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
+      "name": "coverage",
+      "urls": [
+        "https://www.firstnet.com/coverage.html"
+      ],
+      "description": "FirstNet Coverage page with coverage map, benefits, connectivity solutions, customer stories, and get started sections",
+      "blocks": [
+        {
+          "name": "hero",
+          "instances": [
+            ".marquee-heading"
+          ]
+        },
+        {
+          "name": "embed",
+          "instances": [
+            ".coverage-map"
+          ]
+        },
+        {
+          "name": "columns-icons",
+          "instances": [
+            ".icon-grid-description"
+          ]
+        },
+        {
+          "name": "cards",
+          "instances": [
+            ".new-offers-card .offersCard"
+          ]
+        },
+        {
+          "name": "columns",
+          "instances": [
+            ".image-text",
+            ".icon-list"
+          ]
+        },
+        {
+          "name": "cards-insights",
+          "instances": [
+            ".content-teaser .list-wrapper"
+          ]
+        },
+        {
+          "name": "form-newsletter",
+          "instances": [
+            ".email-signup"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero",
+          "selector": ".marquee-heading",
+          "style": null,
+          "blocks": [
+            "hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Coverage Map",
+          "selector": "#coverage-map",
+          "style": null,
+          "blocks": [
+            "embed"
+          ],
+          "defaultContent": [
+            ".segment-heading h2",
+            ".segment-heading h3"
+          ]
+        },
+        {
+          "id": "section-3",
+          "name": "Coverage Benefits",
+          "selector": "#benefits",
+          "style": null,
+          "blocks": [
+            "columns-icons"
+          ],
+          "defaultContent": [
+            ".segment-heading h2",
+            ".segment-heading h3"
+          ]
+        },
+        {
+          "id": "section-4",
+          "name": "Connectivity Ecosystem",
+          "selector": "#solutions",
+          "style": null,
+          "blocks": [
+            "cards"
+          ],
+          "defaultContent": [
+            ".segment-heading h2",
+            ".segment-heading h3"
+          ]
+        },
+        {
+          "id": "section-5",
+          "name": "Connectivity Innovation",
+          "selector": "#innovations",
+          "style": null,
+          "blocks": [
+            "columns"
+          ],
+          "defaultContent": [
+            ".segment-heading h2",
+            ".segment-heading h3"
+          ]
+        },
+        {
+          "id": "section-6",
+          "name": "Response Operations Group",
+          "selector": ".marquee-heading:nth-of-type(2)",
+          "style": null,
+          "blocks": [
+            "hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-7",
+          "name": "Customer Stories",
+          "selector": "#customer-stories",
+          "style": null,
+          "blocks": [
+            "cards-insights"
+          ],
+          "defaultContent": [
+            ".segment-heading h2",
+            ".segment-heading h3"
+          ]
+        },
+        {
+          "id": "section-8",
+          "name": "Get Started",
+          "selector": "#get-started",
+          "style": "grey",
+          "blocks": [
+            "columns"
+          ],
+          "defaultContent": [
+            ".segment-heading h2",
+            ".segment-heading h3"
+          ]
+        },
+        {
+          "id": "section-9",
+          "name": "Email Signup",
+          "selector": ".email-signup",
+          "style": "dark",
+          "blocks": [
+            "form-newsletter"
+          ],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
+      "name": "community",
+      "urls": [
+        "https://www.firstnet.com/community.html"
+      ],
+      "description": "FirstNet Community page with case studies, news articles, blogs/videos tabs, and get started sections",
+      "blocks": [
+        {
+          "name": "hero",
+          "instances": [
+            ".marquee-heading"
+          ]
+        },
+        {
+          "name": "columns",
+          "instances": [
+            ".image-text",
+            ".icon-list:not(:has(.hide-icons))"
+          ]
+        },
+        {
+          "name": "cards-insights",
+          "instances": [
+            ".content-teaser .list-wrapper"
+          ]
+        },
+        {
+          "name": "news-list",
+          "instances": [
+            ".icon-list:has(.hide-icons)"
+          ]
+        },
+        {
+          "name": "tabs",
+          "instances": [
+            ".tabs.parbase"
+          ]
+        },
+        {
+          "name": "form-newsletter",
+          "instances": [
+            ".email-signup"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero",
+          "selector": ".marquee-heading",
+          "style": null,
+          "blocks": [
+            "hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Case Studies",
+          "selector": ".segment-heading:first-of-type",
+          "style": null,
+          "blocks": [
+            "columns",
+            "cards-insights"
+          ],
+          "defaultContent": [
+            ".segment-heading h2",
+            ".segment-heading h3"
+          ]
+        },
+        {
+          "id": "section-3",
+          "name": "Wellness Callout",
+          "selector": ".marquee-heading:nth-of-type(2)",
+          "style": null,
+          "blocks": [
+            "hero"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "News",
+          "selector": ".icon-list:has(.hide-icons)",
+          "style": "grey",
+          "blocks": [
+            "news-list"
+          ],
+          "defaultContent": [
+            ".segment-heading h2",
+            ".segment-heading h3",
+            ".call-to-action a"
+          ]
+        },
+        {
+          "id": "section-5",
+          "name": "Blogs and Videos",
+          "selector": ".tabs.parbase",
+          "style": null,
+          "blocks": [
+            "tabs"
+          ],
+          "defaultContent": [
+            ".segment-heading h2",
+            ".segment-heading h3"
+          ]
+        },
+        {
+          "id": "section-6",
+          "name": "Get Started",
+          "selector": ".icon-list:not(:has(.hide-icons))",
+          "style": "grey",
+          "blocks": [
+            "columns"
+          ],
+          "defaultContent": [
+            ".segment-heading h2",
+            ".segment-heading h3"
+          ]
+        },
+        {
+          "id": "section-7",
+          "name": "Email Signup",
+          "selector": ".email-signup",
+          "style": "dark",
+          "blocks": [
+            "form-newsletter"
+          ],
           "defaultContent": []
         }
       ]

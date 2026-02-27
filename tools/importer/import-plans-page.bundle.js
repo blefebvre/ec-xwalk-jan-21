@@ -1,8 +1,25 @@
 var CustomImportScript = (() => {
   var __defProp = Object.defineProperty;
+  var __defProps = Object.defineProperties;
   var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropDescs = Object.getOwnPropertyDescriptors;
   var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __getOwnPropSymbols = Object.getOwnPropertySymbols;
   var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __propIsEnum = Object.prototype.propertyIsEnumerable;
+  var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+  var __spreadValues = (a, b) => {
+    for (var prop in b || (b = {}))
+      if (__hasOwnProp.call(b, prop))
+        __defNormalProp(a, prop, b[prop]);
+    if (__getOwnPropSymbols)
+      for (var prop of __getOwnPropSymbols(b)) {
+        if (__propIsEnum.call(b, prop))
+          __defNormalProp(a, prop, b[prop]);
+      }
+    return a;
+  };
+  var __spreadProps = (a, b) => __defProps(a, __getOwnPropDescs(b));
   var __export = (target, all) => {
     for (var name in all)
       __defProp(target, name, { get: all[name], enumerable: true });
@@ -17,35 +34,14 @@ var CustomImportScript = (() => {
   };
   var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: true }), mod);
 
-  // tools/importer/import-homepage.js
-  var import_homepage_exports = {};
-  __export(import_homepage_exports, {
-    default: () => import_homepage_default
+  // ../../../../../../../../../../../workspace/tools/importer/import-plans-page.js
+  var import_plans_page_exports = {};
+  __export(import_plans_page_exports, {
+    default: () => import_plans_page_default
   });
 
-  // tools/importer/parsers/headband.js
+  // ../../../../../../../../../../../workspace/tools/importer/parsers/hero.js
   function parse(element, { document }) {
-    const cells = [];
-    const links = element.querySelectorAll("a");
-    links.forEach((link) => {
-      const row = [];
-      const cell = document.createElement("div");
-      const anchor = document.createElement("a");
-      anchor.href = link.href;
-      anchor.textContent = link.textContent.trim();
-      cell.appendChild(anchor);
-      row.push(cell);
-      cells.push(row);
-    });
-    const block = WebImporter.Blocks.createBlock(document, {
-      name: "headband",
-      cells
-    });
-    element.replaceWith(block);
-  }
-
-  // tools/importer/parsers/hero.js
-  function parse2(element, { document }) {
     const cells = [];
     const imageRow = [];
     const imageCell = document.createElement("div");
@@ -113,92 +109,134 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
-  // tools/importer/parsers/cards-offer.js
-  function parse3(element, { document }) {
-    const text = element.textContent.toLowerCase();
-    const isOfferContent = text.includes("shop now") || text.includes("$") || text.includes("get iphone") || text.includes("break your contract") || text.includes("save 25%") || text.includes("families save");
-    if (!isOfferContent) {
-      return;
-    }
+  // ../../../../../../../../../../../workspace/tools/importer/parsers/tabs.js
+  function parse2(element, { document }) {
     const cells = [];
-    let cards = element.querySelectorAll(".card-tile");
-    if (cards.length === 0) {
-      cards = element.querySelectorAll('[class*="offer"]');
-    }
-    if (cards.length === 0) {
-      cards = element.querySelectorAll('[class*="card"]');
-    }
-    if (cards.length === 0) {
-      cards = element.querySelectorAll(":scope > div");
-    }
-    cards.forEach((card, index) => {
+    const tabLabels = element.querySelectorAll(".tablist label");
+    const tabPanels = element.querySelectorAll(".tab-panel");
+    tabPanels.forEach((panel, index) => {
       const row = [];
-      const imageCell = document.createElement("div");
-      imageCell.appendChild(document.createComment("field:image"));
-      const img = card.querySelector("img");
-      if (img) {
-        const newImg = document.createElement("img");
-        newImg.src = img.src;
-        newImg.alt = img.alt || "offer image";
-        imageCell.appendChild(newImg);
-      }
-      row.push(imageCell);
+      const labelCell = document.createElement("div");
+      const labelText = tabLabels[index] ? tabLabels[index].textContent.trim() : `Tab ${index + 1}`;
+      const labelP = document.createElement("p");
+      labelP.textContent = labelText;
+      labelCell.appendChild(labelP);
+      row.push(labelCell);
       const contentCell = document.createElement("div");
-      contentCell.appendChild(document.createComment("field:text"));
-      let eyebrow = card.querySelector(".eyebrow");
-      if (!eyebrow) eyebrow = card.querySelector('[class*="eyebrow"]');
-      if (!eyebrow) eyebrow = card.querySelector("span:first-of-type");
-      if (eyebrow) {
-        const eyebrowP = document.createElement("p");
-        eyebrowP.textContent = eyebrow.textContent.trim();
-        contentCell.appendChild(eyebrowP);
-      }
-      let heading = card.querySelector(".heading");
-      if (!heading) heading = card.querySelector('[class*="heading"]');
-      if (!heading) heading = card.querySelector("h2, h3, h4");
-      if (heading) {
-        const headingEl = document.createElement("h3");
-        headingEl.textContent = heading.textContent.trim();
-        contentCell.appendChild(headingEl);
-      }
-      const allPs = card.querySelectorAll("p");
-      allPs.forEach((p) => {
-        if (!p.classList.contains("eyebrow") && !p.classList.contains("heading")) {
-          const descP = document.createElement("p");
-          descP.textContent = p.textContent.trim();
-          if (descP.textContent) {
-            contentCell.appendChild(descP);
+      const headings = panel.querySelectorAll(".segment-heading h2, .segment-heading h3");
+      headings.forEach((h) => {
+        const heading = document.createElement(h.tagName.toLowerCase());
+        heading.textContent = h.textContent.trim();
+        contentCell.appendChild(heading);
+      });
+      const imageText = panel.querySelector(".image-text");
+      if (imageText) {
+        const img = imageText.querySelector("img");
+        if (img) {
+          const imgSrc = img.getAttribute("data-src") || img.src;
+          if (imgSrc && !imgSrc.startsWith("data:")) {
+            const newImg = document.createElement("img");
+            newImg.src = imgSrc;
+            newImg.alt = img.alt || "";
+            const imgP = document.createElement("p");
+            imgP.appendChild(newImg);
+            contentCell.appendChild(imgP);
           }
         }
-      });
-      const allLinks = card.querySelectorAll("a");
-      allLinks.forEach((link) => {
-        const linkText = link.textContent.trim();
-        if (linkText && !link.querySelector("img")) {
+        const textDiv = imageText.querySelector(".col-text");
+        if (textDiv) {
+          const paragraphs = textDiv.querySelectorAll("p, li");
+          paragraphs.forEach((p) => {
+            const text = p.textContent.trim();
+            if (text) {
+              const newP = document.createElement("p");
+              newP.textContent = text;
+              contentCell.appendChild(newP);
+            }
+          });
+        }
+        const cta = imageText.querySelector("a.att-button, a.att-track");
+        if (cta && cta.href) {
           const ctaP = document.createElement("p");
           const anchor = document.createElement("a");
-          anchor.href = link.href;
-          anchor.textContent = linkText;
+          anchor.href = cta.href;
+          anchor.textContent = cta.textContent.trim();
           ctaP.appendChild(anchor);
           contentCell.appendChild(ctaP);
         }
-      });
-      if (imageCell.children.length > 0 || contentCell.children.length > 0) {
-        row.push(contentCell);
-        cells.push(row);
       }
-    });
-    if (cells.length > 0) {
-      const block = WebImporter.Blocks.createBlock(document, {
-        name: "Cards Offer",
-        cells
+      const tables = panel.querySelectorAll(".table-comparison");
+      tables.forEach((table) => {
+        const cards = table.querySelectorAll(".table-item, .swiper-slide");
+        cards.forEach((card) => {
+          const planName = card.querySelector(".plan-name");
+          const priceLabel = card.querySelector(".price-option-label");
+          const price = card.querySelector(".plan-price");
+          const features = card.querySelector(".options-label");
+          if (planName || price) {
+            if (planName) {
+              const h4 = document.createElement("h4");
+              h4.textContent = planName.textContent.trim();
+              contentCell.appendChild(h4);
+            }
+            if (priceLabel) {
+              const tierP = document.createElement("p");
+              const strong = document.createElement("strong");
+              strong.textContent = priceLabel.textContent.trim();
+              tierP.appendChild(strong);
+              contentCell.appendChild(tierP);
+            }
+            if (price) {
+              const priceP = document.createElement("p");
+              priceP.textContent = price.textContent.trim();
+              contentCell.appendChild(priceP);
+            }
+            if (features) {
+              const featP = document.createElement("p");
+              featP.textContent = features.textContent.trim();
+              contentCell.appendChild(featP);
+            }
+            const links = card.querySelectorAll("a");
+            links.forEach((link) => {
+              if (link.href && link.textContent.trim()) {
+                const linkP = document.createElement("p");
+                const anchor = document.createElement("a");
+                anchor.href = link.href;
+                anchor.textContent = link.textContent.trim();
+                linkP.appendChild(anchor);
+                contentCell.appendChild(linkP);
+              }
+            });
+            contentCell.appendChild(document.createElement("hr"));
+          }
+        });
       });
-      element.replaceWith(block);
-    }
+      const textBlocks = panel.querySelectorAll(":scope > .text, :scope > .legal-text");
+      textBlocks.forEach((tb) => {
+        const paragraphs = tb.querySelectorAll("p");
+        paragraphs.forEach((p) => {
+          const text = p.textContent.trim();
+          if (text) {
+            const newP = document.createElement("p");
+            const em = document.createElement("em");
+            em.textContent = text;
+            newP.appendChild(em);
+            contentCell.appendChild(newP);
+          }
+        });
+      });
+      row.push(contentCell);
+      cells.push(row);
+    });
+    const block = WebImporter.Blocks.createBlock(document, {
+      name: "Tabs",
+      cells
+    });
+    element.replaceWith(block);
   }
 
-  // tools/importer/parsers/columns-icons.js
-  function parse4(element, { document }) {
+  // ../../../../../../../../../../../workspace/tools/importer/parsers/columns-icons.js
+  function parse3(element, { document }) {
     const cells = [];
     let columns = element.querySelectorAll(".ig-block");
     if (columns.length === 0) {
@@ -241,73 +279,90 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
-  // tools/importer/parsers/cards-news.js
-  function parse5(element, { document }) {
-    const text = element.textContent.toLowerCase();
-    const isNewsContent = text.includes("read more") || text.includes("product launch") || text.includes("health and wellness") || text.includes("law enforcement") || text.includes("firstnet fusion") || text.includes("stress relief") || text.includes("town of duck");
-    if (!isNewsContent) {
-      return;
-    }
+  // ../../../../../../../../../../../workspace/tools/importer/parsers/cards-pricing.js
+  function parse4(element, { document }) {
     const cells = [];
-    let cards = element.querySelectorAll(".card-tile");
-    if (cards.length === 0) {
-      cards = element.querySelectorAll(":scope > div");
-    }
-    cards.forEach((card, index) => {
+    const cards = element.querySelectorAll(".table-item, .swiper-slide");
+    cards.forEach((card) => {
       const row = [];
-      const imageCell = document.createElement("div");
-      imageCell.appendChild(document.createComment("field:image"));
-      const img = card.querySelector("img");
-      if (img) {
-        const newImg = document.createElement("img");
-        newImg.src = img.src;
-        newImg.alt = img.alt || "news image";
-        imageCell.appendChild(newImg);
+      const nameCell = document.createElement("div");
+      const planName = card.querySelector(".plan-name");
+      if (planName) {
+        const h3 = document.createElement("h3");
+        h3.textContent = planName.textContent.trim();
+        nameCell.appendChild(h3);
       }
-      row.push(imageCell);
-      const contentCell = document.createElement("div");
-      contentCell.appendChild(document.createComment("field:text"));
-      const eyebrow = card.querySelector('.eyebrow, [class*="eyebrow"]');
-      if (eyebrow) {
-        const eyebrowP = document.createElement("p");
-        eyebrowP.textContent = eyebrow.textContent.trim();
-        contentCell.appendChild(eyebrowP);
+      row.push(nameCell);
+      const detailsCell = document.createElement("div");
+      const priceLabel = card.querySelector(".price-option-label");
+      if (priceLabel) {
+        const tierP = document.createElement("p");
+        const strong = document.createElement("strong");
+        strong.textContent = priceLabel.textContent.trim();
+        tierP.appendChild(strong);
+        detailsCell.appendChild(tierP);
       }
-      const heading = card.querySelector(".heading, h2, h3, h4");
-      if (heading) {
-        const headingEl = document.createElement("h3");
-        headingEl.textContent = heading.textContent.trim();
-        contentCell.appendChild(headingEl);
+      const price = card.querySelector(".plan-price");
+      if (price) {
+        const priceP = document.createElement("p");
+        priceP.textContent = price.textContent.trim();
+        detailsCell.appendChild(priceP);
       }
-      const desc = card.querySelector("p:not(.eyebrow):not(.heading)");
-      if (desc) {
-        const descP = document.createElement("p");
-        descP.textContent = desc.textContent.trim();
-        contentCell.appendChild(descP);
+      const features = card.querySelector(".options-label");
+      if (features) {
+        const featP = document.createElement("p");
+        featP.textContent = features.textContent.trim();
+        detailsCell.appendChild(featP);
       }
-      const link = card.querySelector("a");
-      if (link) {
-        const linkP = document.createElement("p");
-        const anchor = document.createElement("a");
-        anchor.href = link.href;
-        anchor.textContent = link.textContent.trim() || "Read more";
-        linkP.appendChild(anchor);
-        contentCell.appendChild(linkP);
+      const featureItems = card.querySelectorAll(".accordion-title, .plan-features-header");
+      if (featureItems.length > 0) {
+        const ul = document.createElement("ul");
+        featureItems.forEach((item) => {
+          const text = item.textContent.trim();
+          if (text) {
+            const li = document.createElement("li");
+            li.textContent = text;
+            ul.appendChild(li);
+          }
+        });
+        if (ul.children.length > 0) {
+          detailsCell.appendChild(ul);
+        }
       }
-      row.push(contentCell);
+      const select = card.querySelector("select");
+      if (select) {
+        const options = [...select.querySelectorAll("option")].map((o) => o.textContent.trim());
+        if (options.length > 0) {
+          const optP = document.createElement("p");
+          optP.textContent = `Options: ${options.join(", ")}`;
+          detailsCell.appendChild(optP);
+        }
+      }
+      const links = card.querySelectorAll("a");
+      links.forEach((link) => {
+        const text = link.textContent.trim();
+        if (link.href && text && !text.startsWith("#") && text !== "") {
+          if (link.href.includes("#collapse-")) return;
+          const linkP = document.createElement("p");
+          const anchor = document.createElement("a");
+          anchor.href = link.href;
+          anchor.textContent = text;
+          linkP.appendChild(anchor);
+          detailsCell.appendChild(linkP);
+        }
+      });
+      row.push(detailsCell);
       cells.push(row);
     });
-    if (cells.length > 0) {
-      const block = WebImporter.Blocks.createBlock(document, {
-        name: "Cards News",
-        cells
-      });
-      element.replaceWith(block);
-    }
+    const block = WebImporter.Blocks.createBlock(document, {
+      name: "Cards Pricing",
+      cells
+    });
+    element.replaceWith(block);
   }
 
-  // tools/importer/parsers/form-newsletter.js
-  function parse6(element, { document }) {
+  // ../../../../../../../../../../../workspace/tools/importer/parsers/form-newsletter.js
+  function parse5(element, { document }) {
     const cells = [];
     const headingCell = document.createElement("div");
     headingCell.appendChild(document.createComment("field:heading"));
@@ -362,7 +417,7 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
-  // tools/importer/transformers/firstnet.js
+  // ../../../../../../../../../../../workspace/tools/importer/transformers/firstnet.js
   function transform(hookName, element) {
     if (hookName === "beforeTransform") {
       element.querySelectorAll("script, style, noscript, iframe").forEach((el) => el.remove());
@@ -568,7 +623,7 @@ var CustomImportScript = (() => {
     }
   }
 
-  // tools/importer/transformers/sections.js
+  // ../../../../../../../../../../../workspace/tools/importer/transformers/sections.js
   function transform2(hookName, element, payload) {
     if (hookName !== "afterTransform") return;
     const { document, template } = payload;
@@ -661,56 +716,120 @@ var CustomImportScript = (() => {
     return div;
   }
 
-  // tools/importer/import-homepage.js
+  // ../../../../../../../../../../../workspace/tools/importer/import-plans-page.js
   var parsers = {
-    "headband": parse,
-    "hero": parse2,
-    "cards-offer": parse3,
-    "columns-icons": parse4,
-    "cards-news": parse5,
-    "form-newsletter": parse6
+    "hero": parse,
+    "tabs": parse2,
+    "columns-icons": parse3,
+    "cards-pricing": parse4,
+    "form-newsletter": parse5
   };
   var transformers = [
     transform,
     transform2
   ];
   var PAGE_TEMPLATE = {
-    name: "homepage",
-    description: "FirstNet homepage with hero, features, and promotional content sections",
+    name: "plans-page",
+    description: "FirstNet rate plans page with individual, agency, and international plan pricing, tabbed sections, and comparison cards",
     urls: [
-      "https://www.firstnet.com/"
+      "https://www.firstnet.com/plans.html"
     ],
     blocks: [
       {
-        name: "headband",
-        instances: [".headband"]
+        name: "tabs",
+        instances: [".tabs.parbase"]
+      },
+      {
+        name: "columns-icons",
+        instances: [".icon-list"]
       },
       {
         name: "hero",
         instances: [".marquee-heading"]
       },
       {
-        name: "cards-offer",
-        instances: [".new-offers-card .offersCard"]
-      },
-      {
-        name: "columns-icons",
-        instances: [".icon-grid"]
-      },
-      {
-        name: "cards-news",
-        instances: [".new-offers-card .offersCard"]
+        name: "cards-pricing",
+        instances: [".table-comparison"]
       },
       {
         name: "form-newsletter",
         instances: [".email-signup"]
       }
+    ],
+    sections: [
+      {
+        id: "section-1",
+        name: "Page Header",
+        selector: ".text.parbase:first-child",
+        style: null,
+        blocks: [],
+        defaultContent: [".text h1", ".text h4", ".sticky-nav"]
+      },
+      {
+        id: "section-2",
+        name: "Individual Plans",
+        selector: "#individual-plans",
+        style: null,
+        blocks: ["tabs"],
+        defaultContent: [".segment-heading h3"]
+      },
+      {
+        id: "section-3",
+        name: "Rate Plan Features",
+        selector: ".icon-list",
+        style: null,
+        blocks: ["columns-icons"],
+        defaultContent: [".segment-heading h3"]
+      },
+      {
+        id: "section-4",
+        name: "Promo",
+        selector: ".marquee-heading",
+        style: null,
+        blocks: ["hero"],
+        defaultContent: []
+      },
+      {
+        id: "section-5",
+        name: "Agency Plans",
+        selector: "#agency-plans",
+        style: null,
+        blocks: ["tabs"],
+        defaultContent: [".segment-heading h3"]
+      },
+      {
+        id: "section-6",
+        name: "International Plans",
+        selector: "#international-plans",
+        style: null,
+        blocks: ["cards-pricing"],
+        defaultContent: [".segment-heading h3", ".call-to-action a"]
+      },
+      {
+        id: "section-7",
+        name: "Contact",
+        selector: ".segment-heading:has(h2)",
+        style: null,
+        blocks: [],
+        defaultContent: [".segment-heading h2", ".segment-heading h3", ".call-to-action a"]
+      },
+      {
+        id: "section-8",
+        name: "Email Signup",
+        selector: ".email-signup",
+        style: "dark",
+        blocks: ["form-newsletter"],
+        defaultContent: []
+      }
     ]
   };
   function executeTransformers(hookName, element, payload) {
+    const enhancedPayload = __spreadProps(__spreadValues({}, payload), {
+      template: PAGE_TEMPLATE
+    });
     transformers.forEach((transformerFn) => {
       try {
-        transformerFn.call(null, hookName, element, payload);
+        transformerFn.call(null, hookName, element, enhancedPayload);
       } catch (e) {
         console.error(`Transformer failed at ${hookName}:`, e);
       }
@@ -737,20 +856,31 @@ var CustomImportScript = (() => {
     console.log(`Found ${pageBlocks.length} block instances on page`);
     return pageBlocks;
   }
-  var import_homepage_default = {
+  var import_plans_page_default = {
     /**
      * Main transformation function
      */
     transform: (payload) => {
       const { document, url, html, params } = payload;
       const main = document.body;
+      let rawHtml = null;
+      try {
+        const xhr = new XMLHttpRequest();
+        xhr.open("GET", params.originalURL || url, false);
+        xhr.send();
+        if (xhr.status === 200) {
+          rawHtml = xhr.responseText;
+        }
+      } catch (e) {
+        console.warn("Failed to fetch raw HTML:", e.message);
+      }
       executeTransformers("beforeTransform", main, payload);
       const pageBlocks = findBlocksOnPage(document, PAGE_TEMPLATE);
       pageBlocks.forEach((block) => {
         const parser = parsers[block.name];
         if (parser) {
           try {
-            parser(block.element, { document, url, params });
+            parser(block.element, { document, url, params, html: rawHtml || html });
           } catch (e) {
             console.error(`Failed to parse ${block.name} (${block.selector}):`, e);
           }
@@ -759,6 +889,8 @@ var CustomImportScript = (() => {
         }
       });
       executeTransformers("afterTransform", main, payload);
+      const hr = document.createElement("hr");
+      main.appendChild(hr);
       WebImporter.rules.createMetadata(main, document);
       WebImporter.rules.transformBackgroundImages(main, document);
       WebImporter.rules.adjustImageUrls(main, url, params.originalURL);
@@ -776,5 +908,5 @@ var CustomImportScript = (() => {
       }];
     }
   };
-  return __toCommonJS(import_homepage_exports);
+  return __toCommonJS(import_plans_page_exports);
 })();

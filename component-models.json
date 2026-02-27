@@ -222,6 +222,25 @@
     ]
   },
   {
+    "id": "pricing-card",
+    "fields": [
+      {
+        "component": "richtext",
+        "name": "name",
+        "value": "",
+        "label": "Plan Name",
+        "valueType": "string"
+      },
+      {
+        "component": "richtext",
+        "name": "details",
+        "value": "",
+        "label": "Pricing Details",
+        "valueType": "string"
+      }
+    ]
+  },
+  {
     "id": "card",
     "fields": [
       {
@@ -417,6 +436,25 @@
         "component": "text",
         "name": "linkText",
         "label": "Text"
+      }
+    ]
+  },
+  {
+    "id": "news-item",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "date",
+        "label": "Date",
+        "value": ""
+      },
+      {
+        "component": "richtext",
+        "name": "content",
+        "value": "",
+        "label": "Content",
+        "valueType": "string"
       }
     ]
   },

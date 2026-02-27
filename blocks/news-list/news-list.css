@@ -1,0 +1,75 @@
+/*
+ * News List Block
+ * Chronological list of news articles with dates, titles, descriptions, and links
+ */
+
+.news-list-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.news-list-item {
+  display: flex;
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid #dadada;
+}
+
+.news-list-item:first-child {
+  padding-top: 0;
+}
+
+.news-list-item:last-child {
+  border-bottom: none;
+}
+
+.news-list-date {
+  flex-shrink: 0;
+  width: 160px;
+  font-size: var(--body-font-size-s);
+  color: var(--color-text-secondary, #6e6e6e);
+  font-weight: 500;
+}
+
+.news-list-content {
+  flex: 1;
+}
+
+.news-list-content p {
+  margin: 0 0 8px;
+  font-size: var(--body-font-size-m);
+  font-weight: 700;
+  color: var(--color-text, #191919);
+}
+
+.news-list-content h5 {
+  margin: 0 0 8px;
+  font-size: var(--body-font-size-s);
+  font-weight: 400;
+  color: var(--color-text-secondary, #6e6e6e);
+  line-height: 1.5;
+}
+
+.news-list-content a {
+  color: var(--link-color, #0568ae);
+  font-size: var(--body-font-size-s);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.news-list-content a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile layout - stack date above content */
+@media (width < 600px) {
+  .news-list-item {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .news-list-date {
+    width: auto;
+  }
+}

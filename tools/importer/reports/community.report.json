@@ -1,0 +1,20 @@
+{
+  "status": "success",
+  "url": "https://www.firstnet.com/community.html",
+  "path": "community",
+  "timestamp": "2026-02-23T19:48:39.238Z",
+  "title": "FirstNet Community - Events, News, Videos and Testimonials",
+  "template": "community",
+  "blocks": [
+    "hero",
+    "hero",
+    "columns",
+    "columns",
+    "cards-insights",
+    "cards-insights",
+    "cards-insights",
+    "news-list",
+    "tabs",
+    "form-newsletter"
+  ]
+}

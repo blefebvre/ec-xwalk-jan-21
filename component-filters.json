@@ -53,6 +53,12 @@
     ]
   },
   {
+    "id": "cards-pricing",
+    "components": [
+      "pricing-card"
+    ]
+  },
+  {
     "id": "cards",
     "components": [
       "card"
@@ -83,6 +89,12 @@
       "image",
       "button",
       "title"
+    ]
+  },
+  {
+    "id": "news-list",
+    "components": [
+      "news-item"
     ]
   },
   {

@@ -56,6 +56,15 @@ var CustomImportScript = (() => {
         imageCell.appendChild(img);
       }
     }
+    if (!imageCell.querySelector("img")) {
+      const directImg = element.querySelector(".marquee-item > img, .marquee-item img:first-child");
+      if (directImg) {
+        const img = document.createElement("img");
+        img.src = directImg.src;
+        img.alt = directImg.alt || "Hero background";
+        imageCell.appendChild(img);
+      }
+    }
     imageRow.push(imageCell);
     cells.push(imageRow);
     const contentRow = [];
@@ -258,12 +267,16 @@ var CustomImportScript = (() => {
   function parse4(element, { document, html }) {
     const cells = [];
     const bgUrls = extractBgUrlsFromRawHtml(html);
-    const teaserItems = element.querySelectorAll(".swiper-wrapper .item");
+    const teaserItems = element.querySelectorAll(".swiper-wrapper .item, .items-wrapper .item");
     teaserItems.forEach((item, index) => {
       const row = [];
       const imageCell = document.createElement("div");
       let imgUrl = null;
-      if (index < bgUrls.length) {
+      const directImg = item.querySelector(".image-wrapper img");
+      if (directImg && directImg.src && !directImg.src.startsWith("data:")) {
+        imgUrl = directImg.src;
+      }
+      if (!imgUrl && index < bgUrls.length) {
         imgUrl = bgUrls[index];
       }
       if (!imgUrl) {
@@ -307,7 +320,7 @@ var CustomImportScript = (() => {
         const ctaP = document.createElement("p");
         const anchor = document.createElement("a");
         anchor.href = link.href;
-        const ctaText = item.querySelector(".cta-btn .att-button");
+        const ctaText = item.querySelector(".cta-btn .att-button") || item.querySelector(".cta-link span");
         anchor.textContent = ctaText ? ctaText.textContent.trim() : "Read more";
         ctaP.appendChild(anchor);
         textCell.appendChild(ctaP);
@@ -325,14 +338,14 @@ var CustomImportScript = (() => {
   // tools/importer/parsers/columns.js
   function parse5(element, { document }) {
     const cells = [];
-    const imageTextContainer = element.querySelector(".image-text-container");
+    const imageTextContainer = element.classList.contains("image-text-container") ? element : element.querySelector(".image-text-container");
     if (imageTextContainer) {
       const row = [];
       const imageCell = document.createElement("div");
       const imgEl = imageTextContainer.querySelector(".col-image img");
       if (imgEl) {
         const newImg = document.createElement("img");
-        newImg.src = imgEl.src;
+        newImg.src = imgEl.getAttribute("data-src") || imgEl.src;
         newImg.alt = imgEl.alt || "";
         imageCell.appendChild(newImg);
       }
@@ -356,7 +369,7 @@ var CustomImportScript = (() => {
           }
         });
       }
-      const links = imageTextContainer.querySelectorAll(".col-text > div > a");
+      const links = imageTextContainer.querySelectorAll(".col-text > div > a, .col-text a.youtube-player-link");
       links.forEach((link) => {
         const text = link.textContent.trim();
         if (text && link.href) {
