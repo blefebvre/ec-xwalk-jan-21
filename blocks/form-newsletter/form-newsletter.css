@@ -3,6 +3,12 @@
  * Blue background section with email subscription form
  */
 
+/* Override dark section when wrapping form-newsletter */
+main .section.dark.form-newsletter-container {
+  background-color: #0057b8;
+  padding: 0;
+}
+
 .form-newsletter-container .form-newsletter-wrapper {
   max-width: unset;
   padding: 0;
